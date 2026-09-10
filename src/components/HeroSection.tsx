@@ -237,7 +237,7 @@ export default function HeroSection() {
             <span
               className="block pb-5"
               style={{
-                fontSize: "clamp(3.5rem, 9vw, 8rem)",
+                fontSize: "clamp(3.2rem, 9vw, 8rem)",
               }}
             >
               Tech
@@ -251,7 +251,7 @@ export default function HeroSection() {
                 text-[#E6392F]
               "
               style={{
-                fontSize: "clamp(2.9rem, 7.5vw, 6.6rem)",
+                fontSize: "clamp(2.2rem, 7.5vw, 6.6rem)",
                 transform: "scaleY(1.15)",
                 transformOrigin: "left center",
               }}

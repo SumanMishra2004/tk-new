@@ -2,7 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Space_Grotesk, Rajdhani } from "next/font/google";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const bodyFont = Space_Grotesk({
   subsets: ["latin"],
@@ -54,92 +57,110 @@ export default function OverlaySection() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      /* ABOUT US */
-
+      /* ── ABOUT US ── */
       gsap.fromTo(
         ".about-content",
-        {
-          opacity: 0,
-          y: 60,
-        },
+        { opacity: 0, y: 60 },
         {
           opacity: 1,
           y: 0,
           duration: 1,
           ease: "power3.out",
-          scrollTrigger: undefined,
+          scrollTrigger: {
+            trigger: ".about-content",
+            start: "top 85%",
+            end: "top 50%",
+            scrub: false,
+            toggleActions: "play none none none",
+          },
         }
       );
 
-      /* STATS HEADER */
-
+      /* ── STATS HEADER ── */
       gsap.fromTo(
         ".stats-header",
-        {
-          opacity: 0,
-          y: 40,
-        },
+        { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
           duration: 0.9,
           ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".stats-header",
+            start: "top 88%",
+            end: "top 60%",
+            toggleActions: "play none none none",
+          },
         }
       );
 
-      /* STATS */
-
-      const items =
-        gsap.utils.toArray<HTMLElement>(".stat-item");
+      /* ── STAT CARDS ── */
+      const items = gsap.utils.toArray<HTMLElement>(".stat-item");
 
       items.forEach((item, index) => {
-        const bar =
-          item.querySelector<HTMLElement>(".stat-bar");
-
-        const number =
-          item.querySelector<HTMLElement>(".stat-value");
+        const bar = item.querySelector<HTMLElement>(".stat-bar");
+        const number = item.querySelector<HTMLElement>(".stat-value");
 
         if (!bar || !number) return;
 
         const target = Number(item.dataset.value);
-        const percentage = Number(
-          item.dataset.percentage
-        );
-
+        const percentage = Number(item.dataset.percentage);
         const counter = { value: 0 };
 
+        /* card slide-up */
         gsap.fromTo(
           item,
-          {
-            opacity: 0,
-            y: 45,
-          },
+          { opacity: 0, y: 45 },
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
             delay: index * 0.1,
             ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
           }
         );
 
-        gsap.to(bar, {
-          height: `${percentage}%`,
-          duration: 1.4,
-          delay: index * 0.1,
-          ease: "power3.out",
-        });
+        /* bar fill */
+        gsap.fromTo(
+          bar,
+          { height: "0%" },
+          {
+            height: `${percentage}%`,
+            duration: 1.4,
+            delay: index * 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
 
-        gsap.to(counter, {
-          value: target,
-          duration: 1.4,
-          delay: index * 0.1,
-          ease: "power2.out",
-          onUpdate: () => {
-            number.textContent =
-              Math.floor(counter.value).toString();
-          },
-        });
+        /* number count-up */
+        gsap.fromTo(
+          counter,
+          { value: 0 },
+          {
+            value: target,
+            duration: 1.4,
+            delay: index * 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+            onUpdate: () => {
+              number.textContent = Math.floor(counter.value).toString();
+            },
+          }
+        );
       });
     }, sectionRef);
 
@@ -150,11 +171,9 @@ export default function OverlaySection() {
     <section
       ref={sectionRef}
       className="
-        top-0
         w-full
         overflow-hidden
         bg-black
-        sticky
         px-5
         py-16
         text-white
@@ -411,7 +430,6 @@ function Stat({
         border
         border-white/15
         p-5
-        opacity-0
         transition-colors
         duration-500
         hover:border-[#E6392F]/60

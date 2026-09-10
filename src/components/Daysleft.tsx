@@ -124,15 +124,8 @@ export default function DaysLeft() {
       "
     >
       {/* STICKY CONTENT */}
-      <div
-        className="
-          sticky
-          z-20
-        "
-        style={{
-          top: "calc(50% - 30px)",
-        }}
-      >
+      
+      
         <div className="mx-auto max-w-6xl">
 
           {/* =====================================================
@@ -275,7 +268,7 @@ export default function DaysLeft() {
           </div>
 
         </div>
-      </div>
+     
     </section>
   );
 }
