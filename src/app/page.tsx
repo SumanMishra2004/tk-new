@@ -7,6 +7,10 @@ import GallerySection from "@/components/GallerySection";
 import TeamSection from "@/components/TeamSection";
 import EventTimeline from "@/components/EventTimeline";
 import Footer from "@/components/Footer";
+import BoardingPassSection from "@/components/BoardingPassSection";
+import SponsorsSection from "@/components/SponsorsSection";
+import FAQSection from "@/components/FAQSection";
+import LocationContact from "@/components/LocationContact";
 
 import HeroSection from "@/components/HeroSection";
 import Navigation from "@/components/Navigation";
@@ -23,15 +27,12 @@ export default function LandingPage() {
         <EventsSection />
         <GallerySection />
         <TeamSection />
-      
+        <BoardingPassSection />
+        <SponsorsSection />
+        <FAQSection />
+        <LocationContact />
       </main>
       <Footer />
     </div>
   );
 }
-
-/* =========================================================
-   OVERLAY SECTION
-   Sits above the sticky countdown and slides over it.
-   Replace this placeholder with real content.
-========================================================= */

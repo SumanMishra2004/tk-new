@@ -199,22 +199,7 @@ export default function HeroSection() {
               DECORATIVE LINE
           ═══════════════════════════════════════════ */}
 
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-[2px] w-10 bg-[#E6392F] sm:w-14" />
-
-            <span
-              className={`
-                ${accentFont.className}
-                text-[10px]
-                font-semibold
-                uppercase
-                tracking-[0.2em]
-                text-[#D6D6D6]
-              `}
-            >
-              EST. 2026
-            </span>
-          </div>
+         
 
           {/* ═══════════════════════════════════════════
               MAIN TITLE
@@ -329,7 +314,7 @@ export default function HeroSection() {
                 md:text-base
               `}
             >
-              February 2026
+              26 September, 2026
 
               <span className="mx-2 text-[#E6392F]">
                 •
@@ -458,6 +443,60 @@ export default function HeroSection() {
           to-transparent
         "
       />
+
+      {/* ═══════════════════════════════════════════════
+          SOCIAL BAR — right edge, vertical
+      ═══════════════════════════════════════════════ */}
+      <div className="absolute right-5 sm:right-7 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-4">
+        {/* vertical line top */}
+        <div className="w-px h-16 bg-gradient-to-b from-transparent to-white/25" />
+
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/tech_kurukshetra"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="group flex items-center justify-center w-8 h-8 rounded-full border border-white/15 bg-white/5 text-white/40 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all duration-300"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </a>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/company/tech-kurukshetra"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="group flex items-center justify-center w-8 h-8 rounded-full border border-white/15 bg-white/5 text-white/40 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all duration-300"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+
+        {/* X / Twitter */}
+        <a
+          href="https://twitter.com/tech_kurukshetra"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="X (Twitter)"
+          className="group flex items-center justify-center w-8 h-8 rounded-full border border-white/15 bg-white/5 text-white/40 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all duration-300"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+
+        {/* vertical line bottom */}
+        <div className="w-px h-16 bg-gradient-to-t from-transparent to-white/25" />
+      </div>
 
       {/* Accessibility */}
 

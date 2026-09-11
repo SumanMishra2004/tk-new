@@ -170,6 +170,7 @@ export default function OverlaySection() {
   return (
     <section
       ref={sectionRef}
+      id="about"
       className="
         w-full
         overflow-hidden

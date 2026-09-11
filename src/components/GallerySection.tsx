@@ -7,6 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* -------------------------------------------------------------------------- */
+/* Fonts                                                                      */
+/* -------------------------------------------------------------------------- */
+
 const heading = Rajdhani({
   subsets: ["latin"],
   weight: ["600", "700"],
@@ -19,61 +23,58 @@ const body = Space_Grotesk({
   display: "swap",
 });
 
-// ─── gallery items ───────────────────────────────────────────────────────────
-// Replace src values with real images; the parallax works regardless.
+/* -------------------------------------------------------------------------- */
+/* Gallery Items                                                              */
+/* -------------------------------------------------------------------------- */
+
 const ITEMS = [
   {
-    src: "/images/gallery/1.webp",
-    label: "Opening Ceremony",
-    year: "2025",
-    span: "col-span-2 row-span-2",   // large hero tile
-    speed: -40,                       // px shift on scroll (negative = up)
+    src: "https://res.cloudinary.com/dvky83edw/image/upload/v1774069138/iot/tzw3sr3v2kabktbc0dwd.jpg",
+    
+    span: "col-span-2 row-span-3 col-start-1 row-start-1",
+    speed: -40,
   },
+
   {
-    src: "/images/gallery/2.webp",
-    label: "Hackathon Finals",
-    year: "2025",
-    span: "col-span-1 row-span-1",
+    src: "https://res.cloudinary.com/dvky83edw/image/upload/v1774100346/iot/chjz9ii3pn3cs0ebqemt.jpg",
+  
+    span: "col-span-2 row-span-2 col-start-3 row-start-1",
     speed: 30,
   },
+
   {
-    src: "/images/gallery/3.webp",
-    label: "Robotics Arena",
-    year: "2025",
-    span: "col-span-1 row-span-1",
+    src: "https://res.cloudinary.com/dvky83edw/image/upload/v1789117210/qdmwofrxbt8xfzjshqhq.jpg",
+   
+    span: "col-span-2 row-span-4 col-start-5 row-start-1",
     speed: -20,
   },
+
   {
-    src: "/images/gallery/4.webp",
-    label: "Guest Keynote",
-    year: "2025",
-    span: "col-span-1 row-span-2",
+    src: "https://res.cloudinary.com/dvky83edw/image/upload/v1774119939/iot/jq6lrjgalbxrqjpvbsfe.jpg",
+   
+    span: "col-span-2 row-span-2 col-start-3 row-start-3",
     speed: 50,
   },
+
   {
-    src: "/images/gallery/5.webp",
-    label: "Prize Distribution",
-    year: "2025",
-    span: "col-span-1 row-span-1",
+    src: "https://res.cloudinary.com/dvky83edw/image/upload/v1789116770/azuotaypg3vmj5w9iacn.jpg",
+    
+    span: "col-span-2 row-span-4 col-start-1 row-start-4",
     speed: -35,
   },
+
   {
-    src: "/images/gallery/6.webp",
-    label: "Paper Presentation",
-    year: "2025",
-    span: "col-span-1 row-span-1",
+    src: "https://res.cloudinary.com/dvky83edw/image/upload/v1789117523/gmbasbyiym0gyttxo0yv.jpg",
+   
+    span: "col-span-4 row-span-3 col-start-3 row-start-5",
     speed: 25,
-  },
-  {
-    src: "/images/gallery/7.webp",
-    label: "Closing Night",
-    year: "2025",
-    span: "col-span-2 row-span-1",
-    speed: -15,
   },
 ];
 
-// ─── placeholder colours shown when an image is missing ──────────────────────
+/* -------------------------------------------------------------------------- */
+/* Placeholder Colors                                                         */
+/* -------------------------------------------------------------------------- */
+
 const PLACEHOLDER_COLORS = [
   "#1a1208",
   "#0e1a12",
@@ -81,25 +82,36 @@ const PLACEHOLDER_COLORS = [
   "#0d1018",
   "#18100d",
   "#0f1510",
-  "#1a1118",
 ];
+
+/* -------------------------------------------------------------------------- */
+/* Gallery Section                                                            */
+/* -------------------------------------------------------------------------- */
 
 export default function GallerySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
-  const gridRef    = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
+
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // ── 1. Heading reveal ──────────────────────────────────────────────────
+      /* -------------------------------------------------------------------- */
+      /* Heading Reveal                                                       */
+      /* -------------------------------------------------------------------- */
+
       const headingChildren = headingRef.current?.children;
+
       if (headingChildren) {
         gsap.fromTo(
           headingChildren,
-          { y: 60, opacity: 0 },
+          {
+            y: 60,
+            opacity: 0,
+          },
           {
             y: 0,
             opacity: 1,
@@ -115,17 +127,27 @@ export default function GallerySection() {
         );
       }
 
-      // ── 2. Per-card parallax ───────────────────────────────────────────────
-      const cards = section.querySelectorAll<HTMLElement>(".gallery-card");
+      /* -------------------------------------------------------------------- */
+      /* Gallery Cards                                                        */
+      /* -------------------------------------------------------------------- */
+
+      const cards =
+        section.querySelectorAll<HTMLElement>(".gallery-card");
 
       cards.forEach((card) => {
         const speed = Number(card.dataset.speed ?? 0);
-        const img   = card.querySelector<HTMLElement>(".gallery-img");
 
-        // slide the whole card in from below on first appear
+        const img =
+          card.querySelector<HTMLImageElement>(".gallery-img");
+
+        /* Card entrance */
+
         gsap.fromTo(
           card,
-          { y: 50, opacity: 0 },
+          {
+            y: 50,
+            opacity: 0,
+          },
           {
             y: 0,
             opacity: 1,
@@ -139,13 +161,16 @@ export default function GallerySection() {
           }
         );
 
-        // parallax: inner image moves at a different rate than the card
+        /* Image parallax */
+
         if (img && speed !== 0) {
           gsap.fromTo(
             img,
-            { y: speed * -1 },          // start offset
             {
-              y: speed,                  // end offset
+              y: -speed,
+            },
+            {
+              y: speed,
               ease: "none",
               scrollTrigger: {
                 trigger: card,
@@ -157,18 +182,46 @@ export default function GallerySection() {
           );
         }
 
-        // subtle hover scale via GSAP (pure CSS hover also works but GSAP
-        // integrates better with ongoing ScrollTrigger transforms)
-        card.addEventListener("mouseenter", () => {
-          gsap.to(img, { scale: 1.07, duration: 0.55, ease: "power2.out" });
-        });
-        card.addEventListener("mouseleave", () => {
-          gsap.to(img, { scale: 1,    duration: 0.55, ease: "power2.out" });
-        });
+        /* Hover */
+
+        if (img) {
+          const handleMouseEnter = () => {
+            gsap.to(img, {
+              scale: 1.07,
+              duration: 0.55,
+              ease: "power2.out",
+              overwrite: true,
+            });
+          };
+
+          const handleMouseLeave = () => {
+            gsap.to(img, {
+              scale: 1,
+              duration: 0.55,
+              ease: "power2.out",
+              overwrite: true,
+            });
+          };
+
+          card.addEventListener(
+            "mouseenter",
+            handleMouseEnter
+          );
+
+          card.addEventListener(
+            "mouseleave",
+            handleMouseLeave
+          );
+        }
       });
 
-      // ── 3. Horizontal marquee strip ───────────────────────────────────────
-      const strip = section.querySelector<HTMLElement>(".marquee-track");
+      /* -------------------------------------------------------------------- */
+      /* Marquee                                                               */
+      /* -------------------------------------------------------------------- */
+
+      const strip =
+        section.querySelector<HTMLElement>(".marquee-track");
+
       if (strip) {
         gsap.to(strip, {
           xPercent: -50,
@@ -181,6 +234,8 @@ export default function GallerySection() {
           },
         });
       }
+
+      ScrollTrigger.refresh();
     }, section);
 
     return () => ctx.revert();
@@ -190,138 +245,378 @@ export default function GallerySection() {
     <section
       ref={sectionRef}
       id="gallery"
-      className="relative w-full overflow-hidden bg-black text-white"
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-black
+        text-white
+      "
     >
-      {/* ── top separator ─────────────────────────────────────────────────── */}
+      {/* ================================================================== */}
+      {/* TOP SEPARATOR                                                       */}
+      {/* ================================================================== */}
+
       <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E6392F]/60 to-transparent" />
 
-      {/* ── section header ────────────────────────────────────────────────── */}
+      {/* ================================================================== */}
+      {/* HEADER                                                              */}
+      {/* ================================================================== */}
+
       <div
         ref={headingRef}
-        className="mx-auto flex flex-col gap-4 px-6 pb-12 pt-24 sm:px-10 md:px-14 lg:px-20"
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1500px]
+          flex-col
+          gap-4
+
+          px-5
+          pb-10
+          pt-20
+
+          sm:px-8
+          sm:pb-12
+          sm:pt-24
+
+          md:px-10
+
+          lg:px-12
+          lg:pb-14
+          lg:pt-28
+
+          xl:px-16
+        "
       >
-        {/* label */}
         <p
-          className={`${heading.className} text-[11px] font-bold uppercase tracking-[0.25em] text-[#E6392F]`}
+          className={`
+            ${heading.className}
+            text-[10px]
+            font-bold
+            uppercase
+            tracking-[0.25em]
+            text-[#E6392F]
+
+            sm:text-[11px]
+          `}
         >
           Tech Kurukshetra · Moments
         </p>
 
-        {/* main heading */}
         <h2
-          className="select-none uppercase leading-[0.88] tracking-tight text-[#F5F1E8]"
-          style={{ fontFamily: "var(--font-sketch)", fontSize: "clamp(3rem,9vw,7.5rem)" }}
+          className="
+            select-none
+            uppercase
+            leading-[0.88]
+            tracking-tight
+            text-[#F5F1E8]
+          "
+          style={{
+            fontFamily: "var(--font-sketch)",
+            fontSize: "clamp(3.5rem, 9vw, 7.5rem)",
+          }}
         >
           Gallery
         </h2>
 
-        {/* sub-copy */}
         <p
-          className={`${body.className} max-w-[520px] text-sm leading-7 text-[#A8A8A8] sm:text-base`}
+          className={`
+            ${body.className}
+            max-w-[520px]
+            text-sm
+            leading-7
+            text-[#A8A8A8]
+
+            sm:text-base
+          `}
         >
-          Relive the energy, ideas, and camaraderie from previous editions of
-          Tech Kurukshetra — captured frame by frame.
+          Relive the energy, ideas, and camaraderie from previous
+          editions of Tech Kurukshetra — captured frame by frame.
         </p>
       </div>
 
-      {/* ── masonry-style grid ────────────────────────────────────────────── */}
+      {/* ================================================================== */}
+      {/* GALLERY                                                             */}
+      {/* ================================================================== */}
+
       <div
         ref={gridRef}
-        className={`
+        className="
           mx-auto
-          grid
-          
-          grid-cols-4
-          auto-rows-50
-          gap-3
-          px-6
-          sm:px-10
-          md:px-14
-          lg:px-20
-          sm:auto-rows-[220px]
-          md:auto-rows-[240px]
-        `}
+          w-full
+          max-w-[1500px]
+
+          px-4
+
+          sm:px-6
+
+          md:px-8
+
+          lg:px-12
+
+          xl:px-16
+        "
       >
-        {ITEMS.map((item, i) => (
-          <div
-            key={item.label}
-            className={`gallery-card relative cursor-pointer overflow-hidden rounded-xl ${item.span}`}
-            data-speed={item.speed}
-            style={{ backgroundColor: PLACEHOLDER_COLORS[i % PLACEHOLDER_COLORS.length] }}
-          >
-            {/* parallax inner image — scaled up so the shift never reveals edges */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={item.src}
-              alt={item.label}
-              className="gallery-img absolute inset-0 h-[120%] w-full object-cover"
-              style={{ top: "-10%", willChange: "transform" }}
-              draggable={false}
-              /* graceful fallback: hide broken-image icon, keep bg colour */
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).style.display = "none";
-              }}
-            />
+        {/*
+          IMPORTANT:
+          The grid has a controlled height instead of aspect-ratio.
 
-            {/* dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          This prevents the gallery from becoming excessively tall
+          on wide desktop screens.
+        */}
 
-            {/* label */}
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <p
-                className={`${heading.className} text-[10px] font-bold uppercase tracking-[0.2em] text-[#E6392F]`}
-              >
-                {item.year}
-              </p>
-              <p
-                className={`${body.className} mt-0.5 text-sm font-medium text-[#F5F1E8] sm:text-base`}
-              >
-                {item.label}
-              </p>
-            </div>
+        <div
+          className="
+            grid
+            w-full
 
-            {/* hover border glow */}
+            grid-cols-6
+            grid-rows-7
+
+            gap-2
+
+            h-[520px]
+
+            sm:h-[580px]
+            sm:gap-3
+
+            md:h-[640px]
+            md:gap-4
+
+            lg:h-[700px]
+
+            xl:h-[760px]
+          "
+        >
+          {ITEMS.map((item, i) => (
             <div
-              className="
-                absolute inset-0 rounded-xl
-                ring-0 ring-[#E6392F]/0
-                transition-all duration-500
-                hover:ring-1 hover:ring-[#E6392F]/60
-              "
-            />
-          </div>
-        ))}
+              key={i}
+              className={`
+                gallery-card
+                group
+                relative
+                min-h-0
+                min-w-0
+                cursor-pointer
+                overflow-hidden
+                rounded-lg
+
+                ${item.span}
+              `}
+              data-speed={item.speed}
+              style={{
+                backgroundColor:
+                  PLACEHOLDER_COLORS[
+                    i % PLACEHOLDER_COLORS.length
+                  ],
+              }}
+            >
+              {/* ---------------------------------------------------------- */}
+              {/* IMAGE                                                       */}
+              {/* ---------------------------------------------------------- */}
+
+              {item.src && (
+                <img
+                  src={item.src}
+                  alt={item.src}
+                  className="
+                    gallery-img
+                    absolute
+                    left-0
+                    top-[-10%]
+                    h-[120%]
+                    w-full
+                    object-cover
+
+                    will-change-transform
+
+                    transition-[filter]
+                    duration-500
+
+                    group-hover:brightness-110
+                  "
+                  draggable={false}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              )}
+
+              {/* ---------------------------------------------------------- */}
+              {/* OVERLAY                                                     */}
+              {/* ---------------------------------------------------------- */}
+
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black/90
+                  via-black/20
+                  to-transparent
+                "
+              />
+
+              {/* ---------------------------------------------------------- */}
+              {/* TEXT                                                        */}
+              {/* ---------------------------------------------------------- */}
+
+           
+              {/* ---------------------------------------------------------- */}
+              {/* HOVER BORDER                                                */}
+              {/* ---------------------------------------------------------- */}
+
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  rounded-lg
+
+                  ring-1
+                  ring-[#E6392F]/0
+
+                  transition-all
+                  duration-500
+
+                  group-hover:ring-[#E6392F]/60
+                "
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* ── scrolling marquee strip ───────────────────────────────────────── */}
-      <div className="relative mt-20 overflow-hidden py-6 bg-a">
-        {/* fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-black to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-black to-transparent" />
+      {/* ================================================================== */}
+      {/* MARQUEE                                                             */}
+      {/* ================================================================== */}
 
-        {/* doubled text so the scrub loop feels seamless */}
-        <div className="marquee-track flex whitespace-nowrap will-change-transform">
+      <div
+        className="
+          relative
+          mt-16
+          overflow-hidden
+          bg-black
+          py-6
+
+          sm:mt-20
+          sm:py-8
+        "
+      >
+        {/* Left fade */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-y-0
+            left-0
+            z-10
+            w-16
+            bg-gradient-to-r
+            from-black
+            to-transparent
+
+            sm:w-24
+          "
+        />
+
+        {/* Right fade */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-y-0
+            right-0
+            z-10
+            w-16
+            bg-gradient-to-l
+            from-black
+            to-transparent
+
+            sm:w-24
+          "
+        />
+
+        <div
+          className="
+            marquee-track
+            flex
+            w-max
+            whitespace-nowrap
+            will-change-transform
+          "
+        >
           {Array.from({ length: 2 }).map((_, ri) => (
-            <span key={ri} className="flex items-center">
-              {["Hackathon", "Robotics", "Paper Presentation", "Gaming", "Design", "Innovation"].map(
-                (word) => (
-                  <span key={word} className="flex items-center">
-                    <span
-                      className={`${heading.className} px-8 text-[clamp(2.5rem,6vw,5rem)] font-bold uppercase tracking-tight text-white/50`}
-                    >
-                      {word}
-                    </span>
-                    <span className="text-[#E6392F]/40 text-[clamp(1.5rem,3vw,2.5rem)]">✦</span>
+            <span
+              key={ri}
+              className="flex shrink-0 items-center"
+            >
+              {[
+                "Hackathon",
+                "Robotics",
+                "Paper Presentation",
+                "Gaming",
+                "Design",
+                "Innovation",
+              ].map((word) => (
+                <span
+                  key={word}
+                  className="flex shrink-0 items-center"
+                >
+                  <span
+                    className={`
+                      ${heading.className}
+                      px-5
+                      text-[clamp(2.5rem,6vw,5rem)]
+                      font-bold
+                      uppercase
+                      tracking-tight
+                      text-white/50
+
+                      sm:px-8
+                    `}
+                  >
+                    {word}
                   </span>
-                )
-              )}
+
+                  <span
+                    className="
+                      text-[clamp(1.5rem,3vw,2.5rem)]
+                      text-[#E6392F]/40
+                    "
+                  >
+                    ✦
+                  </span>
+                </span>
+              ))}
             </span>
           ))}
         </div>
       </div>
 
-      {/* ── bottom gradient into next section ────────────────────────────── */}
-      <div className="h-32 w-full bg-gradient-to-b from-transparent to-black" />
+      {/* ================================================================== */}
+      {/* BOTTOM                                                             */}
+      {/* ================================================================== */}
+
+      <div
+        className="
+          h-20
+          w-full
+          bg-gradient-to-b
+          from-transparent
+          to-black
+
+          sm:h-28
+
+          lg:h-32
+        "
+      />
     </section>
   );
 }

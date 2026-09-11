@@ -291,6 +291,35 @@ function memberBg(name: string) {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   COMING SOON
+   ───────────────────────────────────────────────────────────────────────────── */
+
+function TeamComingSoon() {
+  return (
+    <div className="flex min-h-[40vh] flex-col items-center justify-center gap-5 px-6 py-20">
+      <div className="flex items-center gap-3">
+        <span className="h-[1px] w-10 bg-[#E6392F]/50" />
+        <span
+          className={`${heading.className} text-[10px] font-bold uppercase tracking-[0.3em] text-[#E6392F]`}
+        >
+          Tech Kurukshetra · People
+        </span>
+        <span className="h-[1px] w-10 bg-[#E6392F]/50" />
+      </div>
+      <p
+        className="select-none uppercase leading-tight tracking-tight text-white/30"
+        style={{ fontFamily: "var(--font-sketch)", fontSize: "clamp(2.5rem, 8vw, 6rem)" }}
+      >
+        Coming Soon
+      </p>
+      <p className={`${body.className} text-center text-sm text-white/40`}>
+        Team details will be announced shortly.
+      </p>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    MAIN SECTION
    ───────────────────────────────────────────────────────────────────────────── */
 
@@ -298,6 +327,8 @@ export default function TeamSection() {
   const outerRef = useRef<HTMLElement>(null);
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const trackRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  const hasTeam = TEAMS.length > 0 && TEAMS.some((t) => t.members.length > 0);
 
   useLayoutEffect(() => {
     const outer = outerRef.current;
@@ -772,6 +803,7 @@ export default function TeamSection() {
           THREE PARALLAX ROWS
          ─────────────────────────────────────────────────────────────── */}
 
+      {hasTeam ? (
       <div
         className="
           mt-10
@@ -909,6 +941,9 @@ export default function TeamSection() {
           </div>
         ))}
       </div>
+      ) : (
+        <TeamComingSoon />
+      )}
     </section>
   );
 }
