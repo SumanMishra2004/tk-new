@@ -137,3 +137,34 @@
     @apply font-sans;
   }
 }
+
+/* ── Shadow Protocol scrollbar ── */
+
+/* Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0706;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E6392F;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF705F;
+}
+
+::-webkit-scrollbar-corner {
+  background: #0a0706;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #E6392F #0a0706;
+}
