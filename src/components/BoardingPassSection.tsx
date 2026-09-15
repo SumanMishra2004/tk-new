@@ -282,7 +282,6 @@ export default function BoardingPassSection() {
           xl:w-[800px]
           xl:h-[800px]
         "
-        aria-hidden="true"
       >
         <Image
           src="/tree.png"

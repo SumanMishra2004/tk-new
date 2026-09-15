@@ -296,7 +296,7 @@ export default function LocationContact() {
 >
   <Image
     src="/fish.png"
-    alt=""
+    alt="Decorative fish"
     fill
     priority
     sizes="(max-width: 640px) 520px, (max-width: 1024px) 600px, 700px "

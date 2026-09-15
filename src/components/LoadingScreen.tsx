@@ -82,6 +82,7 @@ export default function LoadingScreen({ done, onExited }: LoadingScreenProps) {
   >([]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setColumns(
       Array.from({ length: 18 }, (_, i) => ({
         chars: Array.from({ length: 14 }, () => KANJI[Math.floor(Math.random() * KANJI.length)]),
