@@ -121,7 +121,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-hidden max-w-full`}
     >
       <head>
         <script
@@ -129,9 +129,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full overflow-x-hidden">
+      <body className="min-h-full overflow-x-hidden max-w-full relative">
         <SmoothScroll />
-        {children}
+        <div className="w-full max-w-full overflow-x-hidden relative">
+          {children}
+        </div>
       </body>
     </html>
   );
