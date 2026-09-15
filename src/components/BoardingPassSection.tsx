@@ -289,13 +289,7 @@ export default function BoardingPassSection() {
           alt="Decorative tree background"
           fill
           priority
-          sizes="
-            (max-width: 640px) 420px,
-            (max-width: 768px) 520px,
-            (max-width: 1024px) 620px,
-            (max-width: 1280px) 720px,
-            800px
-          "
+          sizes="(max-width: 640px) 420px, (max-width: 768px) 520px, (max-width: 1024px) 620px, (max-width: 1280px) 720px, 800px"
           className="
             object-contain
             object-right-top
