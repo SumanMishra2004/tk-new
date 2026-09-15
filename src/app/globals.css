@@ -173,3 +173,37 @@
   scrollbar-width: thin;
   scrollbar-color: #E6392F #0a0706;
 }
+
+/* Print styles for Boarding Pass */
+@media print {
+  body {
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-boarding-pass,
+  #printable-boarding-pass * {
+    visibility: visible;
+  }
+
+  #printable-boarding-pass {
+    position: absolute !important;
+    left: 50% !important;
+    top: 20px !important;
+    transform: translateX(-50%) !important;
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

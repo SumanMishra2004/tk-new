@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { Space_Grotesk, Rajdhani } from "next/font/google";
 import gsap from "gsap";
 import Image from "next/image";
+import { toPng } from "html-to-image";
+import Barcode from "react-barcode";
 
 const bodyFont = Space_Grotesk({
   subsets: ["latin"],
@@ -63,59 +65,8 @@ function genPassId(name: string) {
 }
 
 /* ─────────────────────────────────────────────
-   Tiny barcode SVG
+   Scannable Barcode via react-barcode
 ───────────────────────────────────────────── */
-
-function Barcode({ seed }: { seed: string }) {
-  const bars = Array.from({ length: 48 }, (_, i) => {
-    const w =
-      ((seed.charCodeAt(i % seed.length) * (i + 3)) % 4) + 1;
-
-    return w;
-  });
-
-  let x = 0;
-
-  const rects: {
-    x: number;
-    w: number;
-    fill: string;
-  }[] = [];
-
-  bars.forEach((w, i) => {
-    if (i % 2 === 0) {
-      rects.push({
-        x,
-        w,
-        fill: "#12100E",
-      });
-    }
-
-    x += w + 1;
-  });
-
-  const totalW = x;
-
-  return (
-    <svg
-      viewBox={`0 0 ${totalW} 40`}
-      className="w-full h-8"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      {rects.map((r, i) => (
-        <rect
-          key={i}
-          x={r.x}
-          y={0}
-          width={r.w}
-          height={40}
-          fill={r.fill}
-        />
-      ))}
-    </svg>
-  );
-}
 
 /* ─────────────────────────────────────────────
    Main component
@@ -126,6 +77,7 @@ export default function BoardingPassSection() {
   const [domain, setDomain] = useState("");
   const [college, setCollege] = useState("");
   const [generated, setGenerated] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   const passRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
@@ -191,14 +143,32 @@ export default function BoardingPassSection() {
      Generate pass
   ───────────────────────────────────────────── */
 
-  const handleGenerate = (e: React.FormEvent) => {
+  const handleGenerate = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (
-      name.trim() &&
-      domain &&
-      college.trim()
-    ) {
+    if (name.trim() && domain && college.trim()) {
+      // 1. Generate deterministic ID
+      const newPassId = genPassId(name);
+
+      // 2. Log data to our backend Excel endpoint
+      try {
+        await fetch("/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            college,
+            domain,
+            passId: newPassId,
+          }),
+        });
+      } catch (error) {
+        console.error("Failed to append to excel log:", error);
+      }
+
+      // 3. UI Animation
       if (formRef.current) {
         gsap.to(formRef.current, {
           opacity: 0,
@@ -214,8 +184,33 @@ export default function BoardingPassSection() {
   };
 
   /* ─────────────────────────────────────────────
-     Reset
+     Download & Reset
   ───────────────────────────────────────────── */
+
+  const handleDownload = async () => {
+    const el = document.getElementById("printable-boarding-pass");
+    if (!el || isDownloading) return;
+
+    try {
+      setIsDownloading(true);
+      const dataUrl = await toPng(el, {
+        pixelRatio: 3,
+        skipFonts: false,
+      });
+
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      const sanitizedName = name.trim().replace(/[^a-zA-Z0-9_-]/g, "_") || "Pass";
+      link.download = `BoardingPass_${sanitizedName}_${passId}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error generating boarding pass image:", error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   const handleReset = () => {
     if (passRef.current) {
@@ -621,6 +616,7 @@ export default function BoardingPassSection() {
 >
   {/* Pass wrapper */}
   <div
+    id="printable-boarding-pass"
     className="w-full max-w-[680px]"
     style={{
       filter:
@@ -1331,8 +1327,16 @@ export default function BoardingPassSection() {
               Scan at gate
             </p>
 
-            <div className="w-full">
-              <Barcode seed={passId} />
+            <div className="w-full flex justify-end overflow-hidden mt-1">
+              <Barcode
+                value={passId}
+                displayValue={false}
+                background="transparent"
+                lineColor="#12100E"
+                width={1.8}
+                height={35}
+                margin={0}
+              />
             </div>
 
             <p
@@ -1364,31 +1368,109 @@ export default function BoardingPassSection() {
     </div>
   </div>
 
-  {/* Reset */}
-  <button
-    onClick={handleReset}
-    className={`
-      ${accentFont.className}
-      rounded-xl
-      border
-      border-[#B8A080]
-      bg-transparent
-      px-7
-      py-3
-      text-sm
-      font-bold
-      uppercase
-      tracking-[0.18em]
-      text-[#6A5040]
-      transition-all
-      duration-300
-      hover:border-[#B8322C]/60
-      hover:text-[#B8322C]
-      hover:bg-[#B8322C]/5
-    `}
-  >
-    ← New Pass
-  </button>
+  {/* Action Buttons */}
+  <div className="no-print flex flex-wrap items-center justify-center gap-4 mt-2">
+    <button
+      onClick={handleDownload}
+      disabled={isDownloading}
+      type="button"
+      className={`
+        ${accentFont.className}
+        inline-flex
+        items-center
+        gap-2.5
+        rounded-xl
+        bg-[#E6392F]
+        px-7
+        py-3.5
+        text-sm
+        font-bold
+        uppercase
+        tracking-[0.2em]
+        text-white
+        shadow-[0_0_30px_rgba(230,57,47,0.3)]
+        transition-all
+        duration-300
+        hover:-translate-y-0.5
+        hover:bg-[#F04A3D]
+        hover:shadow-[0_0_45px_rgba(230,57,47,0.5)]
+        active:translate-y-0
+        disabled:opacity-60
+        disabled:pointer-events-none
+        cursor-pointer
+      `}
+    >
+      {isDownloading ? (
+        <svg
+          className="w-4 h-4 animate-spin"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          />
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          />
+        </svg>
+      )}
+      <span>{isDownloading ? "Downloading..." : "Download Boarding Pass"}</span>
+    </button>
+
+    <button
+      onClick={handleReset}
+      type="button"
+      className={`
+        ${accentFont.className}
+        inline-flex
+        items-center
+        gap-2
+        rounded-xl
+        border
+        border-[#B8A080]
+        bg-transparent
+        px-7
+        py-3.5
+        text-sm
+        font-bold
+        uppercase
+        tracking-[0.18em]
+        text-[#6A5040]
+        transition-all
+        duration-300
+        hover:border-[#B8322C]/60
+        hover:text-[#B8322C]
+        hover:bg-[#B8322C]/5
+        cursor-pointer
+      `}
+    >
+      ← New Pass
+    </button>
+  </div>
 </div>
 
           )}
@@ -1413,7 +1495,7 @@ export default function BoardingPassSection() {
                   relative
                   rounded-3xl
                   overflow-hidden
-                  opacity-25
+                  opacity-60
                   pointer-events-none
                 "
                 style={{

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Tech Kurukshetra 2026 — The Ultimate Tech Fest",
+    default: "Tech Kurukshetra 2026 — The Ultimate Tech Summit",
     template: "%s | Tech Kurukshetra 2026",
   },
   description:
@@ -36,6 +36,24 @@ export const metadata: Metadata = {
     "coding competition",
     "robotics competition",
     "tech festival India",
+    "Kolkata",
+    "UEMK",
+    "IEDC",
+    "IEDC UEMK",
+    "IEDC UEM Kolkata",
+    "UEM Kolkata",
+    "UEM Kolkata tech fest",
+    "UEM Kolkata tech summit",
+    "UEM Kolkata tech fest 2026",
+    "UEM Kolkata tech summit 2026",
+    "UEM Kolkata tech fest 2026",
+    "UEM Kolkata tech summit 2026",
+    "UEM Kolkata tech fest 2026",
+    "UEM Kolkata tech summit 2026",
+    "Hackathon",
+    "Robotics",
+    "Treasure hunt",
+    "Quiz"
   ],
 
   authors: [{ name: "IEDC UEM Kolkata", url: BASE_URL }],
@@ -122,6 +140,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-hidden max-w-full`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -129,7 +148,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full overflow-x-hidden max-w-full relative">
+      <body className="min-h-full overflow-x-hidden max-w-full relative" suppressHydrationWarning>
         <SmoothScroll />
         <div className="w-full max-w-full overflow-x-hidden relative">
           {children}
