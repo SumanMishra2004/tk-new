@@ -39,8 +39,8 @@ const CONTACTS = [
       </svg>
     ),
     label: "Phone",
-    value: "+91 1744-233208",
-    href: "tel:+911744233208",
+    value: "+91 6289 374 236",
+    href: "tel:+916289374236",
   },
   {
     icon: (
