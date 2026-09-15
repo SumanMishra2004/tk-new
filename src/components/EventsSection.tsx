@@ -37,7 +37,7 @@ interface EventCard {
 
 const events: EventCard[] = [
   /*{
-    poster: "/4:5.png",
+    poster: "/4_5.png",
     title: "HackFest",
     description:
       "A 24-hour hackathon where teams build a working prototype around a surprise theme revealed at kickoff.",
