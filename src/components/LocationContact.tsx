@@ -39,8 +39,8 @@ const CONTACTS = [
       </svg>
     ),
     label: "Phone",
-    value: "+91 1744-233208",
-    href: "tel:+911744233208",
+    value: "+91 6289 374 236",
+    href: "tel:+916289374236",
   },
   {
     icon: (
@@ -296,7 +296,7 @@ export default function LocationContact() {
 >
   <Image
     src="/fish.png"
-    alt=""
+    alt="Decorative fish"
     fill
     priority
     sizes="(max-width: 640px) 520px, (max-width: 1024px) 600px, 700px "

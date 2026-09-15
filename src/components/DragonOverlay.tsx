@@ -21,32 +21,32 @@ const accentFont = Rajdhani({
 
 const stats = [
   {
-    value: 10,
+    value: 5,
     suffix: "+",
     label: "Events",
     code: "EV",
-    percentage: 82,
+    percentage: 75,
   },
   {
-    value: 500,
+    value: 200,
     suffix: "+",
     label: "Participants",
     code: "PT",
-    percentage: 96,
+    percentage: 85,
+  },
+  {
+    value: 1000,
+    suffix: "+",
+    label: "Registrations",
+    code: "RG",
+    percentage: 95,
   },
   {
     value: 50,
     suffix: "+",
     label: "Projects",
     code: "PR",
-    percentage: 72,
-  },
-  {
-    value: 24,
-    suffix: "H",
-    label: "Innovation",
-    code: "IN",
-    percentage: 88,
+    percentage: 80,
   },
 ];
 
