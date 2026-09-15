@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import ExcelJS from "exceljs";
-import path from "path";
-import fs from "fs";
+import { GoogleSpreadsheet } from "google-spreadsheet";
+import { JWT } from "google-auth-library";
 
 export async function POST(req: Request) {
   try {
@@ -15,41 +14,48 @@ export async function POST(req: Request) {
       );
     }
 
-    const filePath = path.join(process.cwd(), "registrations.xlsx");
-    const workbook = new ExcelJS.Workbook();
-    let worksheet: ExcelJS.Worksheet;
+    const {
+      GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      GOOGLE_PRIVATE_KEY,
+      GOOGLE_SHEET_ID,
+    } = process.env;
 
-    if (fs.existsSync(filePath)) {
-      await workbook.xlsx.readFile(filePath);
-      worksheet = workbook.getWorksheet("Registrations") || workbook.addWorksheet("Registrations");
-    } else {
-      worksheet = workbook.addWorksheet("Registrations");
-      worksheet.columns = [
-        { header: "Date", key: "date", width: 20 },
-        { header: "Pass ID", key: "passId", width: 15 },
-        { header: "Name", key: "name", width: 30 },
-        { header: "College", key: "college", width: 40 },
-        { header: "Domain", key: "domain", width: 25 },
-      ];
-      // Make header row bold
-      worksheet.getRow(1).font = { bold: true };
+    if (!GOOGLE_SERVICE_ACCOUNT_EMAIL || !GOOGLE_PRIVATE_KEY || !GOOGLE_SHEET_ID) {
+      console.warn("Google Sheets credentials are not configured in environment variables.");
+      return NextResponse.json(
+        { error: "Server misconfiguration: Google Sheets credentials missing." },
+        { status: 500 }
+      );
     }
 
-    worksheet.addRow({
-      date: new Date().toLocaleString(),
-      passId,
-      name,
-      college,
-      domain,
+    // Format the private key to handle literal \n strings if passed from .env
+    const formattedPrivateKey = GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n");
+
+    const auth = new JWT({
+      email: GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      key: formattedPrivateKey,
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
-    await workbook.xlsx.writeFile(filePath);
+    const doc = new GoogleSpreadsheet(GOOGLE_SHEET_ID, auth);
+    await doc.loadInfo(); // Loads document properties and worksheets
+
+    const sheet = doc.sheetsByIndex[0];
+
+    // Append the row
+    await sheet.addRow({
+      Date: new Date().toLocaleString(),
+      "Pass ID": passId,
+      Name: name,
+      College: college,
+      Domain: domain,
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error saving registration:", error);
+    console.error("Error saving to Google Sheets:", error);
     return NextResponse.json(
-      { error: "Failed to save registration" },
+      { error: "Failed to save registration to Google Sheets" },
       { status: 500 }
     );
   }
