@@ -149,10 +149,10 @@ export default function Navigation() {
 
         {/* IEM & UEM Combined Logo */}
         <img
-          src="/iem_uem.webp"
+          src="/IEM_UEM_4.webp"
           alt="IEM & UEM"
-          className="h-[25px] w-auto object-contain shrink-0"
-          style={{ maxWidth: "clamp(60px, 10vw, 105px)" }}
+          className="h-8 sm:h-9 w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(85px, 14vw, 145px)" }}
         />
       </div>
 

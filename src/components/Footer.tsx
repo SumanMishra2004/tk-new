@@ -100,10 +100,10 @@ export default function Footer() {
               {/* IEM + UEM & IEDC */}
               <div className="flex items-center gap-3">
                 <img
-                  src="/iem_uem.webp"
+                  src="/IEM_UEM_4.webp"
                   alt="IEM & UEM"
-                  className="h-9 w-auto object-contain"
-                  style={{ maxWidth: 140 }}
+                  className="h-11 w-auto object-contain"
+                  style={{ maxWidth: 165 }}
                 />
                 <div className="h-6 w-px bg-white/10" />
                 <img
