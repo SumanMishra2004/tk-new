@@ -60,8 +60,8 @@ const CONTACTS = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    label: "Event Hours",
-    value: "September 2026 · Boarding from 10:00 AM",
+    label: "Event Date",
+    value: "26 September, 2026 · 9:00 AM",
     href: "#boarding-pass",
   },
 ];
