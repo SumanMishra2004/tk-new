@@ -284,6 +284,7 @@ export default function BoardingPassSection() {
         "
       >
         <Image
+          aria-hidden="true"
           src="/tree.png"
           alt="Decorative tree background"
           fill
