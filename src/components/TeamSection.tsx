@@ -25,28 +25,28 @@ interface Member {
 }
 
 
-const members:Member[] = [
+const members: Member[] = [
   {
     name: "Arista Seth",
-    role: "Student Co-ordinator",
+    role: "Managment and Logistics Lead",
     image: "https://res.cloudinary.com/dvky83edw/image/upload/v1789453635/zkvdrjqrsgivva6z7hfv.jpg",
   },
   {
     name: "Debarshi Banerjee",
-    role: "Student Co-ordinator",
+    role: "Technical Lead",
     image: "https://res.cloudinary.com/dvky83edw/image/upload/v1789453637/yljcvnn5w1vcswbwoxe3.webp",
   },
   {
     name: "Roshan Yadav",
-    role: "Student Co-ordinator",
+    role: "Convenor",
     image: "https://res.cloudinary.com/dvky83edw/image/upload/v1789453774/kqc5dt6wdla9qyspq5ip.jpg",
   },
   {
     name: "Ritam Das Gupta",
-    role: "Lead Operative",
+    role: "Graphics Lead",
     image: "https://res.cloudinary.com/dvky83edw/image/upload/v1789453639/dflgvldlstcebzdhagpb.jpg",
   },
-  
+
   {
     name: "Sayan Mondal",
     role: "Web Dev Lead",
@@ -54,7 +54,7 @@ const members:Member[] = [
   },
   {
     name: "Asmita Chatterjee",
-    role: "",
+    role: "Social Media and PR",
     image: "https://res.cloudinary.com/vhf4myms/image/upload/v1789485665/Asmita_Chatterjee.jpg",
   },
 ];
@@ -146,90 +146,90 @@ export default function TeamCarousel() {
       </div>
 
       <div ref={carouselRef}>
-      <Swiper
-        modules={[
-          EffectCoverflow,
-          Pagination,
-          Autoplay,
-          Mousewheel,
-        ]}
+        <Swiper
+          modules={[
+            EffectCoverflow,
+            Pagination,
+            Autoplay,
+            Mousewheel,
+          ]}
 
-        effect="coverflow"
+          effect="coverflow"
 
-        /* =========================
-           SLIDES
-        ========================= */
+          /* =========================
+             SLIDES
+          ========================= */
 
-        centeredSlides={true}
-        slidesPerView="auto"
-        loop={true}
-        grabCursor={true}
+          centeredSlides={true}
+          slidesPerView="auto"
+          loop={true}
+          grabCursor={true}
 
-        /* =========================
-           AUTOPLAY
-        ========================= */
+          /* =========================
+             AUTOPLAY
+          ========================= */
 
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-          stopOnLastSlide: false,
-          waitForTransition: true,
-        }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            stopOnLastSlide: false,
+            waitForTransition: true,
+          }}
 
-        /* Smooth movement */
-        speed={900}
+          /* Smooth movement */
+          speed={900}
 
-        /* =========================
-           SUBTLE 3D COVERFLOW
-        ========================= */
+          /* =========================
+             SUBTLE 3D COVERFLOW
+          ========================= */
 
-        coverflowEffect={{
-          rotate: 10,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: false,
-        }}
+          coverflowEffect={{
+            rotate: 10,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+          }}
 
-        /* =========================
-           MOUSE WHEEL
-        ========================= */
+          /* =========================
+             MOUSE WHEEL
+          ========================= */
 
-        mousewheel={{
-          forceToAxis: true,
-          sensitivity: 0.5,
-        }}
+          mousewheel={{
+            forceToAxis: true,
+            sensitivity: 0.5,
+          }}
 
-        /* =========================
-           PAGINATION
-        ========================= */
+          /* =========================
+             PAGINATION
+          ========================= */
 
-        pagination={{
-          clickable: true,
-        }}
+          pagination={{
+            clickable: true,
+          }}
 
-        className="teamSwiper"
-      >
+          className="teamSwiper"
+        >
 
-        {members.map((member, index) => (
-          <SwiperSlide
-            key={`${member.name}-${index}`}
-            className="
+          {members.map((member, index) => (
+            <SwiperSlide
+              key={`${member.name}-${index}`}
+              className="
               !w-[170px]
               sm:!w-[210px]
               md:!w-[250px]
               lg:!w-[290px]
            
             "
-          >
+            >
 
-            {/* =========================
+              {/* =========================
                 CARD
             ========================= */}
 
-            <div
-              className="
+              <div
+                className="
                 group
                 relative
                 aspect-3/4
@@ -241,17 +241,17 @@ export default function TeamCarousel() {
               
                 select-none
               "
-            >
+              >
 
-              {/* IMAGE */}
+                {/* IMAGE */}
 
-              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden">
 
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  draggable={false}
-                  className="
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    draggable={false}
+                    className="
                     h-full
                     w-full
                     object-cover
@@ -260,19 +260,19 @@ export default function TeamCarousel() {
                     ease-out
                     group-hover:scale-[1.035]
                   "
-                />
+                  />
 
-                {/* Dark overlay */}
+                  {/* Dark overlay */}
 
-               
 
+
+                  {/* Bottom gradient */}
+
+
+                </div>
                 {/* Bottom gradient */}
-
-
-              </div>
-{/* Bottom gradient */}
-<div
-  className="
+                <div
+                  className="
     pointer-events-none
     absolute
     inset-x-0
@@ -284,11 +284,11 @@ export default function TeamCarousel() {
     via-black/75
     to-transparent
   "
-/>
-              {/* TOP LEFT NUMBER */}
+                />
+                {/* TOP LEFT NUMBER */}
 
-              <div
-                className="
+                <div
+                  className="
                   absolute
                   left-4
                   top-4
@@ -298,22 +298,22 @@ export default function TeamCarousel() {
                   tracking-[0.2em]
                   text-white/35
                 "
-              >
-                {String(index + 1).padStart(2, "0")}
-              </div>
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-              {/* TOP RIGHT DOT */}
+                {/* TOP RIGHT DOT */}
 
-              <div
-                className="
+                <div
+                  className="
                   absolute
                   right-4
                   top-4
                   z-20
                 "
-              >
-                <div
-                  className="
+                >
+                  <div
+                    className="
                     h-2
                     w-2
                     rounded-full
@@ -325,13 +325,13 @@ export default function TeamCarousel() {
                     group-hover:scale-125
                     group-hover:bg-white
                   "
-                />
-              </div>
+                  />
+                </div>
 
-              {/* CONTENT */}
+                {/* CONTENT */}
 
-              <div
-                className="
+                <div
+                  className="
                   absolute
                   inset-x-0
                   bottom-0
@@ -340,10 +340,10 @@ export default function TeamCarousel() {
                   sm:p-5
                   md:p-6
                 "
-              >
+                >
 
-                <p
-                  className="
+                  <p
+                    className="
                     mb-1.5
                     text-[7px]
                     font-medium
@@ -353,12 +353,12 @@ export default function TeamCarousel() {
                     sm:text-[8px]
                     md:text-[9px]
                   "
-                >
-                  Operative
-                </p>
+                  >
+                    Operative
+                  </p>
 
-                <h3
-                  className="
+                  <h3
+                    className="
                     text-sm
                     font-bold
                     uppercase
@@ -369,12 +369,12 @@ export default function TeamCarousel() {
                     md:text-lg
                     lg:text-xl
                   "
-                >
-                  {member.name}
-                </h3>
+                  >
+                    {member.name}
+                  </h3>
 
-                <p
-                  className="
+                  <p
+                    className="
                     mt-1.5
                     text-[7px]
                     uppercase
@@ -384,16 +384,16 @@ export default function TeamCarousel() {
                     md:text-[9px]
                     lg:text-[10px]
                   "
-                >
-                  {member.role}
-                </p>
+                  >
+                    {member.role}
+                  </p>
 
-              </div>
+                </div>
 
-              {/* HOVER BORDER */}
+                {/* HOVER BORDER */}
 
-              <div
-                className="
+                <div
+                  className="
                   pointer-events-none
                   absolute
                   inset-0
@@ -405,12 +405,12 @@ export default function TeamCarousel() {
                   duration-500
                   group-hover:border-white/25
                 "
-              />
+                />
 
-              {/* SCANLINE */}
+                {/* SCANLINE */}
 
-              <div
-                className="
+                <div
+                  className="
                   pointer-events-none
                   absolute
                   inset-x-0
@@ -423,12 +423,12 @@ export default function TeamCarousel() {
                   duration-500
                   group-hover:opacity-100
                 "
-              />
+                />
 
-              {/* INNER FRAME */}
+                {/* INNER FRAME */}
 
-              <div
-                className="
+                <div
+                  className="
                   pointer-events-none
                   absolute
                   inset-[5px]
@@ -436,14 +436,14 @@ export default function TeamCarousel() {
                   border
                   border-white/[0.035]
                 "
-              />
+                />
 
-            </div>
+              </div>
 
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          ))}
 
-      </Swiper>
+        </Swiper>
       </div>
 
       {/* =========================
