@@ -286,7 +286,7 @@ export default function BoardingPassSection() {
       >
         <Image
           src="/tree.png"
-          alt=""
+          alt="Decorative tree background"
           fill
           priority
           sizes="
