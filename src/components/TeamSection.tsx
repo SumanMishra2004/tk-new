@@ -52,7 +52,11 @@ const members:Member[] = [
     role: "Web Dev Lead",
     image: "https://res.cloudinary.com/dvky83edw/image/upload/v1789453639/h577anzfvej1ibpgvnvw.jpg",
   },
- 
+  {
+    name: "Asmita Chatterjee",
+    role: "",
+    image: "https://res.cloudinary.com/vhf4myms/image/upload/v1789485665/Asmita_Chatterjee.jpg",
+  },
 ];
 
 export default function TeamCarousel() {
