@@ -5,6 +5,7 @@ import { Space_Grotesk, Rajdhani } from "next/font/google";
 import gsap from "gsap";
 import Image from "next/image";
 import { toPng } from "html-to-image";
+import Barcode from "react-barcode";
 
 const bodyFont = Space_Grotesk({
   subsets: ["latin"],
@@ -64,59 +65,8 @@ function genPassId(name: string) {
 }
 
 /* ─────────────────────────────────────────────
-   Tiny barcode SVG
+   Scannable Barcode via react-barcode
 ───────────────────────────────────────────── */
-
-function Barcode({ seed }: { seed: string }) {
-  const bars = Array.from({ length: 48 }, (_, i) => {
-    const w =
-      ((seed.charCodeAt(i % seed.length) * (i + 3)) % 4) + 1;
-
-    return w;
-  });
-
-  let x = 0;
-
-  const rects: {
-    x: number;
-    w: number;
-    fill: string;
-  }[] = [];
-
-  bars.forEach((w, i) => {
-    if (i % 2 === 0) {
-      rects.push({
-        x,
-        w,
-        fill: "#12100E",
-      });
-    }
-
-    x += w + 1;
-  });
-
-  const totalW = x;
-
-  return (
-    <svg
-      viewBox={`0 0 ${totalW} 40`}
-      className="w-full h-8"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      {rects.map((r, i) => (
-        <rect
-          key={i}
-          x={r.x}
-          y={0}
-          width={r.w}
-          height={40}
-          fill={r.fill}
-        />
-      ))}
-    </svg>
-  );
-}
 
 /* ─────────────────────────────────────────────
    Main component
@@ -193,14 +143,32 @@ export default function BoardingPassSection() {
      Generate pass
   ───────────────────────────────────────────── */
 
-  const handleGenerate = (e: React.FormEvent) => {
+  const handleGenerate = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (
-      name.trim() &&
-      domain &&
-      college.trim()
-    ) {
+    if (name.trim() && domain && college.trim()) {
+      // 1. Generate deterministic ID
+      const newPassId = genPassId(name);
+
+      // 2. Log data to our backend Excel endpoint
+      try {
+        await fetch("/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            college,
+            domain,
+            passId: newPassId,
+          }),
+        });
+      } catch (error) {
+        console.error("Failed to append to excel log:", error);
+      }
+
+      // 3. UI Animation
       if (formRef.current) {
         gsap.to(formRef.current, {
           opacity: 0,
@@ -1359,8 +1327,16 @@ export default function BoardingPassSection() {
               Scan at gate
             </p>
 
-            <div className="w-full">
-              <Barcode seed={passId} />
+            <div className="w-full flex justify-end overflow-hidden mt-1">
+              <Barcode
+                value={passId}
+                displayValue={false}
+                background="transparent"
+                lineColor="#12100E"
+                width={1.8}
+                height={35}
+                margin={0}
+              />
             </div>
 
             <p
