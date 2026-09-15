@@ -50,7 +50,7 @@ const FAQS = [
   },
   {
     q: "What if I face technical issues during registration?",
-    a: "Reach out to us at tech.kurukshetra.uem@gmail.com or call the helpline listed in the Contact section. Our team is available during event hours to resolve any issues promptly.",
+    a: "Reach out to us at tech.kurukshetra@uem.edu.in or call the helpline listed in the Contact section. Our team is available during event hours to resolve any issues promptly.",
   },
   {
     q: "Will certificates be provided?",

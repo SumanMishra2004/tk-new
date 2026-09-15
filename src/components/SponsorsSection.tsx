@@ -93,7 +93,7 @@ function SponsorComingSoon() {
 
       {/* Contact */}
       <a
-        href="mailto:tech.kurukshetra.uem@gmail.com"
+        href="mailto:tech.kurukshetra@uem.edu.in"
         className={`
           ${accentFont.className}
           inline-flex items-center gap-2
@@ -421,7 +421,7 @@ export default function SponsorsSection() {
             The organisations powering the mission. Interested in partnering?
             {" "}
             <a
-              href="mailto:tech.kurukshetra.uem@gmail.com"
+              href="mailto:tech.kurukshetra@uem.edu.in"
               className="text-[#B8322C] underline underline-offset-2 transition-colors hover:text-[#E6392F]"
             >
               Get in touch.
@@ -634,7 +634,7 @@ export default function SponsorsSection() {
           </p>
 
           <a
-            href="mailto:tech.kurukshetra.uem@gmail.com"
+            href="mailto:tech.kurukshetra@uem.edu.in"
             className={`
               ${accentFont.className}
               inline-flex items-center gap-2

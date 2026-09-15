@@ -29,8 +29,8 @@ const CONTACTS = [
       </svg>
     ),
     label: "Email",
-    value: "tech.kurukshetra.uem@gmail.com",
-    href: "mailto:tech.kurukshetra.uem@gmail.com",
+    value: "tech.kurukshetra@uem.edu.in",
+    href: "mailto:tech.kurukshetra@uem.edu.in",
   },
   {
     icon: (

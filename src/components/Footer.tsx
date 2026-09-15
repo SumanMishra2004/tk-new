@@ -149,7 +149,7 @@ export default function Footer() {
             <ul className={`${bodyFont.className} flex flex-col gap-3 text-sm text-white/50`}>
               <li>
                 <a
-                  href="mailto:tech.kurukshetra.uem@gmail.com"
+                  href="mailto:tech.kurukshetra@uem.edu.in"
                   className="hover:text-white transition-colors flex items-start gap-2"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
@@ -158,7 +158,7 @@ export default function Footer() {
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
-                  tech.kurukshetra.uem@gmail.com
+                  tech.kurukshetra@uem.edu.in
                 </a>
               </li>
               <li>
