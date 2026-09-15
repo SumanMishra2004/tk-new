@@ -147,24 +147,12 @@ export default function Navigation() {
 
         <div className={`h-5 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
-        {/* UEM — white pill bg so logo stays visible regardless of nav colour */}
-        <div className="flex items-center shrink-0 bg-white rounded px-1.5 py-0.5">
-          <img
-            src="/uem.png"
-            alt="UEM Kolkata"
-            className="h-6 w-auto object-contain"
-            style={{ maxWidth: "clamp(40px, 7vw, 80px)" }}
-          />
-        </div>
-
-        <div className={`h-5 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
-
-        {/* IEM */}
+        {/* IEM & UEM Combined Logo */}
         <img
-          src="/iem.jpeg"
-          alt="IEM Kolkata"
-          className="h-7 w-auto object-contain shrink-0 rounded-sm"
-          style={{ maxWidth: "clamp(36px, 6vw, 64px)" }}
+          src="/iem_uem.webp"
+          alt="IEM & UEM"
+          className="h-[25px] w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(60px, 10vw, 105px)" }}
         />
       </div>
 

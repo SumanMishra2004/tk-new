@@ -97,22 +97,13 @@ export default function Footer() {
                   style={{ maxWidth: 180 }}
                 />
               </div>
-              {/* UEM + IEM side by side */}
+              {/* IEM + UEM & IEDC */}
               <div className="flex items-center gap-3">
-                <div className="flex items-center bg-white rounded-lg px-2 py-1.5">
-                  <img
-                    src="/uem.png"
-                    alt="UEM Kolkata"
-                    className="h-7 w-auto object-contain"
-                    style={{ maxWidth: 80 }}
-                  />
-                </div>
-                <div className="h-6 w-px bg-white/10" />
                 <img
-                  src="/iem.jpeg"
-                  alt="IEM Kolkata"
-                  className="h-8 w-auto object-contain rounded-md"
-                  style={{ maxWidth: 72 }}
+                  src="/iem_uem.webp"
+                  alt="IEM & UEM"
+                  className="h-9 w-auto object-contain"
+                  style={{ maxWidth: 140 }}
                 />
                 <div className="h-6 w-px bg-white/10" />
                 <img
