@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TARGET_DATE = new Date("2026-09-26T00:00:00+05:30");
+const TARGET_DATE = new Date("2026-09-26T08:00:00+05:30");
 
 export default function DaysLeft() {
   const containerRef = useRef<HTMLElement>(null);

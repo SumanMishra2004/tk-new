@@ -433,16 +433,15 @@ export default function LocationContact() {
               z-10
             "
           />
-
+       
           <iframe
             title="UEM Kolkata — Tech Kurukshetra venue"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.5!2d88.4738!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a020a0db1512d5d%3A0xe23c0813734af0!2sUniversity%20of%20Engineering%20%26%20Management%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.275159607267!2d88.4912531535669!3d22.55972122785963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a020b2612ee95b3%3A0x88a96dc0195a23b!2sUniversity%20Of%20Engineering%20%26%20Management%2C%20New%20Town%2C%20Newtown%2C%20West%20Bengal%20743502!5e0!3m2!1sen!2sin!4v1789462240431!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{
               border: 0,
-              filter:
-                "grayscale(85%) contrast(1.1) brightness(0.7) sepia(0.15)",
+              
             }}
             allowFullScreen
             loading="lazy"
@@ -562,11 +561,11 @@ export default function LocationContact() {
             },
             {
               label: "Date",
-              value: "Sept 2026",
+              value: "26 Sept 2026",
             },
             {
               label: "Boarding",
-              value: "10:00 AM",
+              value: "09:00 AM",
             },
           ].map(({ label, value }) => (
             <div

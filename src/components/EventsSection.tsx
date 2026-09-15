@@ -36,7 +36,7 @@ interface EventCard {
 }
 
 const events: EventCard[] = [
-  {
+  /*{
     poster: "/4:5.png",
     title: "HackFest",
     description:
@@ -154,7 +154,7 @@ const events: EventCard[] = [
     prizepool: "Coming Soon",
     registerLink: "#",
     bg: "#43392f",
-  },
+  },*/
 ];
 
 /* ─── Coming-soon placeholder ─── */

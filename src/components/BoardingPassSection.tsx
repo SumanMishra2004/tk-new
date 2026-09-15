@@ -614,783 +614,789 @@ export default function BoardingPassSection() {
           ═══════════════════════════════════════ */}
 
           {generated && (
+          
+<div
+  ref={passRef}
+  className="
+    w-full
+    flex
+    flex-col
+    items-center
+    gap-6
+  "
+>
+  {/* Pass wrapper */}
+  <div
+    className="w-full max-w-[680px]"
+    style={{
+      filter:
+        "drop-shadow(0 8px 50px rgba(184,50,44,0.28))",
+    }}
+  >
+    {/* Main ticket */}
+    <div
+      className="
+        relative
+        rounded-3xl
+        overflow-hidden
+      "
+      style={{
+        background:
+          "linear-gradient(160deg, #F2E8D5 0%, #E8D8BC 30%, #D8C8A8 60%, #C8B898 100%)",
+      }}
+    >
+      {/* Paper grain */}
+      <div
+        className="
+          absolute
+          inset-0
+          pointer-events-none
+          opacity-[0.18]
+          mix-blend-multiply
+        "
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Ticket content */}
+      <div
+        className="
+          relative
+          z-10
+          px-6
+          pt-6
+          pb-6
+          sm:px-8
+          sm:pt-7
+        "
+      >
+        {/* Header */}
+        <div
+          className="
+            flex
+            items-start
+            justify-between
+            mb-5
+          "
+        >
+          {/* Brand */}
+          <div>
             <div
-              ref={passRef}
               className="
-                w-full
                 flex
-                flex-col
                 items-center
-                gap-6
+                gap-2
+                mb-1
               "
             >
-              {/* Pass wrapper */}
-
               <div
-                className="w-full max-w-[680px]"
-                style={{
-                  filter:
-                    "drop-shadow(0 8px 50px rgba(184,50,44,0.28))",
-                }}
+                className="
+                  w-5
+                  h-5
+                  rounded-full
+                  bg-[#B8322C]
+                  flex
+                  items-center
+                  justify-center
+                "
               >
-                {/* Main ticket */}
-
-                <div
-                  className="
-                    relative
-                    rounded-3xl
-                    overflow-hidden
-                  "
-                  style={{
-                    background:
-                      "linear-gradient(160deg, #F2E8D5 0%, #E8D8BC 30%, #D8C8A8 60%, #C8B898 100%)",
-                  }}
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  className="w-3 h-3"
+                  aria-hidden="true"
                 >
-                  {/* Paper grain */}
-
-                  <div
-                    className="
-                      absolute
-                      inset-0
-                      pointer-events-none
-                      opacity-[0.18]
-                      mix-blend-multiply
-                    "
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")`,
-                    }}
-                  />
-
-                  {/* Ticket content */}
-
-                  <div
-                    className="
-                      relative
-                      z-10
-                      px-6
-                      pt-6
-                      pb-6
-                      sm:px-8
-                      sm:pt-7
-                    "
-                  >
-                    {/* Header */}
-
-                    <div
-                      className="
-                        flex
-                        items-start
-                        justify-between
-                        mb-5
-                      "
-                    >
-                      {/* Brand */}
-
-                      <div>
-                        <div
-                          className="
-                            flex
-                            items-center
-                            gap-2
-                            mb-1
-                          "
-                        >
-                          <div
-                            className="
-                              w-5
-                              h-5
-                              rounded-full
-                              bg-[#B8322C]
-                              flex
-                              items-center
-                              justify-center
-                            "
-                          >
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="white"
-                              className="w-3 h-3"
-                              aria-hidden="true"
-                            >
-                              <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                            </svg>
-                          </div>
-
-                          <span
-                            className={`
-                              ${accentFont.className}
-                              text-[9px]
-                              font-bold
-                              uppercase
-                              tracking-[0.3em]
-                              text-[#8A6040]
-                            `}
-                          >
-                            TK Airways · Boarding Pass
-                          </span>
-                        </div>
-
-                        <p
-                          className="
-                            text-[#12100E]
-                            leading-none
-                            mt-1
-                          "
-                          style={{
-                            fontFamily:
-                              "var(--font-sketch)",
-                            fontSize:
-                              "clamp(1.5rem, 4.5vw, 2.4rem)",
-                          }}
-                        >
-                          Tech Kurukshetra
-                        </p>
-
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[10px]
-                            font-semibold
-                            uppercase
-                            tracking-[0.22em]
-                            text-[#B8322C]
-                            mt-0.5
-                          `}
-                        >
-                          Shadow Protocol · 2026
-                        </p>
-                      </div>
-
-                      {/* Pass ID */}
-
-                      <div
-                        className="
-                          flex
-                          flex-col
-                          items-end
-                          gap-2
-                          flex-shrink-0
-                          ml-4
-                        "
-                      >
-                        <div
-                          className="
-                            border
-                            border-[#B8322C]/50
-                            rounded-lg
-                            px-3
-                            py-1
-                            bg-[#B8322C]/10
-                          "
-                        >
-                          <span
-                            className={`
-                              ${accentFont.className}
-                              text-[9px]
-                              font-bold
-                              uppercase
-                              tracking-[0.18em]
-                              text-[#B8322C]
-                            `}
-                          >
-                            OPERATOR CLASS
-                          </span>
-                        </div>
-
-                        <div>
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-[8px]
-                              font-bold
-                              uppercase
-                              tracking-[0.2em]
-                              text-[#8A6040]
-                              text-right
-                            `}
-                          >
-                            Pass ID
-                          </p>
-
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-base
-                              font-bold
-                              text-[#12100E]
-                              tracking-[0.15em]
-                              text-right
-                            `}
-                          >
-                            {passId}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Divider */}
-
-                    <div className="border-t border-dashed border-[#A89060]/50 mb-5" />
-
-                    {/* Passenger */}
-
-                    <div
-                      className="
-                        grid
-                        grid-cols-2
-                        gap-x-6
-                        gap-y-4
-                        mb-5
-                      "
-                    >
-                      <div>
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[8px]
-                            font-bold
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#8A6040]
-                            mb-1
-                          `}
-                        >
-                          Passenger
-                        </p>
-
-                        <p
-                          className={`
-                            ${bodyFont.className}
-                            text-[#12100E]
-                            font-bold
-                            text-lg
-                            leading-tight
-                          `}
-                        >
-                          {name.toUpperCase()}
-                        </p>
-                      </div>
-
-                      <div>
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[8px]
-                            font-bold
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#8A6040]
-                            mb-1
-                          `}
-                        >
-                          Institution
-                        </p>
-
-                        <p
-                          className={`
-                            ${bodyFont.className}
-                            text-[#12100E]
-                            font-semibold
-                            text-sm
-                            leading-tight
-                          `}
-                        >
-                          {college.toUpperCase()}
-                        </p>
-                      </div>
-
-                      <div>
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[8px]
-                            font-bold
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#8A6040]
-                            mb-1
-                          `}
-                        >
-                          Domain / Track
-                        </p>
-
-                        <p
-                          className={`
-                            ${bodyFont.className}
-                            text-[#12100E]
-                            font-semibold
-                            text-sm
-                            leading-tight
-                          `}
-                        >
-                          {domain}
-                        </p>
-                      </div>
-
-                      <div>
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[8px]
-                            font-bold
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#8A6040]
-                            mb-1
-                          `}
-                        >
-                          Gate
-                        </p>
-
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[#12100E]
-                            font-bold
-                            text-base
-                            tracking-wider
-                          `}
-                        >
-                          SP-26
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Route */}
-
-                    <div
-                      className="
-                        rounded-2xl
-                        px-5
-                        py-4
-                        mb-5
-                        flex
-                        items-center
-                        justify-between
-                      "
-                      style={{
-                        background:
-                          "rgba(18,16,14,0.07)",
-                      }}
-                    >
-                      {/* From */}
-
-                      <div className="text-center min-w-[64px]">
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[8px]
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#8A6040]
-                            mb-0.5
-                          `}
-                        >
-                          From
-                        </p>
-
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-3xl
-                            font-bold
-                            text-[#12100E]
-                            tracking-wider
-                            leading-none
-                          `}
-                        >
-                          KOL
-                        </p>
-
-                        <p
-                          className={`
-                            ${bodyFont.className}
-                            text-[10px]
-                            text-[#6A5040]
-                            mt-0.5
-                          `}
-                        >
-                          Kolkata
-                        </p>
-                      </div>
-
-                      {/* Plane */}
-
-                      <div
-                        className="
-                          flex-1
-                          flex
-                          items-center
-                          gap-1.5
-                          mx-3
-                        "
-                      >
-                        <div className="flex-1 h-[1.5px] bg-[#A89060]/40" />
-
-                        <div
-                          className="
-                            flex
-                            flex-col
-                            items-center
-                            gap-0.5
-                          "
-                        >
-                          <svg
-                            viewBox="0 0 32 16"
-                            fill="none"
-                            className="w-8"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M28 8 L8 3 L6 8 L8 13 Z"
-                              fill="#B8322C"
-                            />
-
-                            <path
-                              d="M16 8 L12 2 L10 3 L14 8 Z"
-                              fill="#B8322C"
-                            />
-
-                            <path
-                              d="M16 8 L12 14 L10 13 L14 8 Z"
-                              fill="#B8322C"
-                            />
-
-                            <path
-                              d="M8 8 L4 5 L3 6 L6 8 L3 10 L4 11 Z"
-                              fill="#B8322C"
-                            />
-                          </svg>
-
-                          <div className="flex gap-0.5">
-                            {[0, 1, 2, 3].map((i) => (
-                              <div
-                                key={i}
-                                className="
-                                  w-1
-                                  h-1
-                                  rounded-full
-                                  bg-[#A89060]/50
-                                "
-                              />
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="flex-1 h-[1.5px] bg-[#A89060]/40" />
-                      </div>
-
-                      {/* Destination */}
-
-                      <div className="text-center min-w-[64px]">
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[8px]
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#8A6040]
-                            mb-0.5
-                          `}
-                        >
-                          To
-                        </p>
-
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-3xl
-                            font-bold
-                            text-[#B8322C]
-                            tracking-wider
-                            leading-none
-                          `}
-                        >
-                          UEMK
-                        </p>
-
-                        <p
-                          className={`
-                            ${bodyFont.className}
-                            text-[10px]
-                            text-[#6A5040]
-                            mt-0.5
-                          `}
-                        >
-                          New Town
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Flight details */}
-
-                    <div
-                      className="
-                        grid
-                        grid-cols-4
-                        gap-3
-                        mb-5
-                      "
-                    >
-                      {[
-                        {
-                          label: "Date",
-                          value: "SEPT 2026",
-                        },
-                        {
-                          label: "Boarding",
-                          value: "10:00 AM",
-                        },
-                        {
-                          label: "Flight",
-                          value: "TK-001",
-                        },
-                        {
-                          label: "Seat",
-                          value: seat,
-                        },
-                      ].map(({ label, value }) => (
-                        <div
-                          key={label}
-                          className="
-                            bg-white/20
-                            rounded-xl
-                            px-3
-                            py-2.5
-                            text-center
-                          "
-                        >
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-[7px]
-                              font-bold
-                              uppercase
-                              tracking-[0.2em]
-                              text-[#8A6040]
-                              mb-1
-                            `}
-                          >
-                            {label}
-                          </p>
-
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-sm
-                              font-bold
-                              text-[#12100E]
-                              leading-none
-                              tracking-wider
-                            `}
-                          >
-                            {value}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Tear line */}
-
-                    <div
-                      className="
-                        relative
-                        flex
-                        items-center
-                        my-2
-                      "
-                    >
-                      <div
-                        className="
-                          absolute
-                          -left-8
-                          sm:-left-9
-                          w-8
-                          h-8
-                          rounded-full
-                          bg-[#E8D8BC]
-                        "
-                      />
-
-                      <div
-                        className="
-                          absolute
-                          -right-8
-                          sm:-right-9
-                          w-8
-                          h-8
-                          rounded-full
-                          bg-[#E8D8BC]
-                        "
-                      />
-
-                      <div
-                        className="
-                          flex-1
-                          border-t-2
-                          border-dashed
-                          border-[#A89060]/50
-                        "
-                      />
-                    </div>
-
-                    {/* Stub */}
-
-                    <div
-                      className="
-                        flex
-                        items-end
-                        justify-between
-                        gap-4
-                        pt-4
-                      "
-                    >
-                      {/* Stub info */}
-
-                      <div className="flex gap-6">
-                        <div>
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-[8px]
-                              font-bold
-                              uppercase
-                              tracking-[0.22em]
-                              text-[#8A6040]
-                              mb-1
-                            `}
-                          >
-                            Seat
-                          </p>
-
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-2xl
-                              font-bold
-                              text-[#12100E]
-                              tracking-widest
-                            `}
-                          >
-                            {seat}
-                          </p>
-                        </div>
-
-                        <div>
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-[8px]
-                              font-bold
-                              uppercase
-                              tracking-[0.22em]
-                              text-[#8A6040]
-                              mb-1
-                            `}
-                          >
-                            Gate
-                          </p>
-
-                          <p
-                            className={`
-                              ${accentFont.className}
-                              text-2xl
-                              font-bold
-                              text-[#B8322C]
-                              tracking-widest
-                            `}
-                          >
-                            SP-26
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Barcode */}
-
-                      <div
-                        className="
-                          flex
-                          flex-col
-                          items-end
-                          gap-1.5
-                          flex-1
-                          max-w-[200px]
-                        "
-                      >
-                        <p
-                          className={`
-                            ${accentFont.className}
-                            text-[8px]
-                            font-bold
-                            uppercase
-                            tracking-[0.18em]
-                            text-[#8A6040]
-                          `}
-                        >
-                          Scan at gate
-                        </p>
-
-                        <div className="w-full">
-                          <Barcode seed={passId} />
-                        </div>
-
-                        <p
-                          className={`
-                            ${bodyFont.className}
-                            text-[9px]
-                            text-[#8A6040]
-                            tracking-[0.12em]
-                            font-medium
-                          `}
-                        >
-                          {passId}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom accent */}
-
-                  <div
-                    className="
-                      h-2
-                      w-full
-                      bg-gradient-to-r
-                      from-[#B8322C]
-                      via-[#E6392F]
-                      to-[#B8322C]
-                    "
-                  />
-                </div>
+                  <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                </svg>
               </div>
 
-              {/* Reset */}
-
-              <button
-                onClick={handleReset}
+              <span
                 className={`
                   ${accentFont.className}
-                  rounded-xl
-                  border
-                  border-[#B8A080]
-                  bg-transparent
-                  px-7
-                  py-3
-                  text-sm
+                  text-[9px]
+                  font-bold
+                  uppercase
+                  tracking-[0.3em]
+                  text-[#8A6040]
+                `}
+              >
+                TK Airways · Boarding Pass
+              </span>
+            </div>
+
+            <p
+              className="
+                text-[#12100E]
+                leading-none
+                mt-1
+              "
+              style={{
+                fontFamily: "var(--font-sketch)",
+                fontSize: "clamp(1.5rem, 4.5vw, 2.4rem)",
+              }}
+            >
+              Tech Kurukshetra
+            </p>
+
+            <p
+              className={`
+                ${accentFont.className}
+                text-[10px]
+                font-semibold
+                uppercase
+                tracking-[0.22em]
+                text-[#B8322C]
+                mt-0.5
+              `}
+            >
+              Shadow Protocol · 2026
+            </p>
+          </div>
+
+          {/* Pass ID */}
+          <div
+            className="
+              flex
+              flex-col
+              items-end
+              gap-2
+              flex-shrink-0
+              ml-4
+            "
+          >
+            <div
+              className="
+                border
+                border-[#B8322C]/50
+                rounded-lg
+                px-3
+                py-1
+                bg-[#B8322C]/10
+              "
+            >
+              <span
+                className={`
+                  ${accentFont.className}
+                  text-[9px]
                   font-bold
                   uppercase
                   tracking-[0.18em]
-                  text-[#6A5040]
-                  transition-all
-                  duration-300
-                  hover:border-[#B8322C]/60
-                  hover:text-[#B8322C]
-                  hover:bg-[#B8322C]/5
+                  text-[#B8322C]
                 `}
               >
-                ← New Pass
-              </button>
+                OPERATOR CLASS
+              </span>
             </div>
+
+            <div>
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-[8px]
+                  font-bold
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#8A6040]
+                  text-right
+                `}
+              >
+                Pass ID
+              </p>
+
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-base
+                  font-bold
+                  text-[#12100E]
+                  tracking-[0.15em]
+                  text-right
+                `}
+              >
+                {passId}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-dashed border-[#A89060]/50 mb-5" />
+
+        {/* Passenger + Institution + Logo */}
+        <div
+          className="
+            grid
+            grid-cols-2
+            gap-x-6
+            gap-y-4
+            mb-5
+          "
+        >
+          {/* Passenger */}
+          <div>
+            <p
+              className={`
+                ${accentFont.className}
+                text-[8px]
+                font-bold
+                uppercase
+                tracking-[0.25em]
+                text-[#8A6040]
+                mb-1
+              `}
+            >
+              Passenger
+            </p>
+
+            <p
+              className={`
+                ${bodyFont.className}
+                text-[#12100E]
+                font-bold
+                text-lg
+                leading-tight
+              `}
+            >
+              {name.toUpperCase()}
+            </p>
+          </div>
+
+          {/* Institution + Date + Logo */}
+          <div className="row-span-2 flex items-center justify-between gap-3">
+            <div className="flex-1">
+              {/* Institution */}
+              <div className="mb-3">
+                <p
+                  className={`
+                    ${accentFont.className}
+                    text-[8px]
+                    font-bold
+                    uppercase
+                    tracking-[0.25em]
+                    text-[#8A6040]
+                    mb-1
+                  `}
+                >
+                  Institution
+                </p>
+
+                <p
+                  className={`
+                    ${bodyFont.className}
+                    text-[#12100E]
+                    font-semibold
+                    text-sm
+                    leading-tight
+                  `}
+                >
+                  {college.toUpperCase()}
+                </p>
+              </div>
+
+              {/* Date */}
+              <div>
+                <p
+                  className={`
+                    ${accentFont.className}
+                    text-[8px]
+                    font-bold
+                    uppercase
+                    tracking-[0.25em]
+                    text-[#8A6040]
+                    mb-1
+                  `}
+                >
+                  Date
+                </p>
+
+                <p
+                  className={`
+                    ${accentFont.className}
+                    text-[#12100E]
+                    font-bold
+                    text-sm
+                    tracking-wide
+                  `}
+                >
+                  26 SEPT 2026
+                </p>
+              </div>
+            </div>
+
+            {/* Tech Kurukshetra Logo */}
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <img
+                src="/logo-tech-kurukshetra.png"
+                alt="Tech Kurukshetra"
+                className="
+                  w-16
+                  h-16
+                  sm:w-28
+                  sm:h-28
+                  object-contain
+                "
+              />
+            </div>
+          </div>
+
+          {/* Domain */}
+          <div>
+            <p
+              className={`
+                ${accentFont.className}
+                text-[8px]
+                font-bold
+                uppercase
+                tracking-[0.25em]
+                text-[#8A6040]
+                mb-1
+              `}
+            >
+              Domain / Track
+            </p>
+
+            <p
+              className={`
+                ${bodyFont.className}
+                text-[#12100E]
+                font-semibold
+                text-sm
+                leading-tight
+              `}
+            >
+              {domain}
+            </p>
+          </div>
+
+          {/* Gate */}
+       
+        </div>
+
+        {/* Route */}
+        <div
+          className="
+            rounded-2xl
+            px-5
+            py-4
+            mb-5
+            flex
+            items-center
+            justify-between
+          "
+          style={{
+            background: "rgba(18,16,14,0.07)",
+          }}
+        >
+          {/* From */}
+          <div className="text-center min-w-[64px]">
+            <p
+              className={`
+                ${accentFont.className}
+                text-[8px]
+                uppercase
+                tracking-[0.25em]
+                text-[#8A6040]
+                mb-0.5
+              `}
+            >
+              From
+            </p>
+
+            <p
+              className={`
+                ${accentFont.className}
+                text-3xl
+                font-bold
+                text-[#12100E]
+                tracking-wider
+                leading-none
+              `}
+            >
+              KOL
+            </p>
+
+            <p
+              className={`
+                ${bodyFont.className}
+                text-[10px]
+                text-[#6A5040]
+                mt-0.5
+              `}
+            >
+              Kolkata
+            </p>
+          </div>
+
+          {/* Plane */}
+          <div
+            className="
+              flex-1
+              flex
+              items-center
+              gap-1.5
+              mx-3
+            "
+          >
+            <div className="flex-1 h-[1.5px] bg-[#A89060]/40" />
+
+            <div
+              className="
+                flex
+                flex-col
+                items-center
+                gap-0.5
+              "
+            >
+              <svg
+                viewBox="0 0 32 16"
+                fill="none"
+                className="w-8"
+                aria-hidden="true"
+              >
+                <path
+                  d="M28 8 L8 3 L6 8 L8 13 Z"
+                  fill="#B8322C"
+                />
+
+                <path
+                  d="M16 8 L12 2 L10 3 L14 8 Z"
+                  fill="#B8322C"
+                />
+
+                <path
+                  d="M16 8 L12 14 L10 13 L14 8 Z"
+                  fill="#B8322C"
+                />
+
+                <path
+                  d="M8 8 L4 5 L3 6 L6 8 L3 10 L4 11 Z"
+                  fill="#B8322C"
+                />
+              </svg>
+
+              <div className="flex gap-0.5">
+                {[0, 1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="
+                      w-1
+                      h-1
+                      rounded-full
+                      bg-[#A89060]/50
+                    "
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="flex-1 h-[1.5px] bg-[#A89060]/40" />
+          </div>
+
+          {/* Destination */}
+          <div className="text-center min-w-[64px]">
+            <p
+              className={`
+                ${accentFont.className}
+                text-[8px]
+                uppercase
+                tracking-[0.25em]
+                text-[#8A6040]
+                mb-0.5
+              `}
+            >
+              To
+            </p>
+
+            <p
+              className={`
+                ${accentFont.className}
+                text-3xl
+                font-bold
+                text-[#B8322C]
+                tracking-wider
+                leading-none
+              `}
+            >
+              UEMK
+            </p>
+
+            <p
+              className={`
+                ${bodyFont.className}
+                text-[10px]
+                text-[#6A5040]
+                mt-0.5
+              `}
+            >
+              New Town
+            </p>
+          </div>
+        </div>
+
+        {/* Flight details */}
+        <div
+          className="
+            grid
+            grid-cols-4
+            gap-3
+            mb-5
+          "
+        >
+          {[
+            {
+              label: "Date",
+              value: "26 SEPT 2026",
+            },
+            {
+              label: "Boarding",
+              value: "09:00 AM",
+            },
+            {
+              label: "Flight",
+              value: "TK-001",
+            },
+            {
+              label: "Seat",
+              value: seat,
+            },
+          ].map(({ label, value }) => (
+            <div
+              key={label}
+              className="
+                bg-white/20
+                rounded-xl
+                px-3
+                py-2.5
+                text-center
+              "
+            >
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-[7px]
+                  font-bold
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#8A6040]
+                  mb-1
+                `}
+              >
+                {label}
+              </p>
+
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-sm
+                  font-bold
+                  text-[#12100E]
+                  leading-none
+                  tracking-wider
+                `}
+              >
+                {value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Tear line */}
+        <div
+          className="
+            relative
+            flex
+            items-center
+            my-2
+          "
+        >
+          <div
+            className="
+              absolute
+              -left-8
+              sm:-left-9
+              w-8
+              h-8
+              rounded-full
+              bg-[#E8D8BC]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              -right-8
+              sm:-right-9
+              w-8
+              h-8
+              rounded-full
+              bg-[#E8D8BC]
+            "
+          />
+
+          <div
+            className="
+              flex-1
+              border-t-2
+              border-dashed
+              border-[#A89060]/50
+            "
+          />
+        </div>
+
+        {/* Stub */}
+        <div
+          className="
+            flex
+            items-end
+            justify-between
+            gap-4
+            pt-4
+          "
+        >
+          {/* Stub info */}
+          <div className="flex gap-6">
+            <div>
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-[8px]
+                  font-bold
+                  uppercase
+                  tracking-[0.22em]
+                  text-[#8A6040]
+                  mb-1
+                `}
+              >
+                Seat
+              </p>
+
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-2xl
+                  font-bold
+                  text-[#12100E]
+                  tracking-widest
+                `}
+              >
+                {seat}
+              </p>
+            </div>
+
+            <div>
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-[8px]
+                  font-bold
+                  uppercase
+                  tracking-[0.22em]
+                  text-[#8A6040]
+                  mb-1
+                `}
+              >
+                Gate
+              </p>
+
+              <p
+                className={`
+                  ${accentFont.className}
+                  text-2xl
+                  font-bold
+                  text-[#B8322C]
+                  tracking-widest
+                `}
+              >
+                SP-26
+              </p>
+            </div>
+          </div>
+
+          {/* Barcode */}
+          <div
+            className="
+              flex
+              flex-col
+              items-end
+              gap-1.5
+              flex-1
+              max-w-[200px]
+            "
+          >
+            <p
+              className={`
+                ${accentFont.className}
+                text-[8px]
+                font-bold
+                uppercase
+                tracking-[0.18em]
+                text-[#8A6040]
+              `}
+            >
+              Scan at gate
+            </p>
+
+            <div className="w-full">
+              <Barcode seed={passId} />
+            </div>
+
+            <p
+              className={`
+                ${bodyFont.className}
+                text-[9px]
+                text-[#8A6040]
+                tracking-[0.12em]
+                font-medium
+              `}
+            >
+              {passId}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom accent */}
+      <div
+        className="
+          h-2
+          w-full
+          bg-gradient-to-r
+          from-[#B8322C]
+          via-[#E6392F]
+          to-[#B8322C]
+        "
+      />
+    </div>
+  </div>
+
+  {/* Reset */}
+  <button
+    onClick={handleReset}
+    className={`
+      ${accentFont.className}
+      rounded-xl
+      border
+      border-[#B8A080]
+      bg-transparent
+      px-7
+      py-3
+      text-sm
+      font-bold
+      uppercase
+      tracking-[0.18em]
+      text-[#6A5040]
+      transition-all
+      duration-300
+      hover:border-[#B8322C]/60
+      hover:text-[#B8322C]
+      hover:bg-[#B8322C]/5
+    `}
+  >
+    ← New Pass
+  </button>
+</div>
+
           )}
 
           {/* ═══════════════════════════════════════

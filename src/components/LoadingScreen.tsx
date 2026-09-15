@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Rajdhani } from "next/font/google";
 
@@ -76,16 +76,22 @@ export default function LoadingScreen({ done, onExited }: LoadingScreenProps) {
   const progressFillRef = useRef<HTMLDivElement>(null);
   const slashRef = useRef<HTMLDivElement>(null);
 
-  /* ── Generate kanji columns once ── */
-  const columns = useRef(
-    Array.from({ length: 18 }, (_, i) => ({
-      chars: Array.from({ length: 14 }, () => KANJI[Math.floor(Math.random() * KANJI.length)]),
-      x: (i / 18) * 100 + Math.random() * 3,
-      duration: 6 + Math.random() * 6,
-      delay: -(Math.random() * 8),
-      opacity: 0.05 + Math.random() * 0.12,
-    }))
-  );
+  /* ── Generate kanji columns once (client-only to avoid SSR mismatch) ── */
+  const [columns, setColumns] = useState<
+    { chars: string[]; x: number; duration: number; delay: number; opacity: number }[]
+  >([]);
+
+  useEffect(() => {
+    setColumns(
+      Array.from({ length: 18 }, (_, i) => ({
+        chars: Array.from({ length: 14 }, () => KANJI[Math.floor(Math.random() * KANJI.length)]),
+        x: (i / 18) * 100 + Math.random() * 3,
+        duration: 6 + Math.random() * 6,
+        delay: -(Math.random() * 8),
+        opacity: 0.05 + Math.random() * 0.12,
+      }))
+    );
+  }, []);
 
   /* ── Entrance ── */
   useEffect(() => {
@@ -224,7 +230,7 @@ export default function LoadingScreen({ done, onExited }: LoadingScreenProps) {
 
           {/* Kanji rain columns */}
           <div className="absolute inset-0 overflow-hidden">
-            {columns.current.map((col, i) => (
+            {columns.map((col, i) => (
               <KanjiColumn key={i} {...col} />
             ))}
           </div>
