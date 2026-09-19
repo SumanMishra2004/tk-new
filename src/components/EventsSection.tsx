@@ -75,10 +75,12 @@ const events: EventCard[] = [
     poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/Mystic_Minds",
     title: "Mystic Minds",
     description:
-      "A competitive programming contest across multiple rounds of increasing difficulty.",
+      "It's time to whirl all the knowledge inside your brain!! Join this exciting quiz event and put your intellect to the ultimate test.",
     rules: [
       "Open to all university/college students.",
       "Team Size: [Solo / Teams of 2]",
+      "Solo Participant: ₹49",
+      "Team of 2: ₹79",
       "Decision of the quizmasters/organizers will be final.",
     ],
     coordinators: [
@@ -92,7 +94,8 @@ const events: EventCard[] = [
   {
     poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/MIND_FORGE",
     title: "Mind Forge",
-    description: "Join us for Mind Forge, an exciting challenge!",
+    description:
+      "Get ready to forge bold ideas into powerful innovations at MIND FORGE: The Ultimate Pitch Challenge, where creativity meets technology and ideas take center stage !!",
     rules: [
       "UEM Kolkata",
       "Team Size: 2–4",
