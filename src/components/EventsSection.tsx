@@ -97,7 +97,7 @@ const events: EventCard[] = [
     description:
       "Get ready to forge bold ideas into powerful innovations at MIND FORGE: The Ultimate Pitch Challenge, where creativity meets technology and ideas take center stage !!",
     rules: [
-      "UEM Kolkata",
+      "Open to all university/college student",
       "Team Size: 2–4",
       "Registration Fee: ₹100",
     ],
@@ -109,23 +109,39 @@ const events: EventCard[] = [
     bg: "#2f251e",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/coming_soon_2",
-    title: "Coming Soon",
-    description: "Stay tuned! More exciting events will be revealed shortly.",
-    rules: ["Details to be announced soon"],
-    coordinators: [],
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/Phantom_tail",
+    title: "Phantom Tail",
+    description:
+      "THE SHADOWS ARE WAITING.Gather your team, follow the clues, and uncover what lies hidden. PHANTOM TAIL — A TREASURE HUNT",
+    rules: [
+      "Open to all university/college student",
+      "Team Size: 3-5",
+      "Registration Fees- 100 per Team"
+    ],
+    coordinators: [
+      { name: "Sayan Mondal", phone: "+91 9064685807" }
+    ],
     prizepool: "Revealing Soon",
-    registerLink: "#",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScD22Mi6AFV8sSXKoOhWwsgk9yaJy32W6g-_g-zhKUjB9u-LQ/viewform",
     bg: "#43392f",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/coming_soon_2",
-    title: "Coming Soon",
-    description: "Stay tuned! More exciting events will be revealed shortly.",
-    rules: ["Details to be announced soon"],
-    coordinators: [],
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/NOIR_VISION",
+    title: "Noir Vision",
+    description: "Step into the dark, sleek world of high-tech aesthetics and let your creativity take center stage at Noir Vision, the premier poster design competition at TechKurukshetra '26!",
+    rules: [
+      "Maximum team size - 2",
+      "Every participant has to register either individually or as a team.",
+      "If registering as a team, only one member must fill the form.",
+      "Partnered participants must register with the same team name to avoid confusion on the day of the event.",
+      "Theme of the poster must be pertaining to emerging technologies."
+    ],
+    coordinators: [
+      { name: "Arista Seth", phone: "+91 79803 12509" },
+      { name: "Asmita Chatterjee", phone: "+91 6291 750 785" }
+    ],
     prizepool: "Revealing Soon",
-    registerLink: "#",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScU78xo8AwtZY6EH4ue2VTs3fPaUQp0fGCLkRA662opR2Q2AA/viewform",
     bg: "#2f251e",
   },
   {
@@ -216,13 +232,13 @@ export default function EventsSection() {
       </div>
 
       <div className="flex flex-col xl:flex-row items-center xl:items-center justify-center w-full max-w-[1800px] mx-auto gap-12 xl:gap-8 px-4 sm:px-6 lg:px-12 mt-4 xl:mt-10">
-        
+
         {/* LEFT: Carousel */}
         <div ref={carouselRef} className="relative w-full xl:w-[50%] flex-shrink-0 flex flex-col items-center justify-center">
-        {/* Navigation Arrows */}
-        <button
-          onClick={handlePrev}
-          className="
+          {/* Navigation Arrows */}
+          <button
+            onClick={handlePrev}
+            className="
             absolute left-2 sm:left-6 lg:left-4 xl:left-10
             top-[45%] xl:top-[40%] -translate-y-1/2 z-30
             flex h-10 w-10 sm:h-12 sm:w-12
@@ -236,14 +252,14 @@ export default function EventsSection() {
             hover:scale-110
             active:scale-95
           "
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button
-          onClick={handleNext}
-          className="
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            onClick={handleNext}
+            className="
             absolute right-2 sm:right-6 lg:right-4 xl:right-10
             top-[45%] xl:top-[40%] -translate-y-1/2 z-30
             flex h-10 w-10 sm:h-12 sm:w-12
@@ -257,108 +273,108 @@ export default function EventsSection() {
             hover:scale-110
             active:scale-95
           "
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
 
-        <Swiper
-          modules={[EffectCoverflow, Pagination, Autoplay, Mousewheel, Navigation]}
-          onSwiper={(swiper) => { swiperRef.current = swiper; }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          effect="coverflow"
-          centeredSlides={true}
-          slidesPerView="auto"
-          loop={true}
-          grabCursor={true}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          speed={1000}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: -30,
-            depth: 350,
-            modifier: 1,
-            slideShadows: false,
-          }}
-          mousewheel={{
-            forceToAxis: true,
-            sensitivity: 0.5,
-          }}
-          pagination={{ clickable: true }}
-          className="eventsSwiper"
-        >
-          {events.map((event, index) => (
-            <SwiperSlide
-              key={`${event.title}-${index}`}
-              className="
+          <Swiper
+            modules={[EffectCoverflow, Pagination, Autoplay, Mousewheel, Navigation]}
+            onSwiper={(swiper) => { swiperRef.current = swiper; }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            effect="coverflow"
+            centeredSlides={true}
+            slidesPerView="auto"
+            loop={true}
+            grabCursor={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={1000}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: -30,
+              depth: 350,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            mousewheel={{
+              forceToAxis: true,
+              sensitivity: 0.5,
+            }}
+            pagination={{ clickable: true }}
+            className="eventsSwiper"
+          >
+            {events.map((event, index) => (
+              <SwiperSlide
+                key={`${event.title}-${index}`}
+                className="
                 !w-[240px] !h-[320px]
                 sm:!w-[280px] sm:!h-[373px]
                 md:!w-[320px] md:!h-[427px]
                 lg:!w-[360px] lg:!h-[480px]
               "
-            >
-              <div
-                className="
+              >
+                <div
+                  className="
                   group relative w-full h-full overflow-hidden
                   rounded-2xl border border-white/10 select-none
                   transition-all duration-700 bg-[#2f251e]
                 "
-              >
-                <img
-                  src={event.poster}
-                  alt={event.title}
-                  draggable={false}
-                  className="
+                >
+                  <img
+                    src={event.poster}
+                    alt={event.title}
+                    draggable={false}
+                    className="
                     h-full w-full object-cover
                     transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]
                     group-hover:scale-[1.05]
                   "
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                
-                {/* Fallback pattern if image is missing */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center -z-10 bg-black/40">
-                   <div className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-2`}>Event Poster</div>
-                   <div className="h-[1px] w-10 bg-white/20"></div>
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+
+                  {/* Fallback pattern if image is missing */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center -z-10 bg-black/40">
+                    <div className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-2`}>Event Poster</div>
+                    <div className="h-[1px] w-10 bg-white/20"></div>
+                  </div>
+
+                  <div className="pointer-events-none absolute inset-0 z-30 rounded-2xl border border-white/0 transition-all duration-700 group-hover:border-white/20 group-hover:shadow-[inset_0_0_30px_rgba(255,255,255,0.05)]" />
                 </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-                <div className="pointer-events-none absolute inset-0 z-30 rounded-2xl border border-white/0 transition-all duration-700 group-hover:border-white/20 group-hover:shadow-[inset_0_0_30px_rgba(255,255,255,0.05)]" />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div className="mt-8 flex items-center justify-center gap-3 text-center">
-          <span className="h-px w-6 bg-white/20 sm:w-10" />
-          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/35 sm:text-[11px] transition-all duration-500">
-            {String(activeIndex + 1).padStart(2, "0")} / {String(events.length).padStart(2, "0")}
-          </p>
-          <span className="h-px w-6 bg-white/20 sm:w-10" />
-        </div>
-
-        {/* BELOW-DESKTOP ONLY: Quick Action CTA */}
-        <div className="flex xl:hidden items-center justify-between w-full max-w-md mx-auto mt-6 px-6 relative z-30">
-          <div className="flex flex-col">
-            <span className={`${accentFont.className} block text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 mb-0.5`}>
-              Prize Pool
-            </span>
-            <span className={`${accentFont.className} text-base sm:text-lg font-bold uppercase tracking-wide text-[#E6392F] leading-none block`}>
-              {activeEvent.prizepool}
-            </span>
+          <div className="mt-8 flex items-center justify-center gap-3 text-center">
+            <span className="h-px w-6 bg-white/20 sm:w-10" />
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/35 sm:text-[11px] transition-all duration-500">
+              {String(activeIndex + 1).padStart(2, "0")} / {String(events.length).padStart(2, "0")}
+            </p>
+            <span className="h-px w-6 bg-white/20 sm:w-10" />
           </div>
-          {activeEvent.title !== "Coming Soon" && (
-            <a
-              href={activeEvent.registerLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`
+
+          {/* BELOW-DESKTOP ONLY: Quick Action CTA */}
+          <div className="flex xl:hidden items-center justify-between w-full max-w-md mx-auto mt-6 px-6 relative z-30">
+            <div className="flex flex-col">
+              <span className={`${accentFont.className} block text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 mb-0.5`}>
+                Prize Pool
+              </span>
+              <span className={`${accentFont.className} text-base sm:text-lg font-bold uppercase tracking-wide text-[#E6392F] leading-none block`}>
+                {activeEvent.prizepool}
+              </span>
+            </div>
+            {activeEvent.title !== "Coming Soon" && (
+              <a
+                href={activeEvent.registerLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`
                 ${accentFont.className}
                 flex w-auto px-6 sm:px-8 items-center justify-center
                 rounded-full bg-white
@@ -367,96 +383,96 @@ export default function EventsSection() {
                 hover:bg-white/80 hover:scale-[1.02] active:scale-[0.98]
                 flex-shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.15)]
               `}
-            >
-              Register
-            </a>
-          )}
+              >
+                Register
+              </a>
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* RIGHT: Active Event Details */}
-      <div ref={detailsRef} className="w-full max-w-3xl xl:max-w-none xl:w-[50%] relative z-20 flex flex-col justify-center">
-        <div 
-          className="rounded-3xl border border-white/[0.14] bg-white/[0.08] p-4 sm:p-6 xl:p-8 transition-all duration-700 relative overflow-hidden flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0.5px_0_rgba(255,255,255,0.14)] backdrop-blur-[22px] backdrop-saturate-[160%]"
-          style={{ WebkitBackdropFilter: "blur(22px) saturate(160%)" }}
-        >
-          {/* subtle glow accent based on bg color, though keeping it neutral is safer */}
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/10 rounded-full blur-[100px] pointer-events-none" />
+        {/* RIGHT: Active Event Details */}
+        <div ref={detailsRef} className="w-full max-w-3xl xl:max-w-none xl:w-[50%] relative z-20 flex flex-col justify-center">
+          <div
+            className="rounded-3xl border border-white/[0.14] bg-white/[0.08] p-4 sm:p-6 xl:p-8 transition-all duration-700 relative overflow-hidden flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0.5px_0_rgba(255,255,255,0.14)] backdrop-blur-[22px] backdrop-saturate-[160%]"
+            style={{ WebkitBackdropFilter: "blur(22px) saturate(160%)" }}
+          >
+            {/* subtle glow accent based on bg color, though keeping it neutral is safer */}
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="flex flex-col md:flex-row gap-5 md:gap-8 relative z-10">
-            {/* Left: Info */}
-            <div className="flex-1">
-              <div className="mb-3">
-                <div className={`${accentFont.className} mb-1 text-[9px] font-bold uppercase tracking-[0.3em] text-[#E6392F]`}>
-                  Tech Kurukshetra Presents
+            <div className="flex flex-col md:flex-row gap-5 md:gap-8 relative z-10">
+              {/* Left: Info */}
+              <div className="flex-1">
+                <div className="mb-3">
+                  <div className={`${accentFont.className} mb-1 text-[9px] font-bold uppercase tracking-[0.3em] text-[#E6392F]`}>
+                    Tech Kurukshetra Presents
+                  </div>
+                  <h3
+                    className={`${accentFont.className} text-2xl sm:text-3xl xl:text-4xl uppercase leading-[0.9] tracking-tight font-bold`}
+                  >
+                    {activeEvent.title}
+                  </h3>
                 </div>
-                <h3
-                  className={`${accentFont.className} text-2xl sm:text-3xl xl:text-4xl uppercase leading-[0.9] tracking-tight font-bold`}
-                >
-                  {activeEvent.title}
-                </h3>
-              </div>
-              
-              <p className={`${bodyFont.className} text-[12px] sm:text-[13px] leading-relaxed text-white/75 mb-4`}>
-                {activeEvent.description}
-              </p>
 
-              <div>
-                <div className="mb-2 flex items-center gap-2">
-                  <span className="h-px w-6 bg-white/30" />
-                  <span className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.25em] text-white/60`}>
-                    Rules & Guidelines
-                  </span>
-                </div>
-                <ul className="flex flex-col gap-1.5">
-                  {activeEvent.rules.map((rule, idx) => (
-                    <li key={idx} className={`${bodyFont.className} flex items-start gap-2 text-[11px] sm:text-[12px] leading-relaxed text-white/70`}>
-                      <span className="mt-[5px] flex h-[3px] w-[3px] flex-shrink-0 rounded-full bg-[#E6392F]" />
-                      <span>{rule}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+                <p className={`${bodyFont.className} text-[12px] sm:text-[13px] leading-relaxed text-white/75 mb-4`}>
+                  {activeEvent.description}
+                </p>
 
-            {/* Right: Coordinators & Actions */}
-            <div className="flex-1 md:max-w-[260px] flex flex-col justify-between gap-5 md:gap-4">
-              {activeEvent.coordinators && activeEvent.coordinators.length > 0 && (
                 <div>
                   <div className="mb-2 flex items-center gap-2">
                     <span className="h-px w-6 bg-white/30" />
                     <span className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.25em] text-white/60`}>
-                      Coordinators
+                      Rules & Guidelines
                     </span>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
-                    {activeEvent.coordinators.map((coordinator, idx) => (
-                      <div key={idx} className="rounded-lg border border-white/5 bg-white/5 p-2 sm:p-2.5 hover:bg-white/10 transition-colors">
-                        <p className={`${bodyFont.className} text-[11px] sm:text-[12px] font-semibold mb-0.5 whitespace-nowrap overflow-hidden text-ellipsis`}>{coordinator.name}</p>
-                        <a href={`tel:${coordinator.phone.replace(/\s+/g, "")}`} className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/50 hover:text-white transition-colors`}>
-                          {coordinator.phone}
-                        </a>
-                      </div>
+                  <ul className="flex flex-col gap-1.5">
+                    {activeEvent.rules.map((rule, idx) => (
+                      <li key={idx} className={`${bodyFont.className} flex items-start gap-2 text-[11px] sm:text-[12px] leading-relaxed text-white/70`}>
+                        <span className="mt-[5px] flex h-[3px] w-[3px] flex-shrink-0 rounded-full bg-[#E6392F]" />
+                        <span>{rule}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
-              )}
+              </div>
 
-              <div className="hidden xl:flex rounded-xl border border-white/10 bg-black/40 p-4 mt-auto flex-col items-start justify-start">
-                <div className="mb-3">
-                  <span className={`${accentFont.className} block text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 mb-0.5`}>
-                    Prize Pool
-                  </span>
-                  <span className={`${accentFont.className} text-xl font-bold uppercase tracking-wide text-[#E6392F] leading-none block mt-0`}>
-                    {activeEvent.prizepool}
-                  </span>
-                </div>
-                {activeEvent.title !== "Coming Soon" && (
-                  <a
-                    href={activeEvent.registerLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`
+              {/* Right: Coordinators & Actions */}
+              <div className="flex-1 md:max-w-[260px] flex flex-col justify-between gap-5 md:gap-4">
+                {activeEvent.coordinators && activeEvent.coordinators.length > 0 && (
+                  <div>
+                    <div className="mb-2 flex items-center gap-2">
+                      <span className="h-px w-6 bg-white/30" />
+                      <span className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.25em] text-white/60`}>
+                        Coordinators
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
+                      {activeEvent.coordinators.map((coordinator, idx) => (
+                        <div key={idx} className="rounded-lg border border-white/5 bg-white/5 p-2 sm:p-2.5 hover:bg-white/10 transition-colors">
+                          <p className={`${bodyFont.className} text-[11px] sm:text-[12px] font-semibold mb-0.5 whitespace-nowrap overflow-hidden text-ellipsis`}>{coordinator.name}</p>
+                          <a href={`tel:${coordinator.phone.replace(/\s+/g, "")}`} className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/50 hover:text-white transition-colors`}>
+                            {coordinator.phone}
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="hidden xl:flex rounded-xl border border-white/10 bg-black/40 p-4 mt-auto flex-col items-start justify-start">
+                  <div className="mb-3">
+                    <span className={`${accentFont.className} block text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 mb-0.5`}>
+                      Prize Pool
+                    </span>
+                    <span className={`${accentFont.className} text-xl font-bold uppercase tracking-wide text-[#E6392F] leading-none block mt-0`}>
+                      {activeEvent.prizepool}
+                    </span>
+                  </div>
+                  {activeEvent.title !== "Coming Soon" && (
+                    <a
+                      href={activeEvent.registerLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`
                       ${accentFont.className}
                       flex w-full items-center justify-center
                       rounded-full bg-white
@@ -466,16 +482,16 @@ export default function EventsSection() {
                       hover:bg-white/80 hover:scale-[1.02] active:scale-[0.98]
                       flex-shrink-0
                     `}
-                  >
-                    Register
-                  </a>
-                )}
+                    >
+                      Register
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
       <style>{`
         .eventsSwiper {
