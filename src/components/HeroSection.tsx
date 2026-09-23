@@ -314,7 +314,7 @@ export default function HeroSection() {
                 md:text-base
               `}
             >
-              26 September, 2026
+              14 November, 2026
 
               <span className="mx-2 text-[#E6392F]">
                 •

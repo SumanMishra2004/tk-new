@@ -909,7 +909,7 @@ export default function BoardingPassSection() {
                     tracking-wide
                   `}
                 >
-                  26 SEPT 2026
+                  14 NOV 2026
                 </p>
               </div>
             </div>
@@ -1136,7 +1136,7 @@ export default function BoardingPassSection() {
           {[
             {
               label: "Date",
-              value: "26 SEPT 2026",
+              value: "14 NOV 2026",
             },
             {
               label: "Boarding",

@@ -61,7 +61,7 @@ const CONTACTS = [
       </svg>
     ),
     label: "Event Date",
-    value: "26 September, 2026 · 9:00 AM",
+    value: "14 November, 2026 · 9:00 AM",
     href: "#boarding-pass",
   },
 ];
@@ -561,7 +561,7 @@ export default function LocationContact() {
             },
             {
               label: "Date",
-              value: "26 Sept 2026",
+              value: "14 Nov 2026",
             },
             {
               label: "Boarding",
