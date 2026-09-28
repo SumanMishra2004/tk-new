@@ -52,10 +52,10 @@ interface EventCard {
 
 const events: EventCard[] = [
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/orbion",
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ordion2.jpg",
     title: "Orbion",
     description:
-      "A 24-hour hackathon where teams build a working prototype around a surprise theme revealed at kickoff.",
+      "A 8-hour hackathon where teams build a working prototype around a surprise theme revealed at kickoff.",
     rules: [
       "Teams of 2–4 members only",
       "All code must be written during the event window",
@@ -72,7 +72,7 @@ const events: EventCard[] = [
     bg: "#2f251e",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/Mystic_Minds",
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/mystic_mind_2.jpg",
     title: "Mystic Minds",
     description:
       "It's time to whirl all the knowledge inside your brain!! Join this exciting quiz event and put your intellect to the ultimate test.",
@@ -92,7 +92,7 @@ const events: EventCard[] = [
     bg: "#43392f",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/MIND_FORGE",
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/mind_forge_2.jpg",
     title: "Mind Forge",
     description:
       "Get ready to forge bold ideas into powerful innovations at MIND FORGE: The Ultimate Pitch Challenge, where creativity meets technology and ideas take center stage !!",
@@ -109,7 +109,7 @@ const events: EventCard[] = [
     bg: "#2f251e",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/Phantom_tail",
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/phantom_tail2.jpg",
     title: "Phantom Tail",
     description:
       "THE SHADOWS ARE WAITING.Gather your team, follow the clues, and uncover what lies hidden. PHANTOM TAIL — A TREASURE HUNT",
@@ -126,7 +126,7 @@ const events: EventCard[] = [
     bg: "#43392f",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/NOIR_VISION",
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Noir_Vision_2.jpg",
     title: "Noir Vision",
     description: "Step into the dark, sleek world of high-tech aesthetics and let your creativity take center stage at Noir Vision, the premier poster design competition at TechKurukshetra '26!",
     rules: [
