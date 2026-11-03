@@ -141,12 +141,12 @@ export default function DaysLeft() {
               <span
                 className="
                   font-mono
-                  text-[10px]
+                  text-sm
                   font-bold
                   uppercase
                   tracking-[0.28em]
                   text-red-400
-                  sm:text-xs
+                  sm:text-base
                 "
               >
                 SHADOW PROTOCOL // SYSTEM COUNTDOWN
@@ -313,11 +313,11 @@ function CounterUnit({
           <span
             className="
               font-mono
-              text-[9px]
+              text-[11px]
               font-bold
               tracking-[0.18em]
               text-red-400
-              sm:text-[10px]
+              sm:text-xs
             "
           >
             NODE-{code}

@@ -22,6 +22,14 @@ const accentFont = Rajdhani({
 export default function HeroSection() {
   const heroRef = useRef<HTMLElement>(null);
 
+  const scrollToEvents = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    document.querySelector("#events")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   useEffect(() => {
     if (!heroRef.current) return;
 
@@ -341,6 +349,7 @@ export default function HeroSection() {
 
             <a
               href="#events"
+              onClick={scrollToEvents}
               className={`
                 group
                 inline-flex
@@ -390,37 +399,6 @@ export default function HeroSection() {
               </svg>
             </a>
 
-            {/* SECONDARY CTA */}
-
-            <a
-              href="#countdown"
-              className={`
-                ${accentFont.className}
-                inline-flex
-                min-h-[48px]
-                items-center
-                justify-center
-                rounded-md
-                border
-                border-white/25
-                bg-black/30
-                px-6
-                text-sm
-                font-bold
-                uppercase
-                tracking-[0.15em]
-                text-[#F5F1E8]
-                backdrop-blur-md
-                transition-all
-                duration-300
-                hover:border-[#E6392F]
-                hover:bg-[#E6392F]/10
-                hover:text-white
-                sm:px-7
-              `}
-            >
-              Register Now
-            </a>
           </div>
         </div>
       </div>

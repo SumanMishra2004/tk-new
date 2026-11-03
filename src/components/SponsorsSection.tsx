@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -21,181 +20,186 @@ const accentFont = Rajdhani({
 });
 
 /* ─────────────────────────────────────────
-   Sponsor / Partner data
-
-   Keep these arrays empty when no sponsors
-   have been confirmed.
-
-   Once real sponsor data is added,
-   the sponsor breakdown will automatically show.
+   Sponsors & Partners Data
 ───────────────────────────────────────── */
 
-const TITLE_SPONSOR = {
-  tier: "Title Sponsor",
-  name: "Sponsor Name",
-  tagline: "Powering Innovation · 2026",
-};
-
-const PLATINUM: {
+export interface Partner {
+  id: string;
   name: string;
-  short: string;
-}[] = [];
+  logo: string;
+  redirectUrl: string;
+  logoClass?: string;
+}
 
-const GOLD: {
-  name: string;
-  short: string;
-}[] = [];
-
-const ASSOCIATES: {
-  name: string;
-  short: string;
-}[] = [];
+// Fixed 3 slots in the row. Position 1: Unstop, Position 2: Techfest IIT Bombay, Position 3: ML Kolkata
+const SPONSOR_SLOTS: (Partner | null)[] = [
+  {
+    id: "unstop",
+    name: "Unstop",
+    logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Unstop-Logo-Blue-Extra-Large.png",
+    redirectUrl:
+      "https://unstop.com/hackathons/orbion-8-hour-hackathon-institute-of-engineering-and-managemet-1756946?lb=I5srHPJQ&utm_medium=Share&utm_source=roshayad43718&utm_campaign=Online_coding_challenge",
+    logoClass: "h-9 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[210px]",
+  },
+  {
+    id: "techfest",
+    name: "Techfest | IIT Bombay",
+    logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Black_Techfest_Logo_and_Tagline.png",
+    redirectUrl: "https://techfest.org/",
+    logoClass: "h-9 sm:h-10 md:h-11 max-w-[200px] sm:max-w-[220px]",
+  },
+  {
+    id: "ml-kolkata",
+    name: "Machine Learning Kolkata",
+    logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ML_Kolkata_Torch_Logo.png",
+    redirectUrl: "https://www.linkedin.com/company/mlkolkata/home/",
+    logoClass: "h-11 sm:h-12 md:h-13 max-w-[200px] sm:max-w-[220px] scale-[1.25] -translate-y-1.5",
+  },
+];
 
 /* ─────────────────────────────────────────
-   Coming Soon
+   Compact Cuboidal Horizontal Box (3 in a row)
+   Clean format: No role/title labels
 ───────────────────────────────────────── */
 
-function SponsorComingSoon() {
+function CuboidSponsorBox({ partner }: { partner: Partner }) {
   return (
-    <div className="flex min-h-[40vh] flex-col items-center justify-center gap-5 px-6 py-20">
-      {/* Label */}
-      <div className="flex items-center gap-3">
-        <span className="h-[1px] w-10 bg-[#B8322C]/50" />
-
-        <span
-          className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.3em] text-[#B8322C]`}
-        >
-          Sponsors & Partners
-        </span>
-
-        <span className="h-[1px] w-10 bg-[#B8322C]/50" />
-      </div>
-
-      {/* Coming Soon */}
-      <p
-        className="select-none uppercase leading-tight tracking-tight text-[#12100E]/30"
+    <a
+      href={partner.redirectUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit ${partner.name}`}
+      className="group relative block w-full cursor-pointer select-none transition-all duration-300 ease-out hover:-translate-y-1 hover:-translate-x-0.5 active:translate-x-0.5 active:translate-y-0.5"
+      style={{
+        transformStyle: "preserve-3d",
+      }}
+    >
+      {/* 3D Cuboid Card Face & Extrusion */}
+      <div
+        className="relative flex flex-col items-center justify-center h-full min-h-[130px] sm:min-h-[140px] rounded-xl bg-gradient-to-br from-[#FFFFFF] via-[#FAF6EE] to-[#F3E8D6] p-3.5 sm:p-4 transition-all duration-300 border border-[#C4A882]/75"
         style={{
-          fontFamily: "var(--font-sketch)",
-          fontSize: "clamp(2.5rem, 8vw, 6rem)",
+          boxShadow: `
+            1px 1px 0px #B8966C,
+            2px 2px 0px #B8966C,
+            3px 3px 0px #A37F55,
+            4px 4px 0px #A37F55,
+            5px 5px 0px #7A5530,
+            6px 6px 0px #523013,
+            8px 10px 20px rgba(18, 16, 14, 0.22)
+          `,
         }}
       >
-        Coming Soon
-      </p>
+        {/* Top/Left Specular highlight border for 3D bevel */}
+        <div className="pointer-events-none absolute inset-0 rounded-xl border-t-[1.5px] border-l-[1.5px] border-white/95" />
+        {/* Bottom/Right 3D bevel shadow edge */}
+        <div className="pointer-events-none absolute inset-0 rounded-xl border-b-[1.5px] border-r-[1.5px] border-[#523013]/30" />
 
-      {/* Description */}
-      <p
-        className={`${bodyFont.className} max-w-md text-center text-sm leading-relaxed text-[#6A5040]`}
-      >
-        Our sponsors and partners will be announced shortly.
-        <br />
-        Want to collaborate with Tech Kurukshetra?
-      </p>
+        {/* Technical crosshairs in corners */}
+        <span className="pointer-events-none absolute top-2 left-2 text-[9px] font-mono text-[#8A623B]/35 select-none">
+          +
+        </span>
+        <span className="pointer-events-none absolute bottom-2 left-2 text-[9px] font-mono text-[#8A623B]/35 select-none">
+          +
+        </span>
+        <span className="pointer-events-none absolute bottom-2 right-2 text-[9px] font-mono text-[#8A623B]/35 select-none">
+          +
+        </span>
 
-      {/* Contact */}
-      <a
-        href="mailto:tech.kurukshetra@uem.edu.in"
-        className={`
-          ${accentFont.className}
-          inline-flex items-center gap-2
-          text-sm font-bold uppercase
-          tracking-[0.18em]
-          text-[#B8322C]
-          underline underline-offset-4
-          transition-colors duration-300
-          hover:text-[#E6392F]
-        `}
-      >
-        Get in touch
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-4 w-4"
-          aria-hidden="true"
-        >
-          <path d="M5 12h14" />
-          <path d="m12 5 7 7-7 7" />
-        </svg>
-      </a>
-    </div>
+        {/* Top-Right Redirect Arrow */}
+        <div className="absolute top-2.5 right-2.5 flex items-center text-[#8A623B]/70 transition-colors duration-200 group-hover:text-[#B8322C]">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            aria-hidden="true"
+          >
+            <path d="M7 17 17 7" />
+            <path d="M7 7h10v10" />
+          </svg>
+        </div>
+
+        {/* Logo Display */}
+        <div className="relative flex w-full h-[68px] sm:h-[72px] items-center justify-center rounded-lg bg-white px-4 border border-[#E0D2C0] shadow-[inset_0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-300 group-hover:border-[#B8322C]/40 group-hover:shadow-[inset_0_1px_6px_rgba(184,50,44,0.06),0_4px_12px_rgba(0,0,0,0.06)] overflow-hidden">
+          {/* Subtle warm hover wash */}
+          <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/0 via-blue-500/[0.04] to-blue-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+          {/* Logo */}
+          <img
+            src={partner.logo}
+            alt={partner.name}
+            className={`w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${partner.logoClass || "h-9 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[210px]"}`}
+            loading="eager"
+          />
+        </div>
+      </div>
+    </a>
   );
 }
 
 /* ─────────────────────────────────────────
-   Placeholder Logo
+   Companion Open / Upcoming Partner Slot
 ───────────────────────────────────────── */
 
-function LogoBox({
-  short,
-  name,
-  size = "md",
-}: {
-  short: string;
-  name: string;
-  size?: "xl" | "lg" | "md" | "sm";
-}) {
-  const sizeMap = {
-    xl: "h-24 w-44 text-xl",
-    lg: "h-20 w-36 text-lg",
-    md: "h-16 w-28 text-base",
-    sm: "h-12 w-24 text-sm",
-  };
-
+function OpenPartnerSlot() {
   return (
-    <div
-      title={name}
-      className={`
-        ${sizeMap[size]}
-        flex items-center justify-center
-        rounded-xl
-        border border-[#C4A882]
-        bg-white/50
-        transition-all duration-300
-        hover:border-[#B8322C]/50
-        hover:bg-white/70
-        hover:shadow-[0_4px_16px_rgba(184,50,44,0.12)]
-        cursor-default select-none
-      `}
+    <a
+      href="mailto:tech.kurukshetra@uem.edu.in"
+      aria-label="Become a sponsor or partner"
+      className="group relative block w-full cursor-pointer select-none transition-all duration-300 ease-out hover:-translate-y-1 hover:-translate-x-0.5 active:translate-x-0.5 active:translate-y-0.5"
+      style={{
+        transformStyle: "preserve-3d",
+      }}
     >
-      <span
-        className={`${accentFont.className} font-bold tracking-widest text-[#8A6040]`}
-      >
-        {short}
-      </span>
-    </div>
-  );
-}
-
-/* ─────────────────────────────────────────
-   Tier Label
-───────────────────────────────────────── */
-
-function TierLabel({
-  label,
-  accent,
-}: {
-  label: string;
-  accent: string;
-}) {
-  return (
-    <div className="mb-8 flex items-center gap-3">
       <div
-        className="h-[1.5px] w-8"
-        style={{ background: accent }}
-      />
-
-      <span
-        className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.3em]`}
-        style={{ color: accent }}
+        className="relative flex flex-col items-center justify-center h-full min-h-[130px] sm:min-h-[140px] rounded-xl bg-gradient-to-br from-white/70 via-[#FAF6EE]/60 to-[#F3E8D6]/40 p-3.5 sm:p-4 transition-all duration-300 border border-dashed border-[#C4A882]/80 hover:border-[#B8322C]/60"
+        style={{
+          boxShadow: `
+            1px 1px 0px #C4A882,
+            2px 2px 0px #B8966C,
+            3px 3px 0px #A37F55,
+            4px 4px 0px #8F6A42,
+            5px 6px 14px rgba(18, 16, 14, 0.12)
+          `,
+        }}
       >
-        {label}
-      </span>
+        <div className="pointer-events-none absolute inset-0 rounded-xl border-t-[1.5px] border-l-[1.5px] border-white/80" />
 
-      <div className="h-[1px] flex-1 bg-[#C4A882]/40" />
-    </div>
+        <div className="absolute top-2.5 right-2.5 flex items-center text-[#8A623B]/60 transition-colors duration-200 group-hover:text-[#B8322C]">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            aria-hidden="true"
+          >
+            <path d="M7 17 17 7" />
+            <path d="M7 7h10v10" />
+          </svg>
+        </div>
+
+        <div className="relative flex w-full flex-col items-center justify-center rounded-lg bg-white/50 px-4 py-4 sm:py-5 border border-dashed border-[#D6C4AD] transition-all duration-300 group-hover:bg-white/80 group-hover:border-[#B8322C]/40">
+          <span
+            className="select-none uppercase leading-tight text-[#12100E]/25 group-hover:text-[#12100E]/45 transition-colors"
+            style={{
+              fontFamily: "var(--font-sketch)",
+              fontSize: "1.45rem",
+            }}
+          >
+            Coming Soon
+          </span>
+          <span className={`${bodyFont.className} text-[10px] text-[#8A623B] mt-0.5`}>
+            Partner With Us
+          </span>
+        </div>
+      </div>
+    </a>
   );
 }
 
@@ -205,26 +209,14 @@ function TierLabel({
 
 export default function SponsorsSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const titleCardRef = useRef<HTMLDivElement>(null);
-  const platRowRef = useRef<HTMLDivElement>(null);
-  const goldRowRef = useRef<HTMLDivElement>(null);
-  const assocRowRef = useRef<HTMLDivElement>(null);
+  const partnersRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-
-  /*
-   * A sponsor section only exists when there
-   * is actual sponsor data.
-   */
-  const hasSponsors =
-    PLATINUM.length > 0 ||
-    GOLD.length > 0 ||
-    ASSOCIATES.length > 0;
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      /* Header */
+      /* Header animation */
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current,
@@ -245,94 +237,25 @@ export default function SponsorsSection() {
         );
       }
 
-      /*
-       * Only animate sponsor cards when
-       * sponsor data actually exists.
-       */
-
-      if (hasSponsors && titleCardRef.current) {
+      /* Partners Cuboid Box animation */
+      if (partnersRef.current) {
         gsap.fromTo(
-          titleCardRef.current,
+          partnersRef.current.querySelectorAll(".partner-cuboid-item"),
           {
             opacity: 0,
-            scale: 0.92,
-            y: 30,
+            scale: 0.94,
+            y: 25,
           },
           {
             opacity: 1,
             scale: 1,
             y: 0,
-            duration: 1,
-            ease: "expo.out",
-            scrollTrigger: {
-              trigger: titleCardRef.current,
-              start: "top 80%",
-            },
-          }
-        );
-      }
-
-      /* Platinum */
-      if (hasSponsors && platRowRef.current) {
-        gsap.fromTo(
-          platRowRef.current.querySelectorAll(".sponsor-item"),
-          {
-            opacity: 0,
-            y: 24,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "expo.out",
+            duration: 0.7,
             stagger: 0.1,
+            ease: "expo.out",
             scrollTrigger: {
-              trigger: platRowRef.current,
+              trigger: partnersRef.current,
               start: "top 82%",
-            },
-          }
-        );
-      }
-
-      /* Gold */
-      if (hasSponsors && goldRowRef.current) {
-        gsap.fromTo(
-          goldRowRef.current.querySelectorAll(".sponsor-item"),
-          {
-            opacity: 0,
-            y: 20,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.55,
-            ease: "expo.out",
-            stagger: 0.08,
-            scrollTrigger: {
-              trigger: goldRowRef.current,
-              start: "top 84%",
-            },
-          }
-        );
-      }
-
-      /* Associates */
-      if (hasSponsors && assocRowRef.current) {
-        gsap.fromTo(
-          assocRowRef.current.querySelectorAll(".sponsor-item"),
-          {
-            opacity: 0,
-            y: 16,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "expo.out",
-            stagger: 0.06,
-            scrollTrigger: {
-              trigger: assocRowRef.current,
-              start: "top 85%",
             },
           }
         );
@@ -340,7 +263,7 @@ export default function SponsorsSection() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [hasSponsors]);
+  }, []);
 
   return (
     <section
@@ -351,23 +274,16 @@ export default function SponsorsSection() {
         background: "#EFE2C7",
       }}
     >
-      {/* ─────────────────────────────────
-          Dot Grid
-      ───────────────────────────────── */}
-
+      {/* Dot Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.15]"
         style={{
-          backgroundImage:
-            "radial-gradient(#8A623B 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(#8A623B 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />
 
-      {/* ─────────────────────────────────
-          Paper Noise
-      ───────────────────────────────── */}
-
+      {/* Paper Noise */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-multiply"
         style={{
@@ -375,10 +291,7 @@ export default function SponsorsSection() {
         }}
       />
 
-      {/* ─────────────────────────────────
-          Warm Centre Glow
-      ───────────────────────────────── */}
-
+      {/* Warm Centre Glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         style={{
@@ -389,15 +302,11 @@ export default function SponsorsSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-
-        {/* ─────────────────────────────────
-            Header
-        ───────────────────────────────── */}
-
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div
           ref={headerRef}
-          className="mb-16 text-center"
+          className="mb-14 text-center"
         >
           <p
             className={`${accentFont.className} mb-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[#B8322C]`}
@@ -418,8 +327,7 @@ export default function SponsorsSection() {
           <p
             className={`${bodyFont.className} mx-auto mt-4 max-w-lg text-sm leading-relaxed text-[#6A5040] sm:text-base`}
           >
-            The organisations powering the mission. Interested in partnering?
-            {" "}
+            The organisations powering the mission. Interested in partnering?{" "}
             <a
               href="mailto:tech.kurukshetra@uem.edu.in"
               className="text-[#B8322C] underline underline-offset-2 transition-colors hover:text-[#E6392F]"
@@ -430,200 +338,25 @@ export default function SponsorsSection() {
         </div>
 
         {/* ═══════════════════════════════════
-            NO SPONSOR DATA
+            PARTNERS SECTION (3 IN A ROW)
         ═══════════════════════════════════ */}
-
-        {!hasSponsors && <SponsorComingSoon />}
-
-        {/* ═══════════════════════════════════
-            SPONSOR DATA
-        ═══════════════════════════════════ */}
-
-        {hasSponsors && (
-          <>
-            {/* TITLE SPONSOR */}
-
-            <TierLabel
-              label="Title Sponsor"
-              accent="#E6C84A"
-            />
-
-            <div
-              ref={titleCardRef}
-              className="mb-16"
-            >
-              <div
-                className="relative overflow-hidden rounded-2xl border border-[#B8A060]/40"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #FDF6E8 0%, #F5EAD2 60%, #EEE0C4 100%)",
-                }}
-              >
-                <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#B8960A]/50 to-transparent" />
-
-                <div
-                  className="pointer-events-none absolute left-0 top-0"
-                  style={{
-                    width: "300px",
-                    height: "300px",
-                    background:
-                      "radial-gradient(ellipse at top left, rgba(184,150,10,0.06) 0%, transparent 60%)",
-                  }}
-                />
-
-                <div className="relative z-10 flex flex-col items-center justify-between gap-8 px-8 py-10 sm:flex-row sm:px-12">
-
-                  {/* Logo */}
-
-                  <div className="flex-shrink-0">
-                    <div className="flex h-20 w-56 items-center justify-center rounded-xl border border-[#B8960A]/40 bg-[#B8960A]/8">
-                      <span
-                        className={`${accentFont.className} text-2xl font-bold tracking-widest text-[#8A6A0A]/70`}
-                      >
-                        YOUR LOGO
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Info */}
-
-                  <div className="flex-1 text-center sm:text-left">
-                    <div className="mb-2 inline-flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-[#B8960A]" />
-
-                      <span
-                        className={`${accentFont.className} text-[9px] font-bold uppercase tracking-[0.28em] text-[#8A6A0A]`}
-                      >
-                        {TITLE_SPONSOR.tier}
-                      </span>
-                    </div>
-
-                    <p
-                      className={`${accentFont.className} mb-1 text-2xl font-bold uppercase tracking-wide text-[#12100E] sm:text-3xl`}
-                    >
-                      {TITLE_SPONSOR.name}
-                    </p>
-
-                    <p
-                      className={`${bodyFont.className} text-sm text-[#6A5040]`}
-                    >
-                      {TITLE_SPONSOR.tagline}
-                    </p>
-                  </div>
-
-                  {/* Badge */}
-
-                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-2 border-[#B8960A]/40 bg-[#B8960A]/8">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#B8960A"
-                      strokeWidth="1.5"
-                      className="h-7 w-7"
-                      aria-hidden="true"
-                    >
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#B8960A]/50 to-transparent" />
+        <div ref={partnersRef} className="mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+            {SPONSOR_SLOTS.map((partner, idx) => (
+              <div key={partner ? partner.id : `open-slot-${idx}`} className="partner-cuboid-item flex">
+                {partner ? (
+                  <CuboidSponsorBox partner={partner} />
+                ) : (
+                  <OpenPartnerSlot />
+                )}
               </div>
-            </div>
-
-            {/* PLATINUM */}
-
-            {PLATINUM.length > 0 && (
-              <>
-                <TierLabel
-                  label="Platinum Partners"
-                  accent="#C8D8E8"
-                />
-
-                <div
-                  ref={platRowRef}
-                  className="mb-16 flex flex-wrap justify-center gap-5"
-                >
-                  {PLATINUM.map((sponsor) => (
-                    <div
-                      key={sponsor.name}
-                      className="sponsor-item"
-                    >
-                      <LogoBox
-                        short={sponsor.short}
-                        name={sponsor.name}
-                        size="lg"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* GOLD */}
-
-            {GOLD.length > 0 && (
-              <>
-                <TierLabel
-                  label="Gold Partners"
-                  accent="#D4A84A"
-                />
-
-                <div
-                  ref={goldRowRef}
-                  className="mb-16 flex flex-wrap justify-center gap-4"
-                >
-                  {GOLD.map((sponsor) => (
-                    <div
-                      key={sponsor.name}
-                      className="sponsor-item"
-                    >
-                      <LogoBox
-                        short={sponsor.short}
-                        name={sponsor.name}
-                        size="md"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* ASSOCIATES */}
-
-            {ASSOCIATES.length > 0 && (
-              <>
-                <TierLabel
-                  label="Associates & Community Partners"
-                  accent="#6A7A8A"
-                />
-
-                <div
-                  ref={assocRowRef}
-                  className="flex flex-wrap justify-center gap-3"
-                >
-                  {ASSOCIATES.map((sponsor) => (
-                    <div
-                      key={sponsor.name}
-                      className="sponsor-item"
-                    >
-                      <LogoBox
-                        short={sponsor.short}
-                        name={sponsor.name}
-                        size="sm"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-          </>
-        )}
+            ))}
+          </div>
+        </div>
 
         {/* ─────────────────────────────────
-            CTA
+            CTA / Partner Invitation
         ───────────────────────────────── */}
-
         <div className="mt-16 flex flex-col items-center gap-3 text-center">
           <div className="h-[1px] w-full bg-[#C4A882]/50" />
 
@@ -651,7 +384,6 @@ export default function SponsorsSection() {
             `}
           >
             Partner With Us
-
             <svg
               viewBox="0 0 24 24"
               fill="none"

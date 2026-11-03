@@ -109,23 +109,6 @@ const events: EventCard[] = [
     bg: "#2f251e",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/phantom_tail2.jpg",
-    title: "Phantom Tail",
-    description:
-      "THE SHADOWS ARE WAITING.Gather your team, follow the clues, and uncover what lies hidden. PHANTOM TAIL — A TREASURE HUNT",
-    rules: [
-      "Open to all university/college student",
-      "Team Size: 3-5",
-      "Registration Fees- 100 per Team"
-    ],
-    coordinators: [
-      { name: "Sayan Mondal", phone: "+91 9064685807" }
-    ],
-    prizepool: "Revealing Soon",
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScD22Mi6AFV8sSXKoOhWwsgk9yaJy32W6g-_g-zhKUjB9u-LQ/viewform",
-    bg: "#43392f",
-  },
-  {
     poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Noir_Vision_2.jpg",
     title: "Noir Vision",
     description: "Step into the dark, sleek world of high-tech aesthetics and let your creativity take center stage at Noir Vision, the premier poster design competition at TechKurukshetra '26!",
@@ -143,16 +126,6 @@ const events: EventCard[] = [
     prizepool: "Revealing Soon",
     registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScU78xo8AwtZY6EH4ue2VTs3fPaUQp0fGCLkRA662opR2Q2AA/viewform",
     bg: "#2f251e",
-  },
-  {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto,q_auto/coming_soon_2",
-    title: "Coming Soon",
-    description: "Stay tuned! More exciting events will be revealed shortly.",
-    rules: ["Details to be announced soon"],
-    coordinators: [],
-    prizepool: "Revealing Soon",
-    registerLink: "#",
-    bg: "#43392f",
   },
 ];
 
@@ -225,7 +198,7 @@ export default function EventsSection() {
         <div className="flex items-center justify-center gap-3 mt-5">
           <span className="h-[2px] w-10 bg-[#E6392F] sm:w-14" />
           <span className={`${accentFont.className} text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6A5E50]`}>
-            6 Competitions · Kolkata 2026
+            4 Competitions · Kolkata 2026
           </span>
           <span className="h-[2px] w-10 bg-[#E6392F] sm:w-14" />
         </div>
@@ -312,40 +285,50 @@ export default function EventsSection() {
               <SwiperSlide
                 key={`${event.title}-${index}`}
                 className="
-                !w-[240px] !h-[320px]
-                sm:!w-[280px] sm:!h-[373px]
-                md:!w-[320px] md:!h-[427px]
-                lg:!w-[360px] lg:!h-[480px]
+                !w-[220px] !h-[285px]
+                sm:!w-[255px] sm:!h-[330px]
+                md:!w-[285px] md:!h-[370px]
+                lg:!w-[315px] lg:!h-[410px]
               "
               >
                 <div
                   className="
-                  group relative w-full h-full overflow-hidden
-                  rounded-2xl border border-white/10 select-none
-                  transition-all duration-700 bg-[#2f251e]
+                  group relative h-full w-full select-none overflow-hidden
+                  rounded-2xl
+                  transition-all duration-500 ease-out
+                  shadow-[0_22px_42px_rgba(0,0,0,0.55)]
+                  [transform-style:preserve-3d]
+                  hover:shadow-[0_30px_50px_rgba(0,0,0,0.65)]
+                  hover:[transform:perspective(900px)_rotateX(3deg)_rotateY(-3deg)_translateY(-8px)]
                 "
+                  style={{
+                    background: `linear-gradient(145deg, ${event.bg}, #110d0a 72%)`,
+                  }}
                 >
-                  <img
-                    src={event.poster}
-                    alt={event.title}
-                    draggable={false}
-                    className="
-                    h-full w-full object-cover
-                    transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]
-                    group-hover:scale-[1.05]
-                  "
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
+                  <div className="relative h-full overflow-hidden rounded-2xl bg-black/30">
+                    <img
+                      src={event.poster}
+                      alt={event.title}
+                      draggable={false}
+                      className="
+                      h-full w-full object-cover
+                      transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]
+                      group-hover:scale-[1.07]
+                    "
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
 
-                  {/* Fallback pattern if image is missing */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center -z-10 bg-black/40">
-                    <div className={`${accentFont.className} text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-2`}>Event Poster</div>
-                    <div className="h-[1px] w-10 bg-white/20"></div>
+                    {/* Fallback pattern if image is missing */}
+                    <div className="absolute inset-0 -z-10 flex flex-col items-center justify-center bg-black/40">
+                      <div className={`${accentFont.className} mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/30`}>Event Poster</div>
+                      <div className="h-px w-10 bg-white/20" />
+                    </div>
+
                   </div>
 
-                  <div className="pointer-events-none absolute inset-0 z-30 rounded-2xl border border-white/0 transition-all duration-700 group-hover:border-white/20 group-hover:shadow-[inset_0_0_30px_rgba(255,255,255,0.05)]" />
+                  <div className="pointer-events-none absolute inset-0 z-30 rounded-2xl transition-all duration-500 group-hover:shadow-[inset_0_0_30px_rgba(255,255,255,0.06)]" />
                 </div>
               </SwiperSlide>
             ))}
@@ -369,8 +352,7 @@ export default function EventsSection() {
                 {activeEvent.prizepool}
               </span>
             </div>
-            {activeEvent.title !== "Coming Soon" && (
-              <a
+            <a
                 href={activeEvent.registerLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -385,8 +367,7 @@ export default function EventsSection() {
               `}
               >
                 Register
-              </a>
-            )}
+            </a>
           </div>
         </div>
 
@@ -467,8 +448,7 @@ export default function EventsSection() {
                       {activeEvent.prizepool}
                     </span>
                   </div>
-                  {activeEvent.title !== "Coming Soon" && (
-                    <a
+                  <a
                       href={activeEvent.registerLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -484,8 +464,7 @@ export default function EventsSection() {
                     `}
                     >
                       Register
-                    </a>
-                  )}
+                  </a>
                 </div>
               </div>
             </div>

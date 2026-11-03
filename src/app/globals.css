@@ -143,6 +143,25 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   Site-wide parchment theme
+   Toggle by changing SITE_VISUAL_THEME in src/app/page.tsx.
+   -------------------------------------------------------------------------- */
+.site-theme-parchment {
+  --parchment-bg: #efe2c7;
+  --parchment-dot: rgba(138, 98, 59, 0.28);
+  background-color: var(--parchment-bg);
+  background-image: radial-gradient(var(--parchment-dot) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.site-theme-parchment > main > section,
+.site-theme-parchment > footer {
+  background-color: var(--parchment-bg) !important;
+  background-image: radial-gradient(var(--parchment-dot) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+}
+
 /* ── Shadow Protocol scrollbar ── */
 
 /* Webkit (Chrome, Edge, Safari) */
