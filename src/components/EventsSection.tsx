@@ -109,9 +109,9 @@ const events: EventCard[] = [
     bg: "#2f251e",
   },
   {
-    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Noir_Vision_2.jpg",
-    title: "Noir Vision",
-    description: "Step into the dark, sleek world of high-tech aesthetics and let your creativity take center stage at Noir Vision, the premier poster design competition at TechKurukshetra '26!",
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-03_at_5.44.29_PM.jpg",
+    title: "Tech Canvas",
+    description: "Step into the dark, sleek world of high-tech aesthetics and let your creativity take center stage at Tech Canvas, the premier poster design competition at TechKurukshetra '26!",
     rules: [
       "Maximum team size - 2",
       "Every participant has to register either individually or as a team.",
@@ -343,30 +343,22 @@ export default function EventsSection() {
           </div>
 
           {/* BELOW-DESKTOP ONLY: Quick Action CTA */}
-          <div className="flex xl:hidden items-center justify-between w-full max-w-md mx-auto mt-6 px-6 relative z-30">
-            <div className="flex flex-col">
-              <span className={`${accentFont.className} block text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 mb-0.5`}>
-                Prize Pool
-              </span>
-              <span className={`${accentFont.className} text-base sm:text-lg font-bold uppercase tracking-wide text-[#E6392F] leading-none block`}>
-                {activeEvent.prizepool}
-              </span>
-            </div>
+          <div className="flex xl:hidden items-center justify-center w-full max-w-md mx-auto mt-6 px-6 relative z-30">
             <a
                 href={activeEvent.registerLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
                 ${accentFont.className}
-                flex w-auto px-6 sm:px-8 items-center justify-center
+                flex w-full items-center justify-center
                 rounded-full bg-white
-                py-2.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em]
+                py-3.5 sm:py-4 text-[13px] sm:text-[14px] font-bold uppercase tracking-[0.22em]
                 text-black transition-all duration-300
-                hover:bg-white/80 hover:scale-[1.02] active:scale-[0.98]
-                flex-shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.15)]
+                hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98]
+                flex-shrink-0 shadow-[0_0_25px_rgba(255,255,255,0.25)]
               `}
               >
-                Register
+                Register Now ↗
             </a>
           </div>
         </div>
@@ -439,15 +431,7 @@ export default function EventsSection() {
                   </div>
                 )}
 
-                <div className="hidden xl:flex rounded-xl border border-white/10 bg-black/40 p-4 mt-auto flex-col items-start justify-start">
-                  <div className="mb-3">
-                    <span className={`${accentFont.className} block text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 mb-0.5`}>
-                      Prize Pool
-                    </span>
-                    <span className={`${accentFont.className} text-xl font-bold uppercase tracking-wide text-[#E6392F] leading-none block mt-0`}>
-                      {activeEvent.prizepool}
-                    </span>
-                  </div>
+                <div className="hidden xl:flex rounded-xl border border-white/10 bg-black/40 p-3 sm:p-4 mt-auto flex-col items-start justify-start">
                   <a
                       href={activeEvent.registerLink}
                       target="_blank"
@@ -456,14 +440,14 @@ export default function EventsSection() {
                       ${accentFont.className}
                       flex w-full items-center justify-center
                       rounded-full bg-white
-                      py-2.5
-                      text-[11px] font-bold uppercase tracking-[0.18em]
+                      py-3.5 sm:py-4
+                      text-[13px] sm:text-[14px] font-bold uppercase tracking-[0.22em]
                       text-black transition-all duration-300
-                      hover:bg-white/80 hover:scale-[1.02] active:scale-[0.98]
-                      flex-shrink-0
+                      hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98]
+                      flex-shrink-0 shadow-[0_0_25px_rgba(255,255,255,0.2)]
                     `}
                     >
-                      Register
+                      Register Now ↗
                   </a>
                 </div>
               </div>

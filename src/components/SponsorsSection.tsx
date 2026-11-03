@@ -32,7 +32,7 @@ export interface Partner {
 }
 
 // Fixed 3 slots in the row. Position 1: Unstop, Position 2: Techfest IIT Bombay, Position 3: ML Kolkata
-const SPONSOR_SLOTS: (Partner | null)[] = [
+const ROW1_SPONSORS: Partner[] = [
   {
     id: "unstop",
     name: "Unstop",
@@ -54,6 +54,16 @@ const SPONSOR_SLOTS: (Partner | null)[] = [
     logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ML_Kolkata_Torch_Logo.png",
     redirectUrl: "https://www.linkedin.com/company/mlkolkata/home/",
     logoClass: "h-11 sm:h-12 md:h-13 max-w-[200px] sm:max-w-[220px] scale-[1.25] -translate-y-1.5",
+  },
+];
+
+const ROW2_SPONSORS: Partner[] = [
+  {
+    id: "mercy-for-animals",
+    name: "Mercy For Animals",
+    logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/images_1.png",
+    redirectUrl: "https://mercyforanimals.org/",
+    logoClass: "h-9 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[210px]",
   },
 ];
 
@@ -338,19 +348,27 @@ export default function SponsorsSection() {
         </div>
 
         {/* ═══════════════════════════════════
-            PARTNERS SECTION (3 IN A ROW)
+            PARTNERS SECTION
         ═══════════════════════════════════ */}
-        <div ref={partnersRef} className="mb-16">
+        <div ref={partnersRef} className="mb-16 space-y-5 sm:space-y-6">
+          {/* Row 1: 3 in a row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
-            {SPONSOR_SLOTS.map((partner, idx) => (
-              <div key={partner ? partner.id : `open-slot-${idx}`} className="partner-cuboid-item flex">
-                {partner ? (
-                  <CuboidSponsorBox partner={partner} />
-                ) : (
-                  <OpenPartnerSlot />
-                )}
+            {ROW1_SPONSORS.map((partner) => (
+              <div key={partner.id} className="partner-cuboid-item flex">
+                <CuboidSponsorBox partner={partner} />
               </div>
             ))}
+          </div>
+
+          {/* Row 2: Just below the middle of the first row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+            <div className="hidden lg:block" aria-hidden="true" />
+            {ROW2_SPONSORS.map((partner) => (
+              <div key={partner.id} className="partner-cuboid-item flex">
+                <CuboidSponsorBox partner={partner} />
+              </div>
+            ))}
+            <div className="hidden lg:block" aria-hidden="true" />
           </div>
         </div>
 
