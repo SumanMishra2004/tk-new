@@ -84,6 +84,18 @@ const PLACEHOLDER_COLORS = [
   "#0f1510",
 ];
 
+// Set to "original" to restore the previous per-image parallax and source image URLs.
+const GALLERY_SCROLL_MODE: "optimized" | "original" = "optimized";
+
+function getGalleryImageSrc(src: string) {
+  if (GALLERY_SCROLL_MODE === "original" || !src.includes("res.cloudinary.com")) {
+    return src;
+  }
+
+  // Limit decode work while keeping enough resolution for the largest gallery tile.
+  return src.replace("/upload/", "/upload/f_auto,q_auto,w_1200/");
+}
+
 /* -------------------------------------------------------------------------- */
 /* Gallery Section                                                            */
 /* -------------------------------------------------------------------------- */
@@ -163,7 +175,7 @@ export default function GallerySection() {
 
         /* Image parallax */
 
-        if (img && speed !== 0) {
+        if (GALLERY_SCROLL_MODE === "original" && img && speed !== 0) {
           gsap.fromTo(
             img,
             {
@@ -419,7 +431,7 @@ export default function GallerySection() {
 
               {item.src && (
                 <img
-                  src={item.src}
+                  src={getGalleryImageSrc(item.src)}
                   alt={item.src}
                   className="
                     gallery-img
@@ -429,8 +441,6 @@ export default function GallerySection() {
                     h-[120%]
                     w-full
                     object-cover
-
-                    will-change-transform
 
                     transition-[filter]
                     duration-500

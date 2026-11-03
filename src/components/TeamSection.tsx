@@ -27,7 +27,6 @@ interface Member {
   image: string;
 }
 
-
 const members: Member[] = [
   {
     name: "Arista Seth",
@@ -49,16 +48,20 @@ const members: Member[] = [
     role: "Graphics Lead",
     image: "https://res.cloudinary.com/dvky83edw/image/upload/v1789453639/dflgvldlstcebzdhagpb.jpg",
   },
-
   {
     name: "Sayan Mondal",
     role: "Web Dev Lead",
-    image: "https://res.cloudinary.com/dvky83edw/image/upload/v1789453639/h577anzfvej1ibpgvnvw.jpg",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-03_at_5.08.49_PM.jpg",
   },
   {
     name: "Asmita Chatterjee",
     role: "Social Media and PR",
     image: "https://res.cloudinary.com/vhf4myms/image/upload/v1789485665/Asmita_Chatterjee.jpg",
+  },
+  {
+    name: "Rounak Ghosh",
+    role: "Videography Lead",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-03_at_5.05.36_PM.jpg",
   },
 ];
 
@@ -124,7 +127,6 @@ export default function TeamCarousel() {
       className="relative w-full bg-black py-16 sm:py-24"
       id="team"
     >
-
       {/* HEADING */}
       <div ref={headingRef} className="mb-10 px-6 text-center sm:mb-14">
         <h2
@@ -158,83 +160,87 @@ export default function TeamCarousel() {
         </p>
       </div>
 
-      <div ref={carouselRef} className="relative">
-        {/* NAVIGATION ARROWS */}
+      {/* SWIPER CONTAINER */}
+      <div ref={carouselRef} className="relative w-full overflow-hidden">
+        {/* NAV ARROWS — DESKTOP */}
         <button
           onClick={handlePrev}
-          className="
-            team-nav-btn
-            absolute left-2 sm:left-6 lg:left-10
-            top-1/2 -translate-y-1/2 z-30
-            flex h-10 w-10 sm:h-12 sm:w-12
-            items-center justify-center
-            rounded-full
-            border border-white/15
-            bg-black/40 backdrop-blur-md
-            text-white/60
-            transition-all duration-300
-            hover:border-white/40 hover:bg-white/10 hover:text-white
-            hover:scale-110
-            active:scale-95
-          "
           aria-label="Previous team member"
+          className="
+            pointer-events-auto
+            absolute left-4 top-1/2 z-30
+            hidden -translate-y-1/2
+            h-10 w-10 items-center justify-center
+            rounded-full border border-white/20
+            bg-black/60 text-white backdrop-blur-sm
+            transition-all duration-300
+            hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
+            active:scale-95
+            md:flex lg:left-8
+          "
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="15 18 9 12 15 6" />
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-4 w-4"
+          >
+            <path d="m15 18-6-6 6-6" />
           </svg>
         </button>
+
         <button
           onClick={handleNext}
-          className="
-            team-nav-btn
-            absolute right-2 sm:right-6 lg:right-10
-            top-1/2 -translate-y-1/2 z-30
-            flex h-10 w-10 sm:h-12 sm:w-12
-            items-center justify-center
-            rounded-full
-            border border-white/15
-            bg-black/40 backdrop-blur-md
-            text-white/60
-            transition-all duration-300
-            hover:border-white/40 hover:bg-white/10 hover:text-white
-            hover:scale-110
-            active:scale-95
-          "
           aria-label="Next team member"
+          className="
+            pointer-events-auto
+            absolute right-4 top-1/2 z-30
+            hidden -translate-y-1/2
+            h-10 w-10 items-center justify-center
+            rounded-full border border-white/20
+            bg-black/60 text-white backdrop-blur-sm
+            transition-all duration-300
+            hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
+            active:scale-95
+            md:flex lg:right-8
+          "
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 18 15 12 9 6" />
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-4 w-4"
+          >
+            <path d="m9 18 6-6-6-6" />
           </svg>
         </button>
 
         <Swiper
-          modules={[
-            EffectCoverflow,
-            Pagination,
-            Autoplay,
-            Mousewheel,
-            Navigation,
-          ]}
-          onSwiper={(swiper) => { swiperRef.current = swiper; }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={(swiper) => {
+            setActiveIndex(swiper.realIndex);
+          }}
+          modules={[EffectCoverflow, Pagination, Autoplay, Mousewheel, Navigation]}
           effect="coverflow"
-
+          grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
+          initialSlide={1}
           loop={true}
-          grabCursor={true}
-
+          speed={900}
           autoplay={{
-            delay: 3000,
+            delay: 3500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
-            stopOnLastSlide: false,
-            waitForTransition: true,
           }}
-
-          speed={1000}
-
           coverflowEffect={{
             rotate: 0,
             stretch: -30,
@@ -242,19 +248,15 @@ export default function TeamCarousel() {
             modifier: 1,
             slideShadows: true,
           }}
-
           mousewheel={{
             forceToAxis: true,
             sensitivity: 0.5,
           }}
-
           pagination={{
             clickable: true,
           }}
-
           className="teamSwiper"
         >
-
           {members.map((member, index) => (
             <SwiperSlide
               key={`${member.name}-${index}`}
@@ -265,7 +267,6 @@ export default function TeamCarousel() {
                 lg:!w-[320px] lg:!h-[427px]
               "
             >
-
               <div
                 className="
                   group
@@ -280,7 +281,6 @@ export default function TeamCarousel() {
                   duration-700
                 "
               >
-
                 {/* IMAGE */}
                 <div className="absolute inset-0 overflow-hidden">
                   <img
@@ -304,89 +304,82 @@ export default function TeamCarousel() {
                     className="
                       pointer-events-none
                       absolute inset-0
-                      bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.45)_100%)]
+                      bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(0,0,0,0.35)_100%)]
                     "
                   />
                 </div>
 
-                {/* Bottom gradient — taller & richer */}
+                {/* Subtle base gradient strictly at bottom, avoiding the subject's face */}
                 <div
                   className="
                     pointer-events-none
                     absolute inset-x-0 bottom-0
-                    z-10 h-[65%]
+                    z-10 h-24 sm:h-28
                     bg-gradient-to-t
-                    from-black via-black/80 to-transparent
+                    from-black/90 via-black/40 to-transparent
                   "
                 />
 
                 {/* TOP LEFT NUMBER */}
                 <div
                   className="
-                    absolute left-4 top-4 z-20
-                    font-mono text-[9px] tracking-[0.25em]
-                    text-white/30
+                    absolute left-3 top-3 z-20
+                    rounded bg-black/45 px-1.5 py-0.5 backdrop-blur-md
+                    font-mono text-[9px] tracking-[0.2em]
+                    text-white/70 border border-white/10
                     transition-colors duration-300
-                    group-hover:text-white/60
+                    group-hover:text-white group-hover:border-[#E6392F]/50
                   "
                 >
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
                 {/* TOP RIGHT DOT */}
-                <div className="absolute right-4 top-4 z-20">
+                <div className="absolute right-3.5 top-3.5 z-20">
                   <div
                     className="
                       h-2 w-2 rounded-full
                       border border-white/40 bg-transparent
                       transition-all duration-500
-                      group-hover:scale-150
+                      group-hover:scale-125
                       group-hover:border-[#E6392F]
                       group-hover:bg-[#E6392F]
-                      group-hover:shadow-[0_0_10px_rgba(230,57,47,0.6)]
+                      group-hover:shadow-[0_0_8px_rgba(230,57,47,0.7)]
                     "
                   />
                 </div>
 
-                {/* CONTENT */}
+                {/* COMPACT FLOATING DOCKED CARD */}
                 <div
                   className="
-                    absolute inset-x-0 bottom-0 z-20
-                    p-5 sm:p-6 md:p-7
-                    transform transition-transform duration-500 ease-out
-                    group-hover:translate-y-[-4px]
+                    absolute inset-x-2.5 bottom-2.5 z-20
+                    rounded-lg border border-white/15 bg-black/75 px-3 py-2 sm:px-3.5 sm:py-2.5
+                    backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.6)]
+                    transition-all duration-300
+                    group-hover:border-[#E6392F]/50 group-hover:bg-black/85
                   "
                 >
-                  {/* Thin accent line */}
-                  <div
-                    className="
-                      mb-3 h-[1px] w-8
-                      bg-[#E6392F]/60
-                      transition-all duration-500
-                      group-hover:w-12 group-hover:bg-[#E6392F]
-                    "
-                  />
-
-                  <h3
-                    className="
-                      text-base font-bold uppercase
-                      leading-[1.05] tracking-tight
-                      text-white
-                      sm:text-lg md:text-xl lg:text-2xl
-                    "
-                  >
-                    {member.name}
-                  </h3>
+                  <div className="flex items-center justify-between gap-1.5">
+                    <h3
+                      className="
+                        text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
+                        leading-tight tracking-tight
+                        text-white truncate
+                      "
+                    >
+                      {member.name}
+                    </h3>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#E6392F] flex-shrink-0" />
+                  </div>
 
                   <p
                     className="
-                      mt-2
-                      text-[8px] uppercase
-                      tracking-[0.2em]
-                      text-white/50
-                      sm:text-[9px] md:text-[10px] lg:text-[11px]
+                      mt-0.5
+                      text-[8px] sm:text-[9px] md:text-[10px] uppercase
+                      tracking-[0.16em]
+                      text-white/65 truncate
                       transition-colors duration-300
-                      group-hover:text-white/70
+                      group-hover:text-[#E6392F]
                     "
                   >
                     {member.role}
@@ -426,12 +419,9 @@ export default function TeamCarousel() {
                     group-hover:border-white/[0.08]
                   "
                 />
-
               </div>
-
             </SwiperSlide>
           ))}
-
         </Swiper>
 
         {/* ACTIVE MEMBER INFO BAR */}
@@ -454,9 +444,7 @@ export default function TeamCarousel() {
       {/* =========================
           STYLES
       ========================= */}
-
       <style>{`
-
         .teamSwiper {
           width: 100%;
           padding-top: 40px;
@@ -559,9 +547,7 @@ export default function TeamCarousel() {
             padding-bottom: 52px;
           }
         }
-
       `}</style>
-
     </section>
   );
 }

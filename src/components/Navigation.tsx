@@ -112,7 +112,7 @@ export default function Navigation() {
   return (
     <nav
       id="main-nav"
-      className="fixed top-3 left-1/2 -translate-x-1/2 z-[10000] w-[calc(100%-1.25rem)] max-w-[1400px] flex h-[58px] items-center justify-between rounded-2xl px-3 sm:px-4 transition-all duration-500 backdrop-blur-[22px] backdrop-saturate-[160%]"
+      className="fixed top-3 left-1/2 -translate-x-1/2 z-[10000] w-[calc(100%-1.25rem)] max-w-[1400px] flex h-16 sm:h-[68px] items-center justify-between rounded-2xl px-3 sm:px-4 transition-all duration-500 backdrop-blur-[22px] backdrop-saturate-[160%]"
       style={{
         ...navStyle,
         WebkitBackdropFilter: "blur(22px) saturate(160%)",
@@ -130,29 +130,29 @@ export default function Navigation() {
           <img
             src="/tk-logo.webp"
             alt="Tech Kurukshetra"
-            className="h-8 w-auto object-contain"
-            style={{ maxWidth: "clamp(90px, 14vw, 160px)" }}
+            className="h-9 sm:h-10 w-auto object-contain"
+            style={{ maxWidth: "clamp(90px, 14vw, 180px)" }}
           />
         </button>
 
-        <div className={`h-5 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-6 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEDC */}
         <img
           src="/IEDC (2).webp"
           alt="IEDC"
-          className="h-8 w-auto object-contain shrink-0"
-          style={{ maxWidth: "clamp(28px, 5vw, 44px)" }}
+          className="h-9 sm:h-10 w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(28px, 5vw, 52px)" }}
         />
 
-        <div className={`h-5 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-6 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEM & UEM Combined Logo */}
         <img
           src="/IEM_UEM_4.webp"
           alt="IEM & UEM"
-          className="h-8 sm:h-9 w-auto object-contain shrink-0"
-          style={{ maxWidth: "clamp(85px, 14vw, 145px)" }}
+          className="h-9 sm:h-10 w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(85px, 14vw, 165px)" }}
         />
       </div>
 
@@ -167,7 +167,7 @@ export default function Navigation() {
               className={`
                 ${accentFont.className}
                 relative px-3.5 py-2 rounded-xl
-                text-[11px] font-bold uppercase tracking-[0.16em]
+                text-[12px] xl:text-[13px] font-bold uppercase tracking-[0.16em]
                 cursor-pointer transition-all duration-200
                 ${isActive ? linkActiveClass : linkIdleClass}
               `}
@@ -234,7 +234,7 @@ export default function Navigation() {
                 onClick={() => scrollTo("hero", "#hero")}
                 className={`
                   ${accentFont.className} text-left px-4 py-3 rounded-xl
-                  text-sm font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
+                  text-base font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
                   ${activeSection === "hero" ? "text-white bg-white/10" : "text-white/55 hover:text-white hover:bg-white/6"}
                 `}
               >
@@ -247,7 +247,7 @@ export default function Navigation() {
                   onClick={() => scrollTo(link.key, link.href)}
                   className={`
                     ${accentFont.className} text-left px-4 py-3 rounded-xl
-                    text-sm font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
+                    text-base font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
                     ${activeSection === link.key
                       ? "text-white bg-white/10 border-l-2 border-[#E6392F]"
                       : "text-white/55 hover:text-white hover:bg-white/6"
