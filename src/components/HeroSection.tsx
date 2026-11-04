@@ -425,9 +425,9 @@ export default function HeroSection() {
       {/* ═══════════════════════════════════════════════
           SOCIAL BAR — right edge, vertical
       ═══════════════════════════════════════════════ */}
-      <div className="absolute right-5 sm:right-7 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-4">
+      <div className="absolute right-5 sm:right-7 bottom-6 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-20 flex flex-col items-center gap-3 sm:gap-4">
         {/* vertical line top */}
-        <div className="w-px h-16 bg-gradient-to-b from-transparent to-white/25" />
+        <div className="hidden sm:block w-px h-16 bg-gradient-to-b from-transparent to-white/25" />
 
         {/* Instagram */}
         <a
@@ -459,21 +459,21 @@ export default function HeroSection() {
           </svg>
         </a>
 
-        {/* X / Twitter */}
+        {/* Facebook */}
         <a
-          href="https://twitter.com/tech_kurukshetra"
+          href="https://www.facebook.com/share/1d3yd6FxF9/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="X (Twitter)"
+          aria-label="Facebook"
           className="group flex items-center justify-center w-8 h-8 rounded-full border border-white/15 bg-white/5 text-white/40 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all duration-300"
         >
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
           </svg>
         </a>
 
         {/* vertical line bottom */}
-        <div className="w-px h-16 bg-gradient-to-t from-transparent to-white/25" />
+        <div className="hidden sm:block w-px h-16 bg-gradient-to-t from-transparent to-white/25" />
       </div>
 
       {/* Accessibility */}
