@@ -70,12 +70,12 @@ export default function Footer() {
                   style={{ maxWidth: 180 }}
                 />
               </div>
-              {/* IEM + UEM & IEDC */}
-              <div className="flex items-center gap-3">
+              {/* IEM + UEM, IEDC & IEEE */}
+              <div className="flex flex-wrap items-center gap-3">
                 <img
                   src="/IEM_UEM_4.webp"
                   alt="IEM & UEM"
-                  className="h-11 w-auto object-contain"
+                  className="h-10 sm:h-11 w-auto object-contain"
                   style={{ maxWidth: 165 }}
                 />
                 <div className="h-6 w-px bg-white/10" />
@@ -84,6 +84,13 @@ export default function Footer() {
                   alt="IEDC"
                   className="h-8 w-auto object-contain"
                   style={{ maxWidth: 44 }}
+                />
+                <div className="h-6 w-px bg-white/10" />
+                <img
+                  src="/ieee-society.png"
+                  alt="IEEE Society"
+                  className="h-9 sm:h-10 w-auto object-contain"
+                  style={{ maxWidth: 150 }}
                 />
               </div>
             </div>
