@@ -135,7 +135,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Nitu Saha",
     role: "Faculty Coordinator",
-    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_9.53.17_PM.jpg",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809316/Nitu_Saha.jpg",
     linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
   },
   {
