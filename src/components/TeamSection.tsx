@@ -30,6 +30,7 @@ interface FacultyMember {
   id: string;
   name: string;
   role: string;
+  event?: string;
   image?: string;
   linkedin?: string;
   isPlaceholder?: boolean;
@@ -40,6 +41,7 @@ interface FacultyMember {
 interface CoordinatorMember {
   name: string;
   role: string;
+  event?: string;
   image?: string;
   linkedin?: string;
 }
@@ -55,6 +57,7 @@ const facultyMembers: FacultyMember[] = [
     id: "faculty-1",
     name: "Dr Sandip Mandal",
     role: "Faculty Convener",
+    event: "Mind Forge (Ideathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/hod.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sandip-mandal/",
     isPlaceholder: false,
@@ -65,6 +68,7 @@ const facultyMembers: FacultyMember[] = [
     id: "faculty-2",
     name: "Dr. Sangita Dutta",
     role: "Faculty Convener",
+    event: "Orbion & Mind Forge",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/zjk1sdvuv7nogngftflg.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/",
     isPlaceholder: false,
@@ -75,6 +79,7 @@ const facultyMembers: FacultyMember[] = [
     id: "faculty-3",
     name: "Suchanda Chatterjee (Das)",
     role: "Faculty Convener",
+    event: "Orbion (Hackathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/IMG_20260920_145411.jpg",
     linkedin: "https://www.linkedin.com/in/suchanda-chatterjee-das-49b46a3b2/",
     isPlaceholder: false,
@@ -87,12 +92,14 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
+    event: "Mystic Minds",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Sayantani.jpg",
     linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
   },
   {
     name: "Avik Kumar Das",
     role: "Faculty Coordinator",
+    event: "Orbion (Hackathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/4b1a97c3-7ec0-4abb-beaa-975e02ddca7a.png",
     linkedin: "https://in.linkedin.com/in/avikdasetc",
   },
@@ -117,24 +124,28 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Apalok Roy",
     role: "Faculty Coordinator",
+    event: "TechCanvas",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809122/1768022154930.jpg",
     linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
   },
   {
     name: "Sweta Saha",
     role: "Faculty Coordinator",
+    event: "Mind Forge (Ideathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/lkxoyuxhfwc1lklygjpo.jpg",
     linkedin: "https://www.linkedin.com/in/sweta-sarkar-825984238/",
   },
   {
     name: "Dr. Siddhartha Roy",
     role: "Faculty Coordinator",
+    event: "Mind Forge (Ideathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/sf82lahannlnw8gd79dp.jpg",
     linkedin: "https://in.linkedin.com/in/siddhartha-roy-3893732b9",
   },
   {
     name: "Nitu Saha",
     role: "Faculty Coordinator",
+    event: "TechCanvas",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809316/Nitu_Saha.jpg",
     linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
   },
@@ -147,18 +158,21 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Tejashri Srivastava",
     role: "Faculty Coordinator",
+    event: "Mystic Minds",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tejashri_Srivastava.jpg",
     linkedin: "https://in.linkedin.com/in/tejashri-chate",
   },
   {
     name: "Dr. Raktim Kumar Dey",
     role: "Faculty Coordinator",
+    event: "Orbion (Hackathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809013/WhatsApp_Image_2026-11-04_at_8.09.37_PM.jpg",
     linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343",
   },
   {
     name: "Rupayan Halder",
     role: "Faculty Coordinator",
+    event: "Orbion (Hackathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/RPH.png",
     linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/",
   },
@@ -534,19 +548,27 @@ export default function TeamCarousel() {
                   group-hover:border-[#E6392F]/50 group-hover:bg-black/90
                 "
               >
-                <div className="flex items-center justify-between gap-1.5">
+                <div className="flex items-start justify-between gap-1.5">
                   <h3
                     className="
                       text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
                       leading-tight tracking-normal
-                      text-white truncate
+                      text-white
                     "
                     style={{ wordSpacing: "0.25em" }}
                   >
-                    {faculty.name}
+                    <span>{faculty.name}</span>
+                    {faculty.event && (
+                      <span
+                        className="ml-1.5 text-[#E6392F] font-semibold text-[11px] sm:text-xs normal-case tracking-normal inline-block"
+                        style={{ wordSpacing: "normal" }}
+                      >
+                        ({faculty.event})
+                      </span>
+                    )}
                   </h3>
                   <span
-                    className={`h-1.5 w-1.5 rounded-full flex-shrink-0 ${
+                    className={`h-1.5 w-1.5 rounded-full flex-shrink-0 mt-1.5 ${
                       !faculty.isPlaceholder ? "bg-[#E6392F]" : "bg-white/30"
                     }`}
                   />
@@ -867,18 +889,26 @@ export default function TeamCarousel() {
                       group-hover:border-[#E6392F]/50 group-hover:bg-black/85
                     "
                   >
-                    <div className="flex items-center justify-between gap-1.5">
+                    <div className="flex items-start justify-between gap-1.5">
                       <h3
                         className="
                           text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
                           leading-tight tracking-normal
-                          text-white truncate
+                          text-white
                         "
                         style={{ wordSpacing: "0.25em" }}
                       >
-                        {coordinator.name}
+                        <span>{coordinator.name}</span>
+                        {coordinator.event && (
+                          <span
+                            className="ml-1.5 text-[#E6392F] font-semibold text-[11px] sm:text-xs normal-case tracking-normal inline-block"
+                            style={{ wordSpacing: "normal" }}
+                          >
+                            ({coordinator.event})
+                          </span>
+                        )}
                       </h3>
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#E6392F] flex-shrink-0" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#E6392F] flex-shrink-0 mt-1.5" />
                     </div>
 
                     <p
