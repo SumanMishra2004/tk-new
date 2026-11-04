@@ -62,7 +62,7 @@ export default function Footer() {
             {/* Logos */}
             <div className="flex flex-col items-center sm:items-start gap-3">
               {/* TK logo in dark pill */}
-              <div className="inline-flex items-center justify-center self-center px-3.5 py-2 bg-white/[0.05] border border-white/[0.09] rounded-xl">
+              <div className="inline-flex items-center justify-center self-center sm:self-start px-3.5 py-2 bg-white/[0.05] border border-white/[0.09] rounded-xl">
                 <img
                   src="/tk-logo.webp"
                   alt="Tech Kurukshetra 2026"
