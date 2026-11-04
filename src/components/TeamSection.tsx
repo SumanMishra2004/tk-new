@@ -30,7 +30,7 @@ interface FacultyMember {
   id: string;
   name: string;
   role: string;
-  event?: string;
+  event?: string | string[];
   image?: string;
   linkedin?: string;
   isPlaceholder?: boolean;
@@ -41,7 +41,7 @@ interface FacultyMember {
 interface CoordinatorMember {
   name: string;
   role: string;
-  event?: string;
+  event?: string | string[];
   image?: string;
   linkedin?: string;
 }
@@ -89,7 +89,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
-    event: "Mystic Minds, Zerocode (IIT Bombay Techfest)",
+    event: ["Mystic Minds", "Zerocode (IIT Bombay Techfest)"],
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Sayantani.jpg",
     linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
   },
@@ -124,7 +124,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Apalok Roy",
     role: "Faculty Coordinator",
-    event: "TechCanvas, InnovateX (IIT Bombay Techfest)",
+    event: ["TechCanvas", "InnovateX (IIT Bombay Techfest)"],
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809122/1768022154930.jpg",
     linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
   },
@@ -145,7 +145,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Nitu Saha",
     role: "Faculty Coordinator",
-    event: "TechCanvas, SparkX (IIT Bombay Techfest)",
+    event: ["TechCanvas", "SparkX (IIT Bombay Techfest)"],
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809316/Nitu_Saha.jpg",
     linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
   },
@@ -159,7 +159,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Tejashri Srivastava",
     role: "Faculty Coordinator",
-    event: "Mystic Minds, Zerocode (IIT Bombay Techfest)",
+    event: ["Mystic Minds", "Zerocode (IIT Bombay Techfest)"],
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tejashri_Srivastava.jpg",
     linkedin: "https://in.linkedin.com/in/tejashri-chate",
   },
@@ -571,16 +571,23 @@ export default function TeamCarousel() {
                 </div>
 
                 {faculty.event && (
-                  <p
-                    className="
-                      mt-0.5
-                      text-[9px] sm:text-[10px] md:text-[11px] font-semibold
-                      tracking-wider uppercase
-                      text-[#E6392F] truncate
-                    "
-                  >
-                    {faculty.event}
-                  </p>
+                  <div className="mt-0.5 space-y-0.5">
+                    {(Array.isArray(faculty.event)
+                      ? faculty.event
+                      : [faculty.event]
+                    ).map((ev, i) => (
+                      <p
+                        key={i}
+                        className="
+                          text-[9px] sm:text-[10px] md:text-[11px] font-semibold
+                          tracking-wider uppercase
+                          text-[#E6392F] leading-tight break-words
+                        "
+                      >
+                        {ev}
+                      </p>
+                    ))}
+                  </div>
                 )}
 
                 <p
@@ -913,16 +920,23 @@ export default function TeamCarousel() {
                     </div>
 
                     {coordinator.event && (
-                      <p
-                        className="
-                          mt-0.5
-                          text-[9px] sm:text-[10px] md:text-[11px] font-semibold
-                          tracking-wider uppercase
-                          text-[#E6392F] truncate
-                        "
-                      >
-                        {coordinator.event}
-                      </p>
+                      <div className="mt-0.5 space-y-0.5">
+                        {(Array.isArray(coordinator.event)
+                          ? coordinator.event
+                          : [coordinator.event]
+                        ).map((ev, i) => (
+                          <p
+                            key={i}
+                            className="
+                              text-[9px] sm:text-[10px] md:text-[11px] font-semibold
+                              tracking-wider uppercase
+                              text-[#E6392F] leading-tight break-words
+                            "
+                          >
+                            {ev}
+                          </p>
+                        ))}
+                      </div>
                     )}
 
                     <p
