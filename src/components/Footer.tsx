@@ -60,9 +60,9 @@ export default function Footer() {
           {/* ── COL 1: Brand ── */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
             {/* Logos */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col items-center sm:items-start gap-3">
               {/* TK logo in dark pill */}
-              <div className="inline-flex items-center self-start px-3 py-2 bg-white/[0.05] border border-white/[0.09] rounded-xl">
+              <div className="inline-flex items-center justify-center self-center sm:self-start px-3.5 py-2 bg-white/[0.05] border border-white/[0.09] rounded-xl">
                 <img
                   src="/tk-logo.webp"
                   alt="Tech Kurukshetra 2026"
@@ -70,12 +70,12 @@ export default function Footer() {
                   style={{ maxWidth: 180 }}
                 />
               </div>
-              {/* IEM + UEM & IEDC */}
-              <div className="flex items-center gap-3">
+              {/* IEM + UEM, IEDC & IEEE */}
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
                 <img
                   src="/IEM_UEM_4.webp"
                   alt="IEM & UEM"
-                  className="h-11 w-auto object-contain"
+                  className="h-10 sm:h-11 w-auto object-contain"
                   style={{ maxWidth: 165 }}
                 />
                 <div className="h-6 w-px bg-white/10" />
@@ -85,10 +85,17 @@ export default function Footer() {
                   className="h-8 w-auto object-contain"
                   style={{ maxWidth: 44 }}
                 />
+                <div className="h-6 w-px bg-white/10" />
+                <img
+                  src="/ieee-society.png"
+                  alt="IEEE Society"
+                  className="h-9 sm:h-10 w-auto object-contain"
+                  style={{ maxWidth: 150 }}
+                />
               </div>
             </div>
 
-            <p className={`${bodyFont.className} text-white/55 text-sm leading-relaxed`}>
+            <p className={`${bodyFont.className} text-white/55 text-sm leading-relaxed text-center sm:text-left`}>
               The flagship national-level tech fest of Dept.&nbsp;of CSE&nbsp;(IoT,&nbsp;CS,&nbsp;BT),
               UEM&nbsp;Kolkata. Shadow Protocol — 2026.
             </p>

@@ -112,14 +112,14 @@ export default function Navigation() {
   return (
     <nav
       id="main-nav"
-      className="fixed top-3 left-1/2 -translate-x-1/2 z-[10000] w-[calc(100%-1.25rem)] sm:w-[calc(100%-2rem)] max-w-[1560px] flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-14 sm:h-[68px] rounded-2xl px-2.5 sm:px-5 transition-all duration-500 backdrop-blur-[22px] backdrop-saturate-[160%]"
+      className="fixed top-3 left-1/2 -translate-x-1/2 z-[10000] w-[calc(100%-1.25rem)] sm:w-[calc(100%-2rem)] max-w-[1560px] flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-16 sm:h-[68px] rounded-2xl px-3 sm:px-5 transition-all duration-500 backdrop-blur-[22px] backdrop-saturate-[160%]"
       style={{
         ...navStyle,
         WebkitBackdropFilter: "blur(22px) saturate(160%)",
       }}
     >
       {/* ════════ LOGOS ════════ */}
-      <div className="flex items-center gap-1 sm:gap-2 xl:gap-2.5 justify-self-start min-w-0 shrink-0">
+      <div className="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 justify-self-start min-w-0 shrink-0">
 
         {/* TK logo — always visible */}
         <button
@@ -130,39 +130,39 @@ export default function Navigation() {
           <img
             src="/tk-logo.webp"
             alt="Tech Kurukshetra"
-            className="h-7 sm:h-10 xl:h-[46px] w-auto object-contain transition-transform duration-300 hover:scale-105"
-            style={{ maxWidth: "clamp(62px, 8.5vw, 150px)" }}
+            className="h-8 sm:h-10 xl:h-[46px] w-auto object-contain transition-transform duration-300 hover:scale-105"
+            style={{ maxWidth: "clamp(72px, 8.5vw, 150px)" }}
           />
         </button>
 
-        <div className={`h-4 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEDC */}
         <img
           src="/IEDC (2).webp"
           alt="IEDC"
-          className="h-6 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
-          style={{ maxWidth: "clamp(22px, 3.2vw, 48px)" }}
+          className="h-7 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(26px, 3.2vw, 48px)" }}
         />
 
-        <div className={`h-4 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEM & UEM Combined Logo */}
         <img
           src="/IEM_UEM_4.webp"
           alt="IEM & UEM"
-          className="h-6 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
-          style={{ maxWidth: "clamp(55px, 8vw, 130px)" }}
+          className="h-7 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(68px, 8vw, 130px)" }}
         />
 
-        <div className={`h-4 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEEE Society */}
         <img
           src="/ieee-society.png"
           alt="IEEE Society"
-          className="h-7 sm:h-12 xl:h-[56px] w-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105"
-          style={{ maxWidth: "clamp(70px, 12vw, 185px)" }}
+          className="h-[30px] sm:h-12 xl:h-[56px] w-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105"
+          style={{ maxWidth: "clamp(80px, 10vw, 185px)" }}
         />
       </div>
 
@@ -236,11 +236,11 @@ export default function Navigation() {
                 <SheetTitle className="sr-only">Navigation</SheetTitle>
               </SheetHeader>
 
-              <div className="pt-2 pb-4 pr-10 border-b border-white/8 flex flex-wrap items-center gap-2">
-                <img src="/tk-logo.webp" alt="Tech Kurukshetra" className="h-7 w-auto object-contain" />
-                <img src="/IEDC (2).webp" alt="IEDC" className="h-6 w-auto object-contain" />
-                <img src="/IEM_UEM_4.webp" alt="IEM & UEM" className="h-6 w-auto object-contain" />
-                <img src="/ieee-society.png" alt="IEEE Society" className="h-5 w-auto object-contain" />
+              <div className="pt-2 pb-4 pr-10 border-b border-white/8 flex flex-wrap items-center gap-2 sm:gap-2.5">
+                <img src="/tk-logo.webp" alt="Tech Kurukshetra" className="h-8 w-auto object-contain" />
+                <img src="/IEDC (2).webp" alt="IEDC" className="h-7 w-auto object-contain" />
+                <img src="/IEM_UEM_4.webp" alt="IEM & UEM" className="h-7 w-auto object-contain" />
+                <img src="/ieee-society.png" alt="IEEE Society" className="h-6 w-auto object-contain" />
               </div>
 
               <div className="flex flex-col gap-1 pt-3">
