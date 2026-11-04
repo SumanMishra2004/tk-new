@@ -87,6 +87,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Sayantani.jpg",
     linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
   },
   {
@@ -102,6 +103,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Rangon Sarkar",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-09-20_at_11.10.40_PM.jpg",
     linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb",
   },
   {
@@ -132,6 +134,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Dr. Ahona Ghosh",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Ahona.jpg",
     linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/",
   },
   {
@@ -147,6 +150,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Rupayan Halder",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/RPH.png",
     linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/",
   },
   {
