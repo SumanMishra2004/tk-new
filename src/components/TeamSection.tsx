@@ -84,23 +84,85 @@ const facultyMembers: FacultyMember[] = [
 ];
 
 const facultyCoordinators: CoordinatorMember[] = [
-  { name: "Sayantani Das", role: "Faculty Coordinator" },
-  { name: "Avik Kumar Das", role: "Faculty Coordinator" },
-  { name: "Apurba Nandi", role: "Faculty Coordinator" },
-  { name: "Rangon Sarkar", role: "Faculty Coordinator" },
-  { name: "Uddipan Ghosh", role: "Faculty Coordinator" },
-  { name: "Apalok Roy", role: "Faculty Coordinator" },
-  { name: "Sweta Saha", role: "Faculty Coordinator" },
-  { name: "Dr. Siddhartha Roy", role: "Faculty Coordinator" },
-  { name: "Nitu Saha", role: "Faculty Coordinator" },
-  { name: "Dr. Ahona Ghosh", role: "Faculty Coordinator" },
-  { name: "Tejashri Srivastava", role: "Faculty Coordinator" },
-  { name: "Dr. Raktim Kumar Dey", role: "Faculty Coordinator" },
-  { name: "Rupayan Halder", role: "Faculty Coordinator" },
-  { name: "Riya Sarkar", role: "Faculty Coordinator" },
-  { name: "Riya Jana", role: "Faculty Coordinator" },
-  { name: "Monalisa Chakraborty", role: "Faculty Coordinator" },
-  { name: "Saikat Mukherjee", role: "Faculty Coordinator" },
+  {
+    name: "Sayantani Das",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
+  },
+  {
+    name: "Avik Kumar Das",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/avikdasetc",
+  },
+  {
+    name: "Apurba Nandi",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/apurba-nandi-8b63b2174",
+  },
+  {
+    name: "Rangon Sarkar",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb",
+  },
+  {
+    name: "Uddipan Ghosh",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232",
+  },
+  {
+    name: "Apalok Roy",
+    role: "Faculty Coordinator",
+  },
+  {
+    name: "Sweta Saha",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/sweta-saha-7b2347267",
+  },
+  {
+    name: "Dr. Siddhartha Roy",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/siddhartha-roy-3893732b9",
+  },
+  {
+    name: "Nitu Saha",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
+  },
+  {
+    name: "Dr. Ahona Ghosh",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/ahona-ghosh-66757a85",
+  },
+  {
+    name: "Tejashri Srivastava",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/tejashri-chate",
+  },
+  {
+    name: "Dr. Raktim Kumar Dey",
+    role: "Faculty Coordinator",
+    linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343",
+  },
+  {
+    name: "Rupayan Halder",
+    role: "Faculty Coordinator",
+  },
+  {
+    name: "Riya Sarkar",
+    role: "Faculty Coordinator",
+  },
+  {
+    name: "Riya Jana",
+    role: "Faculty Coordinator",
+  },
+  {
+    name: "Monalisa Chakraborty",
+    role: "Faculty Coordinator",
+  },
+  {
+    name: "Saikat Mukherjee",
+    role: "Faculty Coordinator",
+  },
 ];
 
 const displayFacultyCoordinators: CoordinatorMember[] = [
