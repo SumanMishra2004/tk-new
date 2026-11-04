@@ -39,21 +39,21 @@ const ROW1_SPONSORS: Partner[] = [
     logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Unstop-Logo-Blue-Extra-Large.png",
     redirectUrl:
       "https://unstop.com/hackathons/orbion-8-hour-hackathon-institute-of-engineering-and-managemet-1756946?lb=I5srHPJQ&utm_medium=Share&utm_source=roshayad43718&utm_campaign=Online_coding_challenge",
-    logoClass: "h-9 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[210px]",
+    logoClass: "h-12 sm:h-14 md:h-16 max-w-[230px] sm:max-w-[260px]",
   },
   {
     id: "techfest",
     name: "Techfest | IIT Bombay",
     logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Black_Techfest_Logo_and_Tagline.png",
     redirectUrl: "https://techfest.org/",
-    logoClass: "h-9 sm:h-10 md:h-11 max-w-[200px] sm:max-w-[220px]",
+    logoClass: "h-12 sm:h-14 md:h-16 max-w-[240px] sm:max-w-[270px]",
   },
   {
     id: "ml-kolkata",
     name: "Machine Learning Kolkata",
     logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ML_Kolkata_Torch_Logo.png",
     redirectUrl: "https://www.linkedin.com/company/mlkolkata/home/",
-    logoClass: "h-11 sm:h-12 md:h-13 max-w-[200px] sm:max-w-[220px] scale-[1.25] -translate-y-1.5",
+    logoClass: "h-14 sm:h-16 md:h-[76px] max-w-[230px] sm:max-w-[260px] scale-[1.25] -translate-y-1.5",
   },
 ];
 
@@ -63,7 +63,7 @@ const ROW2_SPONSORS: Partner[] = [
     name: "Mercy For Animals",
     logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/images_1.png",
     redirectUrl: "https://mercyforanimals.org/",
-    logoClass: "h-9 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[210px]",
+    logoClass: "h-12 sm:h-14 md:h-16 max-w-[230px] sm:max-w-[260px]",
   },
 ];
 
@@ -86,7 +86,7 @@ function CuboidSponsorBox({ partner }: { partner: Partner }) {
     >
       {/* 3D Cuboid Card Face & Extrusion */}
       <div
-        className="relative flex flex-col items-center justify-center h-full min-h-[130px] sm:min-h-[140px] rounded-xl bg-gradient-to-br from-[#FFFFFF] via-[#FAF6EE] to-[#F3E8D6] p-3.5 sm:p-4 transition-all duration-300 border border-[#C4A882]/75"
+        className="relative flex flex-col items-center justify-center h-full min-h-[155px] sm:min-h-[170px] rounded-xl bg-gradient-to-br from-[#FFFFFF] via-[#FAF6EE] to-[#F3E8D6] p-3.5 sm:p-4 transition-all duration-300 border border-[#C4A882]/75"
         style={{
           boxShadow: `
             1px 1px 0px #B8966C,
@@ -133,7 +133,7 @@ function CuboidSponsorBox({ partner }: { partner: Partner }) {
         </div>
 
         {/* Logo Display */}
-        <div className="relative flex w-full h-[68px] sm:h-[72px] items-center justify-center rounded-lg bg-white px-4 border border-[#E0D2C0] shadow-[inset_0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-300 group-hover:border-[#B8322C]/40 group-hover:shadow-[inset_0_1px_6px_rgba(184,50,44,0.06),0_4px_12px_rgba(0,0,0,0.06)] overflow-hidden">
+        <div className="relative flex w-full h-[88px] sm:h-[96px] md:h-[102px] items-center justify-center rounded-lg bg-white px-4 border border-[#E0D2C0] shadow-[inset_0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-300 group-hover:border-[#B8322C]/40 group-hover:shadow-[inset_0_1px_6px_rgba(184,50,44,0.06),0_4px_12px_rgba(0,0,0,0.06)] overflow-hidden">
           {/* Subtle warm hover wash */}
           <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/0 via-blue-500/[0.04] to-blue-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -141,7 +141,7 @@ function CuboidSponsorBox({ partner }: { partner: Partner }) {
           <img
             src={partner.logo}
             alt={partner.name}
-            className={`w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${partner.logoClass || "h-9 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[210px]"}`}
+            className={`w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${partner.logoClass || "h-12 sm:h-14 md:h-16 max-w-[230px] sm:max-w-[260px]"}`}
             loading="eager"
           />
         </div>
@@ -165,7 +165,7 @@ function OpenPartnerSlot() {
       }}
     >
       <div
-        className="relative flex flex-col items-center justify-center h-full min-h-[130px] sm:min-h-[140px] rounded-xl bg-gradient-to-br from-white/70 via-[#FAF6EE]/60 to-[#F3E8D6]/40 p-3.5 sm:p-4 transition-all duration-300 border border-dashed border-[#C4A882]/80 hover:border-[#B8322C]/60"
+        className="relative flex flex-col items-center justify-center h-full min-h-[155px] sm:min-h-[170px] rounded-xl bg-gradient-to-br from-white/70 via-[#FAF6EE]/60 to-[#F3E8D6]/40 p-3.5 sm:p-4 transition-all duration-300 border border-dashed border-[#C4A882]/80 hover:border-[#B8322C]/60"
         style={{
           boxShadow: `
             1px 1px 0px #C4A882,
@@ -194,7 +194,7 @@ function OpenPartnerSlot() {
           </svg>
         </div>
 
-        <div className="relative flex w-full flex-col items-center justify-center rounded-lg bg-white/50 px-4 py-4 sm:py-5 border border-dashed border-[#D6C4AD] transition-all duration-300 group-hover:bg-white/80 group-hover:border-[#B8322C]/40">
+        <div className="relative flex w-full flex-col items-center justify-center rounded-lg bg-white/50 px-4 h-[88px] sm:h-[96px] md:h-[102px] border border-dashed border-[#D6C4AD] transition-all duration-300 group-hover:bg-white/80 group-hover:border-[#B8322C]/40">
           <span
             className="select-none uppercase leading-tight text-[#12100E]/25 group-hover:text-[#12100E]/45 transition-colors"
             style={{

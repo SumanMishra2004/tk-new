@@ -21,7 +21,7 @@ const accentFont = Rajdhani({
 
 const stats = [
   {
-    value: 5,
+    value: 4,
     suffix: "+",
     label: "Events",
     code: "EV",

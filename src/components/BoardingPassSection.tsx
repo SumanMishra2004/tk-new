@@ -240,6 +240,25 @@ export default function BoardingPassSection() {
       }}
     >
       {/* ═══════════════════════════════════════════
+          CINEMATIC GRADIENT TRANSITION (BLACK → BEIGE)
+      ═══════════════════════════════════════════ */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          top-0
+          h-32
+          sm:h-44
+          md:h-56
+          z-[2]
+        "
+        style={{
+          background:
+            "linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.85) 22%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.18) 75%, rgba(0, 0, 0, 0.04) 90%, transparent 100%)",
+        }}
+      />
+      {/* ═══════════════════════════════════════════
           DOT GRID
       ═══════════════════════════════════════════ */}
 
