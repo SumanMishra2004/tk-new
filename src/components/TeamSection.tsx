@@ -164,6 +164,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Riya Sarkar",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793808642/Riya.jpg",
     linkedin: "https://www.linkedin.com/in/riyasarkarofficial/",
   },
   {
