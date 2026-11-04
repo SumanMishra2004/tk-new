@@ -149,6 +149,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Dr. Raktim Kumar Dey",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_8.09.37_PM_1.jpg",
     linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343",
   },
   {
@@ -169,6 +170,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Monalisa Chakraborty",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_8.09.37_PM_1.jpg",
     linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/",
   },
   {
