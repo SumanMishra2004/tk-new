@@ -152,7 +152,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Dr. Raktim Kumar Dey",
     role: "Faculty Coordinator",
-    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_8.09.37_PM_1.jpg",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809013/WhatsApp_Image_2026-11-04_at_8.09.37_PM.jpg",
     linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343",
   },
   {
