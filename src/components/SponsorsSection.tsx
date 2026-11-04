@@ -31,8 +31,8 @@ export interface Partner {
   logoClass?: string;
 }
 
-// Fixed 3 slots in the row. Position 1: Unstop, Position 2: Techfest IIT Bombay, Position 3: ML Kolkata
-const ROW1_SPONSORS: Partner[] = [
+// 4 Sponsors: 2 in each row in desktop view
+const SPONSORS: Partner[] = [
   {
     id: "unstop",
     name: "Unstop",
@@ -55,9 +55,6 @@ const ROW1_SPONSORS: Partner[] = [
     redirectUrl: "https://www.linkedin.com/company/mlkolkata/home/",
     logoClass: "h-14 sm:h-16 md:h-[76px] max-w-[230px] sm:max-w-[260px] scale-[1.25] -translate-y-1.5",
   },
-];
-
-const ROW2_SPONSORS: Partner[] = [
   {
     id: "mercy-for-animals",
     name: "Mercy For Animals",
@@ -68,7 +65,7 @@ const ROW2_SPONSORS: Partner[] = [
 ];
 
 /* ─────────────────────────────────────────
-   Compact Cuboidal Horizontal Box (3 in a row)
+   Compact Cuboidal Horizontal Box
    Clean format: No role/title labels
 ───────────────────────────────────────── */
 
@@ -144,69 +141,6 @@ function CuboidSponsorBox({ partner }: { partner: Partner }) {
             className={`w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${partner.logoClass || "h-12 sm:h-14 md:h-16 max-w-[230px] sm:max-w-[260px]"}`}
             loading="eager"
           />
-        </div>
-      </div>
-    </a>
-  );
-}
-
-/* ─────────────────────────────────────────
-   Companion Open / Upcoming Partner Slot
-───────────────────────────────────────── */
-
-function OpenPartnerSlot() {
-  return (
-    <a
-      href="mailto:tech.kurukshetra@uem.edu.in"
-      aria-label="Become a sponsor or partner"
-      className="group relative block w-full cursor-pointer select-none transition-all duration-300 ease-out hover:-translate-y-1 hover:-translate-x-0.5 active:translate-x-0.5 active:translate-y-0.5"
-      style={{
-        transformStyle: "preserve-3d",
-      }}
-    >
-      <div
-        className="relative flex flex-col items-center justify-center h-full min-h-[155px] sm:min-h-[170px] rounded-xl bg-gradient-to-br from-white/70 via-[#FAF6EE]/60 to-[#F3E8D6]/40 p-3.5 sm:p-4 transition-all duration-300 border border-dashed border-[#C4A882]/80 hover:border-[#B8322C]/60"
-        style={{
-          boxShadow: `
-            1px 1px 0px #C4A882,
-            2px 2px 0px #B8966C,
-            3px 3px 0px #A37F55,
-            4px 4px 0px #8F6A42,
-            5px 6px 14px rgba(18, 16, 14, 0.12)
-          `,
-        }}
-      >
-        <div className="pointer-events-none absolute inset-0 rounded-xl border-t-[1.5px] border-l-[1.5px] border-white/80" />
-
-        <div className="absolute top-2.5 right-2.5 flex items-center text-[#8A623B]/60 transition-colors duration-200 group-hover:text-[#B8322C]">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            aria-hidden="true"
-          >
-            <path d="M7 17 17 7" />
-            <path d="M7 7h10v10" />
-          </svg>
-        </div>
-
-        <div className="relative flex w-full flex-col items-center justify-center rounded-lg bg-white/50 px-4 h-[88px] sm:h-[96px] md:h-[102px] border border-dashed border-[#D6C4AD] transition-all duration-300 group-hover:bg-white/80 group-hover:border-[#B8322C]/40">
-          <span
-            className="select-none uppercase leading-tight text-[#12100E]/25 group-hover:text-[#12100E]/45 transition-colors"
-            style={{
-              fontFamily: "var(--font-sketch)",
-              fontSize: "1.45rem",
-            }}
-          >
-            Coming Soon
-          </span>
-          <span className={`${bodyFont.className} text-[10px] text-[#8A623B] mt-0.5`}>
-            Partner With Us
-          </span>
         </div>
       </div>
     </a>
@@ -348,28 +282,17 @@ export default function SponsorsSection() {
         </div>
 
         {/* ═══════════════════════════════════
-            PARTNERS SECTION
+            PARTNERS SECTION (2x2 on desktop)
         ═══════════════════════════════════ */}
-        <div ref={partnersRef} className="mb-16 space-y-5 sm:space-y-6">
-          {/* Row 1: 3 in a row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
-            {ROW1_SPONSORS.map((partner) => (
-              <div key={partner.id} className="partner-cuboid-item flex">
-                <CuboidSponsorBox partner={partner} />
-              </div>
-            ))}
-          </div>
-
-          {/* Row 2: Just below the middle of the first row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
-            <div className="hidden lg:block" aria-hidden="true" />
-            {ROW2_SPONSORS.map((partner) => (
-              <div key={partner.id} className="partner-cuboid-item flex">
-                <CuboidSponsorBox partner={partner} />
-              </div>
-            ))}
-            <div className="hidden lg:block" aria-hidden="true" />
-          </div>
+        <div
+          ref={partnersRef}
+          className="mb-16 mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-stretch"
+        >
+          {SPONSORS.map((partner) => (
+            <div key={partner.id} className="partner-cuboid-item flex">
+              <CuboidSponsorBox partner={partner} />
+            </div>
+          ))}
         </div>
 
         {/* ─────────────────────────────────
