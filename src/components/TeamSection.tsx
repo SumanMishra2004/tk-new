@@ -147,6 +147,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Tejashri Srivastava",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tejashri_Srivastava.jpg",
     linkedin: "https://in.linkedin.com/in/tejashri-chate",
   },
   {
