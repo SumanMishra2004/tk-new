@@ -538,9 +538,10 @@ export default function TeamCarousel() {
                   <h3
                     className="
                       text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
-                      leading-tight tracking-tight
+                      leading-tight tracking-normal
                       text-white truncate
                     "
+                    style={{ wordSpacing: "0.25em" }}
                   >
                     {faculty.name}
                   </h3>
@@ -870,9 +871,10 @@ export default function TeamCarousel() {
                       <h3
                         className="
                           text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
-                          leading-tight tracking-tight
+                          leading-tight tracking-normal
                           text-white truncate
                         "
+                        style={{ wordSpacing: "0.25em" }}
                       >
                         {coordinator.name}
                       </h3>
@@ -1215,9 +1217,10 @@ export default function TeamCarousel() {
                       <h3
                         className="
                           text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
-                          leading-tight tracking-tight
+                          leading-tight tracking-normal
                           text-white truncate
                         "
+                        style={{ wordSpacing: "0.25em" }}
                       >
                         {member.name}
                       </h3>
