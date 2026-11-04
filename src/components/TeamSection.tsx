@@ -1012,19 +1012,19 @@ export default function TeamCarousel() {
         </div>
       </div>
 
-      {/* ── CORE / STUDENT LEADS ── */}
+      {/* ── STUDENT LEADS ── */}
       <div className="mb-6 flex items-center justify-center gap-3">
         <div className="h-px w-8 bg-[#E6392F]" />
         <span
           className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-[#E6392F]"
           style={{ fontFamily: "var(--font-sketch)" }}
         >
-          Core Leads
+          Student Leads
         </span>
         <div className="h-px w-8 bg-[#E6392F]" />
       </div>
 
-      {/* CORE SWIPER CONTAINER */}
+      {/* STUDENT LEADS SWIPER CONTAINER */}
       <div ref={carouselRef} className="relative w-full overflow-hidden">
         {/* Soft edge gradient fades */}
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-r from-black to-transparent" />
@@ -1033,7 +1033,7 @@ export default function TeamCarousel() {
         {/* NAV ARROWS — DESKTOP */}
         <button
           onClick={handleCorePrev}
-          aria-label="Previous core lead"
+          aria-label="Previous student lead"
           className="
             pointer-events-auto
             absolute left-4 top-1/2 z-30
@@ -1062,7 +1062,7 @@ export default function TeamCarousel() {
 
         <button
           onClick={handleCoreNext}
-          aria-label="Next core lead"
+          aria-label="Next student lead"
           className="
             pointer-events-auto
             absolute right-4 top-1/2 z-30
