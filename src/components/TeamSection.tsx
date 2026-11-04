@@ -89,7 +89,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
-    event: "Mystic Minds, Zerocode",
+    event: "Mystic Minds, Zerocode (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Sayantani.jpg",
     linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
   },
@@ -124,7 +124,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Apalok Roy",
     role: "Faculty Coordinator",
-    event: "TechCanvas, InnovateX (Tech Fest – IIT Bombay)",
+    event: "TechCanvas, InnovateX (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809122/1768022154930.jpg",
     linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
   },
@@ -145,7 +145,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Nitu Saha",
     role: "Faculty Coordinator",
-    event: "TechCanvas, SparkX",
+    event: "TechCanvas, SparkX (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809316/Nitu_Saha.jpg",
     linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
   },
@@ -159,7 +159,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Tejashri Srivastava",
     role: "Faculty Coordinator",
-    event: "Mystic Minds, Zerocode",
+    event: "Mystic Minds, Zerocode (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tejashri_Srivastava.jpg",
     linkedin: "https://in.linkedin.com/in/tejashri-chate",
   },
@@ -198,7 +198,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Saikat Mukherjee",
     role: "Faculty Coordinator",
-    event: "SparkX",
+    event: "SparkX (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_9.53.17_PM.jpg",
     linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/",
   },
