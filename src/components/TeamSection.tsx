@@ -112,6 +112,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Apalok Roy",
     role: "Faculty Coordinator",
+    linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
   },
   {
     name: "Sweta Saha",
@@ -146,10 +147,12 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Rupayan Halder",
     role: "Faculty Coordinator",
+    linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/",
   },
   {
     name: "Riya Sarkar",
     role: "Faculty Coordinator",
+    linkedin: "https://www.linkedin.com/in/riyasarkarofficial/",
   },
   {
     name: "Riya Jana",
@@ -158,10 +161,12 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Monalisa Chakraborty",
     role: "Faculty Coordinator",
+    linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/",
   },
   {
     name: "Saikat Mukherjee",
     role: "Faculty Coordinator",
+    linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/",
   },
 ];
 
