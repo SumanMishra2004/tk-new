@@ -117,7 +117,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Apalok Roy",
     role: "Faculty Coordinator",
-    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/lkxoyuxhfwc1lklygjpo.jpg",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809122/1768022154930.jpg",
     linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
   },
   {
