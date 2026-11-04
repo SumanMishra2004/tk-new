@@ -112,14 +112,14 @@ export default function Navigation() {
   return (
     <nav
       id="main-nav"
-      className="fixed top-3 left-1/2 -translate-x-1/2 z-[10000] w-[calc(100%-1.25rem)] sm:w-[calc(100%-2rem)] max-w-[1560px] flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-16 sm:h-[68px] rounded-2xl px-3 sm:px-5 transition-all duration-500 backdrop-blur-[22px] backdrop-saturate-[160%]"
+      className="fixed top-3 left-1/2 -translate-x-1/2 z-[10000] w-[calc(100%-1.25rem)] sm:w-[calc(100%-2rem)] max-w-[1560px] flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-14 sm:h-[68px] rounded-2xl px-2.5 sm:px-5 transition-all duration-500 backdrop-blur-[22px] backdrop-saturate-[160%]"
       style={{
         ...navStyle,
         WebkitBackdropFilter: "blur(22px) saturate(160%)",
       }}
     >
       {/* ════════ LOGOS ════════ */}
-      <div className="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 justify-self-start min-w-0">
+      <div className="flex items-center gap-1 sm:gap-2 xl:gap-2.5 justify-self-start min-w-0 shrink-0">
 
         {/* TK logo — always visible */}
         <button
@@ -130,39 +130,39 @@ export default function Navigation() {
           <img
             src="/tk-logo.webp"
             alt="Tech Kurukshetra"
-            className="h-9 sm:h-10 xl:h-[46px] w-auto object-contain transition-transform duration-300 hover:scale-105"
-            style={{ maxWidth: "clamp(85px, 8.5vw, 150px)" }}
+            className="h-7 sm:h-10 xl:h-[46px] w-auto object-contain transition-transform duration-300 hover:scale-105"
+            style={{ maxWidth: "clamp(62px, 8.5vw, 150px)" }}
           />
         </button>
 
-        <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-4 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEDC */}
         <img
           src="/IEDC (2).webp"
           alt="IEDC"
-          className="h-9 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
-          style={{ maxWidth: "clamp(30px, 3.2vw, 48px)" }}
+          className="h-6 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(22px, 3.2vw, 48px)" }}
         />
 
-        <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-4 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEM & UEM Combined Logo */}
         <img
           src="/IEM_UEM_4.webp"
           alt="IEM & UEM"
-          className="h-9 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
-          style={{ maxWidth: "clamp(80px, 8vw, 130px)" }}
+          className="h-6 sm:h-10 xl:h-[44px] w-auto object-contain shrink-0"
+          style={{ maxWidth: "clamp(55px, 8vw, 130px)" }}
         />
 
-        <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+        <div className={`h-4 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
         {/* IEEE Society */}
         <img
           src="/ieee-society.png"
           alt="IEEE Society"
-          className="h-11 sm:h-12 xl:h-[56px] w-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105"
-          style={{ maxWidth: "clamp(110px, 12vw, 185px)" }}
+          className="h-7 sm:h-12 xl:h-[56px] w-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105"
+          style={{ maxWidth: "clamp(70px, 12vw, 185px)" }}
         />
       </div>
 
@@ -217,7 +217,7 @@ export default function Navigation() {
             aria-label="Open menu"
             className={`
               lg:hidden flex items-center justify-center
-              w-9 h-9 rounded-xl transition-colors cursor-pointer
+              w-9 h-9 rounded-xl transition-colors cursor-pointer shrink-0
               ${darkBg
                 ? "bg-white/8 border border-white/14 text-white hover:bg-white/16"
                 : "bg-black/8 border border-black/12 text-[#12100E] hover:bg-black/14"
@@ -229,61 +229,63 @@ export default function Navigation() {
 
           <SheetContent
             side="right"
-            className="bg-[#0C0A08]/96 border-white/10 backdrop-blur-2xl w-72"
+            className="bg-[#0C0A08]/96 border-l border-white/10 backdrop-blur-2xl w-[82vw] max-w-[320px] p-5 sm:p-6 flex flex-col justify-between"
           >
-            <SheetHeader>
-              <SheetTitle className="sr-only">Navigation</SheetTitle>
-            </SheetHeader>
+            <div>
+              <SheetHeader className="p-0 text-left">
+                <SheetTitle className="sr-only">Navigation</SheetTitle>
+              </SheetHeader>
 
-            <div className="pt-2 pb-5 border-b border-white/8 flex flex-wrap items-center gap-2.5">
-              <img src="/tk-logo.webp" alt="Tech Kurukshetra" className="h-8 w-auto object-contain" />
-              <img src="/IEDC (2).webp" alt="IEDC" className="h-7 w-auto object-contain" />
-              <img src="/IEM_UEM_4.webp" alt="IEM & UEM" className="h-7 w-auto object-contain" />
-              <img src="/ieee-society.png" alt="IEEE Society" className="h-6 w-auto object-contain" />
+              <div className="pt-2 pb-4 pr-10 border-b border-white/8 flex flex-wrap items-center gap-2">
+                <img src="/tk-logo.webp" alt="Tech Kurukshetra" className="h-7 w-auto object-contain" />
+                <img src="/IEDC (2).webp" alt="IEDC" className="h-6 w-auto object-contain" />
+                <img src="/IEM_UEM_4.webp" alt="IEM & UEM" className="h-6 w-auto object-contain" />
+                <img src="/ieee-society.png" alt="IEEE Society" className="h-5 w-auto object-contain" />
+              </div>
+
+              <div className="flex flex-col gap-1 pt-3">
+                <button
+                  onClick={() => scrollTo("hero", "#hero")}
+                  className={`
+                    ${accentFont.className} text-left px-4 py-2.5 rounded-xl
+                    text-base font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
+                    ${activeSection === "hero" ? "text-white bg-white/10" : "text-white/55 hover:text-white hover:bg-white/6"}
+                  `}
+                >
+                  Home
+                </button>
+
+                {NAV_LINKS.map((link) => (
+                  <button
+                    key={link.key}
+                    onClick={() => scrollTo(link.key, link.href)}
+                    className={`
+                      ${accentFont.className} text-left px-4 py-2.5 rounded-xl
+                      text-base font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
+                      ${activeSection === link.key
+                        ? "text-white bg-white/10 border-l-2 border-[#E6392F]"
+                        : "text-white/55 hover:text-white hover:bg-white/6"
+                      }
+                    `}
+                  >
+                    {link.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-col gap-1 pt-4">
+            <div className="pt-4 border-t border-white/8">
               <button
-                onClick={() => scrollTo("hero", "#hero")}
+                onClick={() => scrollTo("events", "#events")}
                 className={`
-                  ${accentFont.className} text-left px-4 py-3 rounded-xl
-                  text-base font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
-                  ${activeSection === "hero" ? "text-white bg-white/10" : "text-white/55 hover:text-white hover:bg-white/6"}
+                  ${accentFont.className} block w-full px-4 py-3 rounded-xl
+                  bg-[#E6392F] text-sm font-bold tracking-[0.15em] uppercase
+                  text-white text-center hover:bg-[#F04A3D] transition-colors cursor-pointer
+                  shadow-[0_0_18px_rgba(230,57,47,0.28)]
                 `}
               >
-                Home
+                Register Now →
               </button>
-
-              {NAV_LINKS.map((link) => (
-                <button
-                  key={link.key}
-                  onClick={() => scrollTo(link.key, link.href)}
-                  className={`
-                    ${accentFont.className} text-left px-4 py-3 rounded-xl
-                    text-base font-bold tracking-[0.15em] uppercase transition-colors cursor-pointer
-                    ${activeSection === link.key
-                      ? "text-white bg-white/10 border-l-2 border-[#E6392F]"
-                      : "text-white/55 hover:text-white hover:bg-white/6"
-                    }
-                  `}
-                >
-                  {link.label}
-                </button>
-              ))}
-
-              <div className="mt-5 pt-5 border-t border-white/8">
-                <button
-                  onClick={() => scrollTo("events", "#events")}
-                  className={`
-                    ${accentFont.className} block w-full px-4 py-3 rounded-xl
-                    bg-[#E6392F] text-sm font-bold tracking-[0.15em] uppercase
-                    text-white text-center hover:bg-[#F04A3D] transition-colors cursor-pointer
-                    shadow-[0_0_18px_rgba(230,57,47,0.28)]
-                  `}
-                >
-                  Register Now →
-                </button>
-              </div>
             </div>
           </SheetContent>
         </Sheet>
