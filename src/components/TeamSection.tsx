@@ -93,11 +93,13 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Avik Kumar Das",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/4b1a97c3-7ec0-4abb-beaa-975e02ddca7a.png",
     linkedin: "https://in.linkedin.com/in/avikdasetc",
   },
   {
     name: "Apurba Nandi",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/c2c77c23-20cc-4cd6-8788-82eacf0779fe.png",
     linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/",
   },
   {
@@ -109,6 +111,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Uddipan Ghosh",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/9c2d31d5-a96e-4978-9712-4dd3d3c6162c_1.png",
     linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232",
   },
   {
@@ -124,6 +127,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Dr. Siddhartha Roy",
     role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/sf82lahannlnw8gd79dp.jpg",
     linkedin: "https://in.linkedin.com/in/siddhartha-roy-3893732b9",
   },
   {
