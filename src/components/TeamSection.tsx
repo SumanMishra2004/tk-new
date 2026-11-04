@@ -97,7 +97,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Apurba Nandi",
     role: "Faculty Coordinator",
-    linkedin: "https://in.linkedin.com/in/apurba-nandi-8b63b2174",
+    linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/",
   },
   {
     name: "Rangon Sarkar",
@@ -116,7 +116,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sweta Saha",
     role: "Faculty Coordinator",
-    linkedin: "https://in.linkedin.com/in/sweta-saha-7b2347267",
+    linkedin: "https://www.linkedin.com/in/sweta-sarkar-825984238/",
   },
   {
     name: "Dr. Siddhartha Roy",
@@ -131,7 +131,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Dr. Ahona Ghosh",
     role: "Faculty Coordinator",
-    linkedin: "https://in.linkedin.com/in/ahona-ghosh-66757a85",
+    linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/",
   },
   {
     name: "Tejashri Srivastava",
