@@ -57,7 +57,7 @@ const facultyMembers: FacultyMember[] = [
     id: "faculty-1",
     name: "Dr Sandip Mandal",
     role: "Faculty Convener",
-    event: "Mind Forge (Ideathon)",
+    event: "Mind Forge",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/hod.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sandip-mandal/",
     isPlaceholder: false,
@@ -68,7 +68,7 @@ const facultyMembers: FacultyMember[] = [
     id: "faculty-2",
     name: "Dr. Sangita Dutta",
     role: "Faculty Convener",
-    event: "Orbion & Mind Forge",
+    event: "Orbion, Mind Forge",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/zjk1sdvuv7nogngftflg.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/",
     isPlaceholder: false,
@@ -79,7 +79,7 @@ const facultyMembers: FacultyMember[] = [
     id: "faculty-3",
     name: "Suchanda Chatterjee (Das)",
     role: "Faculty Convener",
-    event: "Orbion (Hackathon)",
+    event: "Orbion, InnovateX (Tech Fest – IIT Bombay)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/IMG_20260920_145411.jpg",
     linkedin: "https://www.linkedin.com/in/suchanda-chatterjee-das-49b46a3b2/",
     isPlaceholder: false,
@@ -92,93 +92,98 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
-    event: "Mystic Minds",
+    event: "Mystic Minds, Zerocode",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Sayantani.jpg",
     linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
   },
   {
     name: "Avik Kumar Das",
     role: "Faculty Coordinator",
-    event: "Orbion (Hackathon)",
+    event: "Orbion",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/4b1a97c3-7ec0-4abb-beaa-975e02ddca7a.png",
     linkedin: "https://in.linkedin.com/in/avikdasetc",
   },
   {
     name: "Apurba Nandi",
     role: "Faculty Coordinator",
+    event: "ThetaShift",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/c2c77c23-20cc-4cd6-8788-82eacf0779fe.png",
     linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/",
   },
   {
     name: "Rangon Sarkar",
     role: "Faculty Coordinator",
+    event: "Roboreach",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-09-20_at_11.10.40_PM.jpg",
     linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb",
   },
   {
     name: "Uddipan Ghosh",
     role: "Faculty Coordinator",
+    event: "Meshmerize",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/9c2d31d5-a96e-4978-9712-4dd3d3c6162c_1.png",
     linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232",
   },
   {
     name: "Apalok Roy",
     role: "Faculty Coordinator",
-    event: "TechCanvas",
+    event: "TechCanvas, InnovateX (Tech Fest – IIT Bombay)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809122/1768022154930.jpg",
     linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
   },
   {
     name: "Sweta Saha",
     role: "Faculty Coordinator",
-    event: "Mind Forge (Ideathon)",
+    event: "Mind Forge",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/lkxoyuxhfwc1lklygjpo.jpg",
     linkedin: "https://www.linkedin.com/in/sweta-sarkar-825984238/",
   },
   {
     name: "Dr. Siddhartha Roy",
     role: "Faculty Coordinator",
-    event: "Mind Forge (Ideathon)",
+    event: "Mind Forge",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/sf82lahannlnw8gd79dp.jpg",
     linkedin: "https://in.linkedin.com/in/siddhartha-roy-3893732b9",
   },
   {
     name: "Nitu Saha",
     role: "Faculty Coordinator",
-    event: "TechCanvas",
+    event: "TechCanvas, SparkX",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809316/Nitu_Saha.jpg",
     linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
   },
   {
     name: "Dr. Ahona Ghosh",
     role: "Faculty Coordinator",
+    event: "Meshmerize",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Ahona.jpg",
     linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/",
   },
   {
     name: "Tejashri Srivastava",
     role: "Faculty Coordinator",
-    event: "Mystic Minds",
+    event: "Mystic Minds, Zerocode",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tejashri_Srivastava.jpg",
     linkedin: "https://in.linkedin.com/in/tejashri-chate",
   },
   {
     name: "Dr. Raktim Kumar Dey",
     role: "Faculty Coordinator",
-    event: "Orbion (Hackathon)",
+    event: "Orbion",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809013/WhatsApp_Image_2026-11-04_at_8.09.37_PM.jpg",
     linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343",
   },
   {
     name: "Rupayan Halder",
     role: "Faculty Coordinator",
-    event: "Orbion (Hackathon)",
+    event: "Orbion",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/RPH.png",
     linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/",
   },
   {
     name: "Riya Sarkar",
     role: "Faculty Coordinator",
+    event: "Roboreach",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793808642/Riya.jpg",
     linkedin: "https://www.linkedin.com/in/riyasarkarofficial/",
   },
@@ -189,12 +194,14 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Monalisa Chakraborty",
     role: "Faculty Coordinator",
+    event: "ThetaShift",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_8.09.37_PM_1.jpg",
     linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/",
   },
   {
     name: "Saikat Mukherjee",
     role: "Faculty Coordinator",
+    event: "SparkX",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_9.53.17_PM.jpg",
     linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/",
   },
@@ -548,31 +555,36 @@ export default function TeamCarousel() {
                   group-hover:border-[#E6392F]/50 group-hover:bg-black/90
                 "
               >
-                <div className="flex items-start justify-between gap-1.5">
+                <div className="flex items-center justify-between gap-1.5">
                   <h3
                     className="
                       text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
                       leading-tight tracking-normal
-                      text-white
+                      text-white truncate
                     "
                     style={{ wordSpacing: "0.25em" }}
                   >
-                    <span>{faculty.name}</span>
-                    {faculty.event && (
-                      <span
-                        className="ml-1.5 text-[#E6392F] font-semibold text-[11px] sm:text-xs normal-case tracking-normal inline-block"
-                        style={{ wordSpacing: "normal" }}
-                      >
-                        ({faculty.event})
-                      </span>
-                    )}
+                    {faculty.name}
                   </h3>
                   <span
-                    className={`h-1.5 w-1.5 rounded-full flex-shrink-0 mt-1.5 ${
+                    className={`h-1.5 w-1.5 rounded-full flex-shrink-0 ${
                       !faculty.isPlaceholder ? "bg-[#E6392F]" : "bg-white/30"
                     }`}
                   />
                 </div>
+
+                {faculty.event && (
+                  <p
+                    className="
+                      mt-0.5
+                      text-[9px] sm:text-[10px] md:text-[11px] font-semibold
+                      tracking-wider uppercase
+                      text-[#E6392F] truncate
+                    "
+                  >
+                    {faculty.event}
+                  </p>
+                )}
 
                 <p
                   className="
@@ -581,7 +593,7 @@ export default function TeamCarousel() {
                     tracking-[0.16em]
                     text-white/65 truncate
                     transition-colors duration-300
-                    group-hover:text-[#E6392F]
+                    group-hover:text-white/85
                   "
                 >
                   {faculty.role}
@@ -889,27 +901,32 @@ export default function TeamCarousel() {
                       group-hover:border-[#E6392F]/50 group-hover:bg-black/85
                     "
                   >
-                    <div className="flex items-start justify-between gap-1.5">
+                    <div className="flex items-center justify-between gap-1.5">
                       <h3
                         className="
                           text-[13px] sm:text-sm md:text-[15px] font-bold uppercase
                           leading-tight tracking-normal
-                          text-white
+                          text-white truncate
                         "
                         style={{ wordSpacing: "0.25em" }}
                       >
-                        <span>{coordinator.name}</span>
-                        {coordinator.event && (
-                          <span
-                            className="ml-1.5 text-[#E6392F] font-semibold text-[11px] sm:text-xs normal-case tracking-normal inline-block"
-                            style={{ wordSpacing: "normal" }}
-                          >
-                            ({coordinator.event})
-                          </span>
-                        )}
+                        {coordinator.name}
                       </h3>
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#E6392F] flex-shrink-0 mt-1.5" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#E6392F] flex-shrink-0" />
                     </div>
+
+                    {coordinator.event && (
+                      <p
+                        className="
+                          mt-0.5
+                          text-[9px] sm:text-[10px] md:text-[11px] font-semibold
+                          tracking-wider uppercase
+                          text-[#E6392F] truncate
+                        "
+                      >
+                        {coordinator.event}
+                      </p>
+                    )}
 
                     <p
                       className="
@@ -918,7 +935,7 @@ export default function TeamCarousel() {
                         tracking-[0.16em]
                         text-white/65 truncate
                         transition-colors duration-300
-                        group-hover:text-[#E6392F]
+                        group-hover:text-white/85
                       "
                     >
                       {coordinator.role}
