@@ -167,7 +167,7 @@ export default function Navigation() {
       </div>
 
       {/* ════════ DESKTOP NAV LINKS (CENTER ALIGNED) ════════ */}
-      <div className="hidden lg:flex items-center justify-self-center gap-0.5 xl:gap-1 px-1 translate-x-6 sm:translate-x-10 xl:translate-x-14">
+      <div className="hidden lg:flex items-center justify-self-center gap-0.5 xl:gap-1 px-1 translate-x-8 sm:translate-x-12 xl:translate-x-20">
         {NAV_LINKS.map((link) => {
           const isActive = activeSection === link.key;
           return (
