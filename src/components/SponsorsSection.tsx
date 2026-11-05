@@ -31,7 +31,7 @@ export interface Partner {
   logoClass?: string;
 }
 
-// 4 Sponsors: 2 in each row in desktop view
+// 5 Sponsors: 3 per row on desktop view
 const SPONSORS: Partner[] = [
   {
     id: "unstop",
@@ -60,6 +60,14 @@ const SPONSORS: Partner[] = [
     name: "Mercy For Animals",
     logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/images_1.png",
     redirectUrl: "https://mercyforanimals.org/",
+    logoClass: "h-12 sm:h-14 md:h-16 max-w-[230px] sm:max-w-[260px]",
+  },
+  {
+    id: "vyapo",
+    name: "VYAPO | Smart POS Management",
+    logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Vyapo_Gradient_Swoosh_Logo.png",
+    redirectUrl:
+      "https://www.vyapo.tech/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeCkOiM-ECCxWk0s9u0QTjQ9EIp3M0qJWNwMJQjARu43Lp16VdzE_O5WnETdA_aem_q-4Sto-Uxxna9qtht9u_sg",
     logoClass: "h-12 sm:h-14 md:h-16 max-w-[230px] sm:max-w-[260px]",
   },
 ];
@@ -282,17 +290,29 @@ export default function SponsorsSection() {
         </div>
 
         {/* ═══════════════════════════════════
-            PARTNERS SECTION (2x2 on desktop)
+            PARTNERS SECTION (3 sponsors per row)
         ═══════════════════════════════════ */}
-        <div
-          ref={partnersRef}
-          className="mb-16 mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-stretch"
-        >
-          {SPONSORS.map((partner) => (
-            <div key={partner.id} className="partner-cuboid-item flex">
-              <CuboidSponsorBox partner={partner} />
-            </div>
-          ))}
+        <div ref={partnersRef} className="mb-16 space-y-5 sm:space-y-6">
+          {/* Row 1: 3 in a row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+            {SPONSORS.slice(0, 3).map((partner) => (
+              <div key={partner.id} className="partner-cuboid-item flex">
+                <CuboidSponsorBox partner={partner} />
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2: Centered sponsors below */}
+          <div className="flex flex-wrap justify-center gap-5 sm:gap-6 items-stretch">
+            {SPONSORS.slice(3).map((partner) => (
+              <div
+                key={partner.id}
+                className="partner-cuboid-item flex w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
+              >
+                <CuboidSponsorBox partner={partner} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* ─────────────────────────────────

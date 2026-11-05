@@ -414,7 +414,7 @@ export default function LocationContact() {
       ===================================================== */}
       <div
         ref={mapRef}
-        className="flex flex-col gap-5"
+        className="flex flex-col gap-5 lg:pt-6"
       >
         {/* MAP */}
         <div
