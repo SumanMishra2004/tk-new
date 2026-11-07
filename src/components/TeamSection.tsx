@@ -40,7 +40,7 @@ interface FacultyMember {
 
 interface CoordinatorMember {
   name: string;
-  role: string;
+  role?: string;
   event?: string | string[];
   image?: string;
   linkedin?: string;
@@ -66,7 +66,7 @@ const facultyMembers: FacultyMember[] = [
   {
     id: "faculty-2",
     name: "Dr. Sangita Dutta",
-    role: "Faculty Convener",
+    role: "Joint Convener",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/zjk1sdvuv7nogngftflg.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/",
     isPlaceholder: false,
@@ -76,7 +76,7 @@ const facultyMembers: FacultyMember[] = [
   {
     id: "faculty-3",
     name: "Suchanda Chatterjee (Das)",
-    role: "Faculty Convener",
+    role: "Joint Convener",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/IMG_20260920_145411.jpg",
     linkedin: "https://www.linkedin.com/in/suchanda-chatterjee-das-49b46a3b2/",
     isPlaceholder: false,
@@ -89,42 +89,39 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
-    event: ["Mystic Minds", "Zerocode (IIT Bombay Techfest)"],
+    event: ["Mystic Minds", "Techfest IIT Bombay"],
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Sayantani.jpg",
     linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
   },
   {
     name: "Avik Kumar Das",
     role: "Faculty Coordinator",
-    event: "Orbion",
+    event: ["Orbion", "Techfest IIT Bombay"],
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/4b1a97c3-7ec0-4abb-beaa-975e02ddca7a.png",
     linkedin: "https://in.linkedin.com/in/avikdasetc",
   },
   {
     name: "Apurba Nandi",
     role: "Faculty Coordinator",
-    event: "ThetaShift (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/c2c77c23-20cc-4cd6-8788-82eacf0779fe.png",
     linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/",
   },
   {
     name: "Rangon Sarkar",
     role: "Faculty Coordinator",
-    event: "Roboreach (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-09-20_at_11.10.40_PM.jpg",
     linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb",
   },
   {
     name: "Uddipan Ghosh",
     role: "Faculty Coordinator",
-    event: "Meshmerize (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/9c2d31d5-a96e-4978-9712-4dd3d3c6162c_1.png",
     linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232",
   },
   {
     name: "Apalok Roy",
     role: "Faculty Coordinator",
-    event: ["TechCanvas", "InnovateX (IIT Bombay Techfest)"],
+    event: "TechCanvas",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809122/1768022154930.jpg",
     linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
   },
@@ -145,21 +142,20 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Nitu Saha",
     role: "Faculty Coordinator",
-    event: ["TechCanvas", "SparkX (IIT Bombay Techfest)"],
+    event: "TechCanvas",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809316/Nitu_Saha.jpg",
     linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
   },
   {
     name: "Dr. Ahona Ghosh",
     role: "Faculty Coordinator",
-    event: "Meshmerize (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Ahona.jpg",
     linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/",
   },
   {
     name: "Tejashri Srivastava",
     role: "Faculty Coordinator",
-    event: ["Mystic Minds", "Zerocode (IIT Bombay Techfest)"],
+    event: "Mystic Minds",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tejashri_Srivastava.jpg",
     linkedin: "https://in.linkedin.com/in/tejashri-chate",
   },
@@ -180,7 +176,6 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Riya Sarkar",
     role: "Faculty Coordinator",
-    event: "Roboreach (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793808642/Riya.jpg",
     linkedin: "https://www.linkedin.com/in/riyasarkarofficial/",
   },
@@ -192,14 +187,12 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Monalisa Chakraborty",
     role: "Faculty Coordinator",
-    event: "ThetaShift (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_8.09.37_PM_1.jpg",
     linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/",
   },
   {
     name: "Saikat Mukherjee",
     role: "Faculty Coordinator",
-    event: "SparkX (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_9.53.17_PM.jpg",
     linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/",
   },
@@ -836,11 +829,13 @@ export default function TeamCarousel() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          loopAdditionalSlides={2}
           coverflowEffect={{
             rotate: 0,
             stretch: -30,
             depth: 350,
             modifier: 1,
+            scale: 0.94,
             slideShadows: false,
           }}
           className="teamSwiper"
@@ -1049,18 +1044,20 @@ export default function TeamCarousel() {
                       );
                     })()}
 
-                    <p
-                      className="
-                        mt-0.5
-                        text-[8px] sm:text-[9px] md:text-[10px] uppercase
-                        tracking-[0.16em]
-                        text-white/65 truncate
-                        transition-colors duration-300
-                        group-hover:text-white/85
-                      "
-                    >
-                      {coordinator.role}
-                    </p>
+                    {coordinator.role ? (
+                      <p
+                        className="
+                          mt-0.5
+                          text-[8px] sm:text-[9px] md:text-[10px] uppercase
+                          tracking-[0.16em]
+                          text-white/65 truncate
+                          transition-colors duration-300
+                          group-hover:text-white/85
+                        "
+                      >
+                        {coordinator.role}
+                      </p>
+                    ) : null}
                   </div>
 
                   {/* HOVER BORDER GLOW */}
@@ -1234,11 +1231,13 @@ export default function TeamCarousel() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          loopAdditionalSlides={2}
           coverflowEffect={{
             rotate: 0,
             stretch: -30,
             depth: 350,
             modifier: 1,
+            scale: 0.94,
             slideShadows: false,
           }}
           className="teamSwiper"
@@ -1582,11 +1581,13 @@ export default function TeamCarousel() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          loopAdditionalSlides={2}
           coverflowEffect={{
             rotate: 0,
             stretch: -30,
             depth: 350,
             modifier: 1,
+            scale: 0.94,
             slideShadows: false,
           }}
           className="teamSwiper"
@@ -1838,12 +1839,18 @@ export default function TeamCarousel() {
 
         .teamSwiper .swiper-slide {
           height: auto;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          will-change: transform, opacity;
           transition: opacity 0.4s ease;
         }
 
         .teamSwiper .swiper-slide > div {
-          transform-origin: center center;
-          transition: transform 0.4s ease-out;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          transition: box-shadow 0.4s ease, border-color 0.4s ease;
         }
 
         /* SIDE CARDS — visible but receded for circular depth */
@@ -1857,16 +1864,15 @@ export default function TeamCarousel() {
           opacity: 0.75;
         }
 
-        /* CENTER CARD — full glow + scale pop on inner card */
+        /* CENTER CARD — full glow on inner card */
         .teamSwiper .swiper-slide-active {
           opacity: 1;
           z-index: 10;
         }
 
         .teamSwiper .swiper-slide-active > div {
-          transform: scale(1.04);
           box-shadow:
-            0 0 35px rgba(230, 57, 47, 0.2),
+            0 0 35px rgba(230, 57, 47, 0.25),
             0 20px 45px rgba(0, 0, 0, 0.6);
         }
 
