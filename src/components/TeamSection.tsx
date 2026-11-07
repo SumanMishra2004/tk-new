@@ -835,11 +835,13 @@ export default function TeamCarousel() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          loopAdditionalSlides={2}
           coverflowEffect={{
             rotate: 0,
             stretch: -30,
             depth: 350,
             modifier: 1,
+            scale: 0.94,
             slideShadows: false,
           }}
           className="teamSwiper"
@@ -1235,11 +1237,13 @@ export default function TeamCarousel() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          loopAdditionalSlides={2}
           coverflowEffect={{
             rotate: 0,
             stretch: -30,
             depth: 350,
             modifier: 1,
+            scale: 0.94,
             slideShadows: false,
           }}
           className="teamSwiper"
@@ -1583,11 +1587,13 @@ export default function TeamCarousel() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          loopAdditionalSlides={2}
           coverflowEffect={{
             rotate: 0,
             stretch: -30,
             depth: 350,
             modifier: 1,
+            scale: 0.94,
             slideShadows: false,
           }}
           className="teamSwiper"
@@ -1839,12 +1845,18 @@ export default function TeamCarousel() {
 
         .teamSwiper .swiper-slide {
           height: auto;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          will-change: transform, opacity;
           transition: opacity 0.4s ease;
         }
 
         .teamSwiper .swiper-slide > div {
-          transform-origin: center center;
-          transition: transform 0.4s ease-out;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          transition: box-shadow 0.4s ease, border-color 0.4s ease;
         }
 
         /* SIDE CARDS — visible but receded for circular depth */
@@ -1858,16 +1870,15 @@ export default function TeamCarousel() {
           opacity: 0.75;
         }
 
-        /* CENTER CARD — full glow + scale pop on inner card */
+        /* CENTER CARD — full glow on inner card */
         .teamSwiper .swiper-slide-active {
           opacity: 1;
           z-index: 10;
         }
 
         .teamSwiper .swiper-slide-active > div {
-          transform: scale(1.04);
           box-shadow:
-            0 0 35px rgba(230, 57, 47, 0.2),
+            0 0 35px rgba(230, 57, 47, 0.25),
             0 20px 45px rgba(0, 0, 0, 0.6);
         }
 

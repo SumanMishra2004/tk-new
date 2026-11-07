@@ -300,23 +300,23 @@ export default function EventsSection() {
             centeredSlides={true}
             slidesPerView="auto"
             loop={true}
+            loopAdditionalSlides={2}
+            watchSlidesProgress={true}
+            touchStartPreventDefault={false}
             grabCursor={true}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            speed={1000}
+            speed={800}
             coverflowEffect={{
               rotate: 0,
               stretch: -30,
               depth: 350,
               modifier: 1,
+              scale: 0.94,
               slideShadows: false,
-            }}
-            mousewheel={{
-              forceToAxis: true,
-              sensitivity: 0.5,
             }}
             pagination={{ clickable: true }}
             className="eventsSwiper"
@@ -335,11 +335,9 @@ export default function EventsSection() {
                   className="
                   group relative h-full w-full select-none overflow-hidden
                   rounded-2xl
-                  transition-all duration-500 ease-out
+                  transition-shadow duration-300 ease-out
                   shadow-[0_22px_42px_rgba(0,0,0,0.55)]
-                  [transform-style:preserve-3d]
                   hover:shadow-[0_30px_50px_rgba(0,0,0,0.65)]
-                  hover:[transform:perspective(900px)_rotateX(3deg)_rotateY(-3deg)_translateY(-8px)]
                 "
                   style={{
                     background: `linear-gradient(145deg, ${event.bg}, #110d0a 72%)`,
@@ -520,10 +518,22 @@ export default function EventsSection() {
           padding-top: 20px;
           padding-bottom: 40px;
           overflow: visible;
+          touch-action: pan-y;
+          user-select: none;
         }
         .eventsSwiper .swiper-slide {
           height: auto;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          will-change: transform, opacity;
           transition: opacity 0.4s ease;
+        }
+        .eventsSwiper .swiper-slide > div {
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          transition: box-shadow 0.4s ease, border-color 0.4s ease;
         }
         .eventsSwiper .swiper-slide:not(.swiper-slide-active) {
           opacity: 0.45;
