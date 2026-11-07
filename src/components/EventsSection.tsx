@@ -185,7 +185,7 @@ export default function EventsSection() {
   }, []);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       if (carouselRef.current) {
         gsap.fromTo(
           carouselRef.current,
