@@ -103,21 +103,21 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Apurba Nandi",
     role: "Faculty Coordinator",
-    event: ["ThetaShift", "Robotics (IIT Bombay)"],
+    event: "ThetaShift (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/c2c77c23-20cc-4cd6-8788-82eacf0779fe.png",
     linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/",
   },
   {
     name: "Rangon Sarkar",
     role: "Faculty Coordinator",
-    event: ["Roboreach", "Robotics (IIT Bombay)"],
+    event: "Roboreach (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-09-20_at_11.10.40_PM.jpg",
     linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb",
   },
   {
     name: "Uddipan Ghosh",
     role: "Faculty Coordinator",
-    event: ["Meshmerize", "Robotics (IIT Bombay)"],
+    event: "Meshmerize (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/9c2d31d5-a96e-4978-9712-4dd3d3c6162c_1.png",
     linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232",
   },
@@ -152,7 +152,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Dr. Ahona Ghosh",
     role: "Faculty Coordinator",
-    event: ["Meshmerize", "Robotics (IIT Bombay)"],
+    event: "Meshmerize (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Ahona.jpg",
     linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/",
   },
@@ -180,7 +180,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Riya Sarkar",
     role: "Faculty Coordinator",
-    event: ["Roboreach", "Robotics (IIT Bombay)"],
+    event: "Roboreach (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793808642/Riya.jpg",
     linkedin: "https://www.linkedin.com/in/riyasarkarofficial/",
   },
@@ -192,7 +192,7 @@ const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Monalisa Chakraborty",
     role: "Faculty Coordinator",
-    event: ["ThetaShift", "Robotics (IIT Bombay)"],
+    event: "ThetaShift (IIT Bombay Techfest)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_8.09.37_PM_1.jpg",
     linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/",
   },
@@ -243,7 +243,7 @@ const members: Member[] = [
   },
   {
     name: "Asmita Chatterjee",
-    role: "Social Media and PR",
+    role: "Social Media and PR Lead",
     image: "https://res.cloudinary.com/vhf4myms/image/upload/v1789485665/Asmita_Chatterjee.jpg",
     linkedin: "https://www.linkedin.com/in/asmita-chatterjee-b214b1232/",
   },
@@ -252,6 +252,12 @@ const members: Member[] = [
     role: "Videography Lead",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-03_at_5.05.36_PM.jpg",
     linkedin: "https://www.linkedin.com/in/rounak-ghosh-497b5530a/",
+  },
+  {
+    name: "Hriddhita Bhattacharjee",
+    role: "Decoration Lead",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-06_at_1.51.46_AM.jpg",
+    linkedin: "https://www.linkedin.com/in/hriddhita-bhattacharjee-b0034b335/",
   },
 ];
 
@@ -650,25 +656,36 @@ export default function TeamCarousel() {
                   />
                 </div>
 
-                {faculty.event && (
-                  <div className="mt-0.5 space-y-0.5">
-                    {(Array.isArray(faculty.event)
-                      ? faculty.event
-                      : [faculty.event]
-                    ).map((ev, i) => (
-                      <p
-                        key={i}
-                        className="
-                          text-[9px] sm:text-[10px] md:text-[11px] font-semibold
-                          tracking-wider uppercase
-                          text-[#E6392F] leading-tight break-words
-                        "
-                      >
-                        {ev}
-                      </p>
-                    ))}
-                  </div>
-                )}
+                {faculty.event && (() => {
+                  const events = Array.isArray(faculty.event)
+                    ? faculty.event
+                    : [faculty.event];
+                  const isMultiple = events.length > 1;
+
+                  return (
+                    <div className="mt-0.5 space-y-0.5">
+                      {events.map((ev, i) => (
+                        <p
+                          key={i}
+                          className="
+                            text-[9px] sm:text-[10px] md:text-[11px] font-semibold
+                            tracking-wider uppercase
+                            text-[#E6392F] leading-tight break-words
+                            flex items-start gap-1.5
+                          "
+                        >
+                          {isMultiple && (
+                            <span
+                              className="mt-[3.5px] h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-[#E6392F] shrink-0"
+                              aria-hidden="true"
+                            />
+                          )}
+                          <span className="flex-1">{ev}</span>
+                        </p>
+                      ))}
+                    </div>
+                  );
+                })()}
 
                 <p
                   className="
@@ -811,7 +828,9 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          speed={900}
+          speed={800}
+          watchSlidesProgress={true}
+          touchStartPreventDefault={false}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -999,25 +1018,36 @@ export default function TeamCarousel() {
                       <span className="h-1.5 w-1.5 rounded-full bg-[#E6392F] flex-shrink-0" />
                     </div>
 
-                    {coordinator.event && (
-                      <div className="mt-0.5 space-y-0.5">
-                        {(Array.isArray(coordinator.event)
-                          ? coordinator.event
-                          : [coordinator.event]
-                        ).map((ev, i) => (
-                          <p
-                            key={i}
-                            className="
-                              text-[9px] sm:text-[10px] md:text-[11px] font-semibold
-                              tracking-wider uppercase
-                              text-[#E6392F] leading-tight break-words
-                            "
-                          >
-                            {ev}
-                          </p>
-                        ))}
-                      </div>
-                    )}
+                    {coordinator.event && (() => {
+                      const events = Array.isArray(coordinator.event)
+                        ? coordinator.event
+                        : [coordinator.event];
+                      const isMultiple = events.length > 1;
+
+                      return (
+                        <div className="mt-0.5 space-y-0.5">
+                          {events.map((ev, i) => (
+                            <p
+                              key={i}
+                              className="
+                                text-[9px] sm:text-[10px] md:text-[11px] font-semibold
+                                tracking-wider uppercase
+                                text-[#E6392F] leading-tight break-words
+                                flex items-start gap-1.5
+                              "
+                            >
+                              {isMultiple && (
+                                <span
+                                  className="mt-[3.5px] h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-[#E6392F] shrink-0"
+                                  aria-hidden="true"
+                                />
+                              )}
+                              <span className="flex-1">{ev}</span>
+                            </p>
+                          ))}
+                        </div>
+                      );
+                    })()}
 
                     <p
                       className="
@@ -1196,7 +1226,9 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          speed={900}
+          speed={800}
+          watchSlidesProgress={true}
+          touchStartPreventDefault={false}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -1542,7 +1574,9 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          speed={900}
+          speed={800}
+          watchSlidesProgress={true}
+          touchStartPreventDefault={false}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -1794,50 +1828,46 @@ export default function TeamCarousel() {
           padding-top: 32px;
           padding-bottom: 56px;
           overflow: visible;
+          touch-action: pan-y;
+          user-select: none;
         }
 
         .teamSwiper .swiper-wrapper {
           align-items: center;
-          transform: translate3d(0, 0, 0);
-          will-change: transform;
         }
 
         .teamSwiper .swiper-slide {
           height: auto;
-          transform: translate3d(0, 0, 0);
-          will-change: transform;
-          transition:
-            transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-            opacity 0.6s ease,
-            filter 0.6s ease;
+          transition: opacity 0.4s ease;
+        }
+
+        .teamSwiper .swiper-slide > div {
+          transform-origin: center center;
+          transition: transform 0.4s ease-out;
         }
 
         /* SIDE CARDS — visible but receded for circular depth */
         .teamSwiper .swiper-slide:not(.swiper-slide-active) {
-          opacity: 0.55;
-          filter: brightness(0.65) saturate(0.8);
+          opacity: 0.45;
         }
 
         /* Next/prev neighbors — slightly brighter */
         .teamSwiper .swiper-slide-prev,
         .teamSwiper .swiper-slide-next {
           opacity: 0.75;
-          filter: brightness(0.85) saturate(0.95);
         }
 
-        /* CENTER CARD — full glow + scale pop */
+        /* CENTER CARD — full glow + scale pop on inner card */
         .teamSwiper .swiper-slide-active {
           opacity: 1;
-          filter: brightness(1) saturate(1);
-          transform: scale(1.06);
           z-index: 10;
         }
 
-        /* Red glow ring on active */
         .teamSwiper .swiper-slide-active > div {
+          transform: scale(1.04);
           box-shadow:
-            0 0 50px rgba(230, 57, 47, 0.2),
-            0 25px 70px rgba(0, 0, 0, 0.6);
+            0 0 35px rgba(230, 57, 47, 0.2),
+            0 20px 45px rgba(0, 0, 0, 0.6);
         }
 
         /* Slide shadows from coverflow */
