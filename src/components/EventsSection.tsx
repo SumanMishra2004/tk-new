@@ -140,11 +140,8 @@ const events: EventCard[] = [
       "Venue: Tech Kurukshetra, UEM Kolkata",
     ],
     coordinators: [
-      { name: "Saikat Mukherjee", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/" },
-      { name: "Nitu Saha", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6" },
+      { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
       { name: "Sayantani Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
-      { name: "Tejashri Srivastava", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/tejashri-chate" },
-      { name: "Apalok Roy", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/" },
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",
@@ -163,12 +160,8 @@ const events: EventCard[] = [
       "Venue: Tech Kurukshetra, UEM Kolkata",
     ],
     coordinators: [
-      { name: "Apurba Nandi", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/" },
-      { name: "Monalisa Chakraborty", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/" },
-      { name: "Rangon Sarkar", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb" },
-      { name: "Riya Sarkar", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/riyasarkarofficial/" },
-      { name: "Uddipan Ghosh", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232" },
-      { name: "Dr. Ahona Ghosh", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/" },
+      { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
+      { name: "Avik Kr Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/avikdasetc" },
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",
@@ -474,10 +467,10 @@ export default function EventsSection() {
                               href={coordinator.linkedin}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={`${bodyFont.className} inline-flex items-center gap-1 text-[9px] sm:text-[10px] text-[#0A66C2] hover:text-[#4da3ff] transition-colors font-medium`}
+                              className={`${bodyFont.className} inline-flex items-center gap-1 text-[9px] sm:text-[10px] text-white/80 hover:text-white transition-colors font-medium`}
                             >
                               <span>LinkedIn</span>
-                              <svg viewBox="0 0 24 24" fill="currentColor" className="h-2.5 w-2.5">
+                              <svg viewBox="0 0 24 24" fill="currentColor" className="h-2.5 w-2.5 text-white">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8m1.39 9.74v-8.37H5.07v8.37h2.78z" />
                               </svg>
                             </a>
