@@ -137,7 +137,7 @@ const events: EventCard[] = [
       "Zerocode - Prompt War",
       "Innovatex - Future Habitat Challenge",
       "Event Date: 14th November, 2026",
-      "Venue: Tech Kurukshetra, UEM Kolkata",
+      "Venue: UEM Kolkata",
     ],
     coordinators: [
       { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
@@ -157,7 +157,7 @@ const events: EventCard[] = [
       "Meshmerize - Line Following Robot",
       "Roboreach - Robotic Arm Competition",
       "Event Date: 14th November, 2026",
-      "Venue: Tech Kurukshetra, UEM Kolkata",
+      "Venue: UEM Kolkata",
     ],
     coordinators: [
       { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
