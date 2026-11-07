@@ -11,7 +11,6 @@ import {
   EffectCoverflow,
   Pagination,
   Autoplay,
-  Mousewheel,
   Navigation,
 } from "swiper/modules";
 
@@ -36,7 +35,8 @@ const accentFont = Rajdhani({
 
 interface Coordinator {
   name: string;
-  phone: string;
+  phone?: string;
+  linkedin?: string;
 }
 
 interface EventCard {
@@ -125,6 +125,53 @@ const events: EventCard[] = [
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScU78xo8AwtZY6EH4ue2VTs3fPaUQp0fGCLkRA662opR2Q2AA/viewform",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/lg_315x410.png",
+    title: "Techfest IIT Bombay",
+    description:
+      "Tech Kurukshetra 2026 in collaboration with Techfest, IIT Bombay presents Kolkata Zonals featuring premier national-level competitions.",
+    rules: [
+      "SparkX - National AI Competition",
+      "Zerocode - Prompt War",
+      "Innovatex - Future Habitat Challenge",
+      "Event Date: 14th November, 2026",
+      "Venue: Tech Kurukshetra, UEM Kolkata",
+    ],
+    coordinators: [
+      { name: "Saikat Mukherjee", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/" },
+      { name: "Nitu Saha", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6" },
+      { name: "Sayantani Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
+      { name: "Tejashri Srivastava", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/tejashri-chate" },
+      { name: "Apalok Roy", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://techfest.org/competitions",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/desktop_315x410.png",
+    title: "Techfest IIT Bombay",
+    description:
+      "Tech Kurukshetra 2026 in collaboration with Techfest, IIT Bombay presents Kolkata Zonals featuring premier robotics competitions.",
+    rules: [
+      "ThetaShift - Spherical Bot Competition",
+      "Meshmerize - Line Following Robot",
+      "Roboreach - Robotic Arm Competition",
+      "Event Date: 14th November, 2026",
+      "Venue: Tech Kurukshetra, UEM Kolkata",
+    ],
+    coordinators: [
+      { name: "Apurba Nandi", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/" },
+      { name: "Monalisa Chakraborty", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/" },
+      { name: "Rangon Sarkar", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb" },
+      { name: "Riya Sarkar", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/riyasarkarofficial/" },
+      { name: "Uddipan Ghosh", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232" },
+      { name: "Dr. Ahona Ghosh", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://techfest.org/competitions",
     bg: "#2f251e",
   },
 ];
@@ -253,7 +300,7 @@ export default function EventsSection() {
           </button>
 
           <Swiper
-            modules={[EffectCoverflow, Pagination, Autoplay, Mousewheel, Navigation]}
+            modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             effect="coverflow"
@@ -418,13 +465,31 @@ export default function EventsSection() {
                         Coordinators
                       </span>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
+                    <div className="grid grid-cols-2 md:grid-cols-1 gap-2 max-h-[190px] sm:max-h-[220px] overflow-y-auto pr-1">
                       {activeEvent.coordinators.map((coordinator, idx) => (
                         <div key={idx} className="rounded-lg border border-white/5 bg-white/5 p-2 sm:p-2.5 hover:bg-white/10 transition-colors">
                           <p className={`${bodyFont.className} text-[11px] sm:text-[12px] font-semibold mb-0.5 whitespace-nowrap overflow-hidden text-ellipsis`}>{coordinator.name}</p>
-                          <a href={`tel:${coordinator.phone.replace(/\s+/g, "")}`} className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/50 hover:text-white transition-colors`}>
-                            {coordinator.phone}
-                          </a>
+                          {coordinator.linkedin ? (
+                            <a
+                              href={coordinator.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`${bodyFont.className} inline-flex items-center gap-1 text-[9px] sm:text-[10px] text-[#0A66C2] hover:text-[#4da3ff] transition-colors font-medium`}
+                            >
+                              <span>LinkedIn</span>
+                              <svg viewBox="0 0 24 24" fill="currentColor" className="h-2.5 w-2.5">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8m1.39 9.74v-8.37H5.07v8.37h2.78z" />
+                              </svg>
+                            </a>
+                          ) : coordinator.phone && coordinator.phone !== "TBA" && coordinator.phone !== "LinkedIn" ? (
+                            <a href={`tel:${coordinator.phone.replace(/\s+/g, "")}`} className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/50 hover:text-white transition-colors`}>
+                              {coordinator.phone}
+                            </a>
+                          ) : (
+                            <span className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/40 tracking-wider`}>
+                              {coordinator.phone || "Contact TBA"}
+                            </span>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -465,25 +530,22 @@ export default function EventsSection() {
         }
         .eventsSwiper .swiper-slide {
           height: auto;
-          transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease, filter 0.8s ease;
+          transition: opacity 0.4s ease;
         }
         .eventsSwiper .swiper-slide:not(.swiper-slide-active) {
-          opacity: 0.5;
-          filter: brightness(0.5) saturate(0.8);
+          opacity: 0.45;
         }
         .eventsSwiper .swiper-slide-prev,
         .eventsSwiper .swiper-slide-next {
-          opacity: 0.7;
-          filter: brightness(0.7) saturate(0.9);
+          opacity: 0.75;
         }
         .eventsSwiper .swiper-slide-active {
           opacity: 1;
-          filter: brightness(1) saturate(1);
-          transform: scale(1.05);
           z-index: 10;
         }
         .eventsSwiper .swiper-slide-active > div {
-          border-color: rgba(255,255,255,0.2);
+          border-color: rgba(255,255,255,0.25);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
         .eventsSwiper .swiper-pagination {
           bottom: 0px;
