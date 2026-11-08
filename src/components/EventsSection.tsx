@@ -142,6 +142,7 @@ const events: EventCard[] = [
     coordinators: [
       { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
       { name: "Sayantani Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
+      
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",
@@ -162,6 +163,7 @@ const events: EventCard[] = [
     coordinators: [
       { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
       { name: "Avik Kr Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/avikdasetc" },
+      { name: "Debarshi Banerjee", phone: "+91 816 733 0456" },
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",
