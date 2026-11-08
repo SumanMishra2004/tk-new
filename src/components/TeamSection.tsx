@@ -66,7 +66,7 @@ const facultyMembers: FacultyMember[] = [
   {
     id: "faculty-2",
     name: "Dr. Sangita Dutta",
-    role: "Joint Convener",
+    role: "Joint Faculty Convener",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/zjk1sdvuv7nogngftflg.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/",
     isPlaceholder: false,
@@ -76,7 +76,7 @@ const facultyMembers: FacultyMember[] = [
   {
     id: "faculty-3",
     name: "Suchanda Chatterjee (Das)",
-    role: "Joint Convener",
+    role: "Joint Faculty Convener",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/IMG_20260920_145411.jpg",
     linkedin: "https://www.linkedin.com/in/suchanda-chatterjee-das-49b46a3b2/",
     isPlaceholder: false,
