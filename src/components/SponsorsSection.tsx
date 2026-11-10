@@ -56,6 +56,13 @@ const SPONSORS: Partner[] = [
     logoClass: "h-14 sm:h-16 md:h-[76px] max-w-[230px] sm:max-w-[260px] scale-[1.25] -translate-y-1.5",
   },
   {
+    id: "unity-rbtx",
+    name: "unity rbtx",
+    logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/440577069_446789848005164_5537947760040701550_n.jpg",
+    redirectUrl: "https://www.instagram.com/unity_rbtx/",
+    logoClass: "h-[76px] sm:h-[86px] md:h-[94px] max-w-[230px] sm:max-w-[260px] rounded-lg",
+  },
+  {
     id: "mercy-for-animals",
     name: "Mercy For Animals",
     logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/images_1.png",
@@ -69,13 +76,6 @@ const SPONSORS: Partner[] = [
     redirectUrl:
       "https://www.vyapo.tech/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeCkOiM-ECCxWk0s9u0QTjQ9EIp3M0qJWNwMJQjARu43Lp16VdzE_O5WnETdA_aem_q-4Sto-Uxxna9qtht9u_sg",
     logoClass: "h-12 sm:h-14 md:h-16 max-w-[230px] sm:max-w-[260px]",
-  },
-  {
-    id: "unity-rbtx",
-    name: "unity rbtx",
-    logo: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/440577069_446789848005164_5537947760040701550_n.jpg",
-    redirectUrl: "https://www.instagram.com/unity_rbtx/",
-    logoClass: "h-[76px] sm:h-[86px] md:h-[94px] max-w-[230px] sm:max-w-[260px] rounded-lg",
   },
 ];
 
