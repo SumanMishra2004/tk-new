@@ -178,7 +178,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="#boarding-pass"
+              href="#events"
               className={`
                 ${accentFont.className}
                 inline-flex items-center justify-center gap-2
