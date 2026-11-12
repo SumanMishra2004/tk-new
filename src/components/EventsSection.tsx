@@ -613,19 +613,25 @@ export default function EventsSection() {
                               href={coordinator.linkedin}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={`${bodyFont.className} inline-flex items-center gap-1 text-[9px] sm:text-[10px] text-white/80 hover:text-white transition-colors font-medium`}
+                              className={`${bodyFont.className} mt-1 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-0.5 text-[9px] sm:text-[10px] font-medium text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)] transition-all duration-200 hover:scale-[1.03] hover:border-white/35 hover:bg-white/15 hover:text-white active:scale-95`}
                             >
-                              <span>LinkedIn</span>
                               <svg viewBox="0 0 24 24" fill="currentColor" className="h-2.5 w-2.5 text-white">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8m1.39 9.74v-8.37H5.07v8.37h2.78z" />
                               </svg>
+                              <span className="text-white">LinkedIn</span>
                             </a>
                           ) : coordinator.phone && coordinator.phone !== "TBA" && coordinator.phone !== "LinkedIn" ? (
-                            <a href={`tel:${coordinator.phone.replace(/\s+/g, "")}`} className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/50 hover:text-white transition-colors`}>
-                              {coordinator.phone}
+                            <a
+                              href={`tel:${coordinator.phone.replace(/\s+/g, "")}`}
+                              className={`${bodyFont.className} mt-1 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-0.5 text-[9px] sm:text-[10px] font-medium text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)] transition-all duration-200 hover:scale-[1.03] hover:border-white/35 hover:bg-white/15 hover:text-white active:scale-95`}
+                            >
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-2.5 w-2.5 text-[#E6392F]">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                              </svg>
+                              <span>{coordinator.phone}</span>
                             </a>
                           ) : (
-                            <span className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/40 tracking-wider`}>
+                            <span className={`${bodyFont.className} mt-1 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 text-[9px] sm:text-[10px] text-white/45 tracking-wider`}>
                               {coordinator.phone || "Contact TBA"}
                             </span>
                           )}
