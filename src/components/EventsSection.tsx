@@ -9,7 +9,6 @@ import { Space_Grotesk, Rajdhani } from "next/font/google";
 
 import {
   EffectCoverflow,
-  Pagination,
   Autoplay,
   Navigation,
 } from "swiper/modules";
@@ -191,7 +190,7 @@ const events: EventCard[] = [
     coordinators: [
       { name: "Avik Kumar Das", linkedin: "https://in.linkedin.com/in/avikdasetc" },
       { name: "Rupayan Halder", linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/" },
-      { name: "Dr. Raktim Kumar Das", linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343" },
+      { name: "Dr. Raktim Kumar Dey", linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343" },
       { name: "Ritam Das Gupta", phone: "+91 62915 34401" },
       { name: "Aritra Sen", phone: "+91 90000 00001" },
       { name: "Priya Das", phone: "+91 90000 00002" },
@@ -283,7 +282,7 @@ const events: EventCard[] = [
       { name: "Saikat Mukherjee", linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/" },
       { name: "Apalok Roy", linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/" },
       { name: "Tannishtha Bhattacharya", phone: "+91 90000 00003" },
-      { name: "Hriddhita Bhattacharya", phone: "+91 90000 00004" },
+      { name: "Hriddhita Bhattacharjee", phone: "+91 90000 00004" },
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",

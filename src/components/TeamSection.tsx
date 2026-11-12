@@ -315,7 +315,7 @@ const facultyCoordinators: CoordinatorMember[] = [
     linkedin: "https://in.linkedin.com/in/tejashri-chate",
   },
   {
-    name: "Dr. Raktim Kumar Das",
+    name: "Dr. Raktim Kumar Dey",
     role: "Faculty Coordinator",
     event: "Orbion (Hackathon)",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809013/WhatsApp_Image_2026-11-04_at_8.09.37_PM.jpg",
@@ -444,7 +444,7 @@ const studentVolunteers: Member[] = [
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Rudrodeb_Saha.jpg",
   },
   {
-    name: "Tannistha Bhattacharya",
+    name: "Tannishtha Bhattacharya",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tannistha_Bhattacharya.jpg",
   },
   {
@@ -907,21 +907,20 @@ export default function TeamCarousel() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-l from-black to-transparent" />
 
-        {/* NAV ARROWS — DESKTOP */}
+        {/* NAV ARROWS — VISIBLE ON BOTH MOBILE & DESKTOP (REVERTIBLE: change flex h-8 w-8 to hidden md:flex h-10 w-10) */}
         <button
           onClick={handleFacultyPrev}
           aria-label="Previous faculty coordinator"
           className="
             pointer-events-auto
-            absolute left-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute left-2 sm:left-4 lg:left-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:left-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -931,7 +930,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m15 18-6-6 6-6" />
           </svg>
@@ -942,15 +941,14 @@ export default function TeamCarousel() {
           aria-label="Next faculty coordinator"
           className="
             pointer-events-auto
-            absolute right-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute right-2 sm:right-4 lg:right-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:right-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -960,7 +958,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -970,7 +968,14 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             facultySwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             If you want to revert back to updating on slide completion:
+             Replace onSlideChangeTransitionStart with:
+             onSlideChange={(swiper) => {
+               setActiveFacultyIndex(swiper.realIndex % facultyCoordinators.length);
+             }}
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveFacultyIndex(swiper.realIndex % facultyCoordinators.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -979,11 +984,15 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          speed={800}
+          /* REVERT INSTRUCTION:
+             If you want to revert speed and delay:
+             Replace with speed={800} and delay: 3500
+          */
+          speed={500}
           watchSlidesProgress={true}
           touchStartPreventDefault={false}
           autoplay={{
-            delay: 3500,
+            delay: 3800,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
@@ -1309,21 +1318,20 @@ export default function TeamCarousel() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-l from-black to-transparent" />
 
-        {/* NAV ARROWS — DESKTOP */}
+        {/* NAV ARROWS — VISIBLE ON BOTH MOBILE & DESKTOP (REVERTIBLE: change flex h-8 w-8 to hidden md:flex h-10 w-10) */}
         <button
           onClick={handleCorePrev}
           aria-label="Previous student lead"
           className="
             pointer-events-auto
-            absolute left-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute left-2 sm:left-4 lg:left-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:left-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1333,7 +1341,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m15 18-6-6 6-6" />
           </svg>
@@ -1344,15 +1352,14 @@ export default function TeamCarousel() {
           aria-label="Next student lead"
           className="
             pointer-events-auto
-            absolute right-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute right-2 sm:right-4 lg:right-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:right-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1362,7 +1369,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -1372,7 +1379,14 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             coreSwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             If you want to revert back to updating on slide completion:
+             Replace onSlideChangeTransitionStart with:
+             onSlideChange={(swiper) => {
+               setActiveCoreIndex(swiper.realIndex % members.length);
+             }}
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveCoreIndex(swiper.realIndex % members.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1381,11 +1395,15 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          speed={800}
+          /* REVERT INSTRUCTION:
+             If you want to revert speed and delay:
+             Replace with speed={800} and delay: 3500
+          */
+          speed={500}
           watchSlidesProgress={true}
           touchStartPreventDefault={false}
           autoplay={{
-            delay: 3500,
+            delay: 4600,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
@@ -1659,21 +1677,20 @@ export default function TeamCarousel() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-l from-black to-transparent" />
 
-        {/* NAV ARROWS — DESKTOP */}
+        {/* NAV ARROWS — VISIBLE ON BOTH MOBILE & DESKTOP (REVERTIBLE: change flex h-8 w-8 to hidden md:flex h-10 w-10) */}
         <button
           onClick={handleVolunteerPrev}
           aria-label="Previous student volunteer"
           className="
             pointer-events-auto
-            absolute left-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute left-2 sm:left-4 lg:left-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:left-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1683,7 +1700,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m15 18-6-6 6-6" />
           </svg>
@@ -1694,15 +1711,14 @@ export default function TeamCarousel() {
           aria-label="Next student volunteer"
           className="
             pointer-events-auto
-            absolute right-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute right-2 sm:right-4 lg:right-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:right-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1712,7 +1728,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -1722,7 +1738,14 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             volunteerSwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             If you want to revert back to updating on slide completion:
+             Replace onSlideChangeTransitionStart with:
+             onSlideChange={(swiper) => {
+               setActiveVolunteerIndex(swiper.realIndex % studentVolunteers.length);
+             }}
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveVolunteerIndex(swiper.realIndex % studentVolunteers.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1731,11 +1754,15 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          speed={800}
+          /* REVERT INSTRUCTION:
+             If you want to revert speed and delay:
+             Replace with speed={800} and delay: 3500
+          */
+          speed={500}
           watchSlidesProgress={true}
           touchStartPreventDefault={false}
           autoplay={{
-            delay: 3500,
+            delay: 5400,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
