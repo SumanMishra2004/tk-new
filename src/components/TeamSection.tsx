@@ -52,10 +52,7 @@ function getInitials(name: string): string {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-/* ═════════════════════════════════════════════════════════════════════════
-   ORIGINAL FACULTY DATA BACKUP (UNCOMMENT TO REVERT)
-   ═════════════════════════════════════════════════════════════════════════
-const _prevFacultyMembers: FacultyMember[] = [
+const facultyMembers: FacultyMember[] = [
   {
     id: "faculty-1",
     name: "Dr Sandip Mandal",
@@ -88,7 +85,10 @@ const _prevFacultyMembers: FacultyMember[] = [
   },
 ];
 
-const _prevFacultyCoordinators: CoordinatorMember[] = [
+/* ═════════════════════════════════════════════════════════════════════════
+   ORIGINAL FACULTY COORDINATORS DATA (ACTIVE)
+   ═════════════════════════════════════════════════════════════════════════ */
+const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
@@ -200,43 +200,11 @@ const _prevFacultyCoordinators: CoordinatorMember[] = [
     linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/",
   },
 ];
-═════════════════════════════════════════════════════════════════════════ */
 
-/* ════════ UPDATED FACULTY EVENT LIST (REVERTIBLE) ════════ */
-const facultyMembers: FacultyMember[] = [
-  {
-    id: "faculty-1",
-    name: "Dr Sandip Mandal",
-    role: "Faculty Convener",
-    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/hod.jpg",
-    linkedin: "https://www.linkedin.com/in/dr-sandip-mandal/",
-    isPlaceholder: false,
-    orderClass: "order-1 sm:order-1",
-    badgeNumber: "01",
-  },
-  {
-    id: "faculty-2",
-    name: "Dr. Sangita Dutta",
-    role: "Joint Faculty Convener",
-    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/zjk1sdvuv7nogngftflg.jpg",
-    linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/",
-    isPlaceholder: false,
-    orderClass: "order-2 sm:order-2",
-    badgeNumber: "02",
-  },
-  {
-    id: "faculty-3",
-    name: "Suchanda Chatterjee (Das)",
-    role: "Joint Faculty Convener",
-    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/IMG_20260920_145411.jpg",
-    linkedin: "https://www.linkedin.com/in/suchanda-chatterjee-das-49b46a3b2/",
-    isPlaceholder: false,
-    orderClass: "order-3 sm:order-3",
-    badgeNumber: "03",
-  },
-];
-
-const facultyCoordinators: CoordinatorMember[] = [
+/* ═════════════════════════════════════════════════════════════════════════
+   EXPANDED FACULTY EVENT LIST BACKUP (UNCOMMENT TO REVERT)
+   ═════════════════════════════════════════════════════════════════════════
+const _expandedFacultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
     role: "Faculty Coordinator",
@@ -355,6 +323,7 @@ const facultyCoordinators: CoordinatorMember[] = [
     linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/",
   },
 ];
+═════════════════════════════════════════════════════════════════════════ */
 
 const displayFacultyCoordinators: CoordinatorMember[] = [
   ...facultyCoordinators,
@@ -815,7 +784,7 @@ export default function TeamCarousel() {
 
                   return (
                     <div className="mt-0.5 space-y-0.5">
-                      {events.map((ev, i) => (
+                      {events.map((ev: string, i: number) => (
                         <p
                           key={i}
                           className="

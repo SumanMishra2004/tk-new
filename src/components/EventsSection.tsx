@@ -50,9 +50,9 @@ interface EventCard {
 }
 
 /* ═════════════════════════════════════════════════════════════════════════
-   ORIGINAL EVENTS DATA BACKUP (UNCOMMENT TO REVERT)
-   ═════════════════════════════════════════════════════════════════════════
-const _prevEvents: EventCard[] = [
+   ORIGINAL EVENTS DATA (ACTIVE)
+   ═════════════════════════════════════════════════════════════════════════ */
+const events: EventCard[] = [
   {
     poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ordion2.jpg",
     title: "Orbion",
@@ -171,10 +171,11 @@ const _prevEvents: EventCard[] = [
     bg: "#2f251e",
   },
 ];
-═════════════════════════════════════════════════════════════════════════ */
 
-/* ════════ UPDATED EVENTS WITH FACULTY & STUDENT COORDINATORS (REVERTIBLE) ════════ */
-const events: EventCard[] = [
+/* ═════════════════════════════════════════════════════════════════════════
+   EXPANDED FACULTY & STUDENT COORDINATORS BACKUP (UNCOMMENT TO REVERT)
+   ═════════════════════════════════════════════════════════════════════════
+const _expandedEvents: EventCard[] = [
   {
     poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ordion2.jpg",
     title: "Orbion",
@@ -315,6 +316,7 @@ const events: EventCard[] = [
     bg: "#2f251e",
   },
 ];
+═════════════════════════════════════════════════════════════════════════ */
 
 const displayEvents: EventCard[] = [...events, ...events];
 
