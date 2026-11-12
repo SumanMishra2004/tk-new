@@ -452,7 +452,12 @@ export default function EventsSection() {
           <Swiper
             modules={[EffectCoverflow, Autoplay, Navigation]}
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % events.length)}
+            /* REVERT INSTRUCTION:
+               If you want to revert back to updating details on slide completion:
+               Replace onSlideChangeTransitionStart with:
+               onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % events.length)}
+            */
+            onSlideChangeTransitionStart={(swiper) => setActiveIndex(swiper.realIndex % events.length)}
             effect="coverflow"
             centeredSlides={true}
             slidesPerView="auto"
