@@ -322,7 +322,7 @@ const displayEvents: EventCard[] = [...events, ...events];
 export default function EventsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const detailsRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -362,12 +362,14 @@ export default function EventsSection() {
     return () => ctx.revert();
   }, []);
 
+  // Smoothly cross-fade only inner card content on event change without making the glassmorphic card container transparent
   useEffect(() => {
-    if (detailsRef.current) {
+    if (contentRef.current) {
+      gsap.killTweensOf(contentRef.current);
       gsap.fromTo(
-        detailsRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+        contentRef.current,
+        { opacity: 0.35 },
+        { opacity: 1, duration: 0.22, ease: "power1.out" }
       );
     }
   }, [activeIndex]);
@@ -572,15 +574,15 @@ export default function EventsSection() {
         </div>
 
         {/* RIGHT: Active Event Details */}
-        <div ref={detailsRef} className="w-full max-w-3xl xl:max-w-none xl:w-[50%] relative z-20 flex flex-col justify-center">
+        <div className="w-full max-w-3xl xl:max-w-none xl:w-[50%] relative z-20 flex flex-col justify-center">
           <div
-            className="rounded-3xl border border-white/[0.14] bg-white/[0.08] p-4 sm:p-6 xl:p-8 transition-all duration-700 relative overflow-hidden flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0.5px_0_rgba(255,255,255,0.14)] backdrop-blur-[22px] backdrop-saturate-[160%]"
+            className="rounded-3xl border border-white/[0.14] bg-white/[0.08] p-4 sm:p-6 xl:p-8 relative overflow-hidden flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0.5px_0_rgba(255,255,255,0.14)] backdrop-blur-[22px] backdrop-saturate-[160%]"
             style={{ WebkitBackdropFilter: "blur(22px) saturate(160%)" }}
           >
             {/* subtle glow accent based on bg color, though keeping it neutral is safer */}
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="flex flex-col md:flex-row gap-5 md:gap-8 relative z-10">
+            <div ref={contentRef} className="flex flex-col md:flex-row gap-5 md:gap-8 relative z-10">
               {/* Left: Info */}
               <div className="flex-1">
                 <div className="mb-3">
