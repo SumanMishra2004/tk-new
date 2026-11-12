@@ -50,7 +50,10 @@ interface EventCard {
   bg: string;
 }
 
-const events: EventCard[] = [
+/* ═════════════════════════════════════════════════════════════════════════
+   ORIGINAL EVENTS DATA BACKUP (UNCOMMENT TO REVERT)
+   ═════════════════════════════════════════════════════════════════════════
+const _prevEvents: EventCard[] = [
   {
     poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ordion2.jpg",
     title: "Orbion",
@@ -142,7 +145,6 @@ const events: EventCard[] = [
     coordinators: [
       { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
       { name: "Sayantani Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
-      
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",
@@ -164,6 +166,150 @@ const events: EventCard[] = [
       { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
       { name: "Avik Kr Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/avikdasetc" },
       { name: "Debarshi Banerjee", phone: "+91 8167330456" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://techfest.org/competitions",
+    bg: "#2f251e",
+  },
+];
+═════════════════════════════════════════════════════════════════════════ */
+
+/* ════════ UPDATED EVENTS WITH FACULTY & STUDENT COORDINATORS (REVERTIBLE) ════════ */
+const events: EventCard[] = [
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ordion2.jpg",
+    title: "Orbion",
+    description:
+      "A 8-hour hackathon where teams build a working prototype around a surprise theme revealed at kickoff.",
+    rules: [
+      "Teams of 2–4 members only",
+      "All code must be written during the event window",
+      "Use of open-source libraries and public APIs is allowed",
+      "Final submission via GitHub before the deadline",
+      "Plagiarized or pre-built submissions lead to disqualification",
+    ],
+    coordinators: [
+      { name: "Avik Kumar Das", linkedin: "https://in.linkedin.com/in/avikdasetc" },
+      { name: "Rupayan Halder", linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/" },
+      { name: "Dr. Raktim Kumar Das", linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343" },
+      { name: "Ritam Das Gupta", phone: "+91 62915 34401" },
+      { name: "Aritra Sen", phone: "+91 90000 00001" },
+      { name: "Priya Das", phone: "+91 90000 00002" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://unstop.com/hackathons/orbion-8-hour-hackathon-institute-of-engineering-and-managemet-1756946?lb=I5srHPJQ&utm_medium=Share&utm_source=roshayad43718&utm_campaign=Online_coding_challenge",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/mystic_mind_2.jpg",
+    title: "Mystic Minds",
+    description:
+      "It's time to whirl all the knowledge inside your brain!! Join this exciting quiz event and put your intellect to the ultimate test.",
+    rules: [
+      "Open to all university/college students.",
+      "Team Size: [Solo / Teams of 2]",
+      "Solo Participant: ₹49",
+      "Team of 2: ₹79",
+      "Decision of the quizmasters/organizers will be final.",
+    ],
+    coordinators: [
+      { name: "Sayantani Das", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
+      { name: "Tejasri Chate", linkedin: "https://in.linkedin.com/in/tejashri-chate" },
+      { name: "Arista Seth", phone: "+91 79803 12509" },
+      { name: "Ritam Das Gupta", phone: "+91 62915 34401" },
+      { name: "Anadir Paul", phone: "+91 93877 96623" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://forms.gle/g5DaYwkiQPfrE5ZK9",
+    bg: "#43392f",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/mind_forge_2.jpg",
+    title: "Mind Forge",
+    description:
+      "Get ready to forge bold ideas into powerful innovations at MIND FORGE: The Ultimate Pitch Challenge, where creativity meets technology and ideas take center stage !!",
+    rules: [
+      "Open to all university/college student",
+      "Team Size: 2–4",
+      "Registration Fee: ₹100",
+    ],
+    coordinators: [
+      { name: "Dr. Siddhartha Roy", linkedin: "https://in.linkedin.com/in/siddhartha-roy-3893732b9" },
+      { name: "Sweta Saha", linkedin: "https://www.linkedin.com/in/sweta-sarkar-825984238/" },
+      { name: "Roshan Yadav", phone: "+91 6289 374 236" },
+      { name: "Arista Seth", phone: "+91 79803 12509" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSe1IMCCqCMSqZ9k1lzV0Ia6_TRhkhk0URErHvtrsjmpnhzZZA/viewform",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-03_at_5.44.29_PM.jpg",
+    title: "Tech Canvas",
+    description: "Step into the dark, sleek world of high-tech aesthetics and let your creativity take center stage at Tech Canvas, the premier poster design competition at TechKurukshetra '26!",
+    rules: [
+      "Maximum team size - 2",
+      "Every participant has to register either individually or as a team.",
+      "If registering as a team, only one member must fill the form.",
+      "Partnered participants must register with the same team name to avoid confusion on the day of the event.",
+      "Theme of the poster must be pertaining to emerging technologies."
+    ],
+    coordinators: [
+      { name: "Apalok Roy", linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/" },
+      { name: "Nitu Saha", linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6" },
+      { name: "Arista Seth", phone: "+91 79803 12509" },
+      { name: "Asmita Chatterjee", phone: "+91 6291 750 785" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScU78xo8AwtZY6EH4ue2VTs3fPaUQp0fGCLkRA662opR2Q2AA/viewform",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/lg_315x410.png",
+    title: "Techfest IIT Bombay",
+    description:
+      "Tech Kurukshetra 2026 in collaboration with Techfest, IIT Bombay presents Kolkata Zonals featuring premier national-level competitions.",
+    rules: [
+      "SparkX - National AI Competition",
+      "Zerocode - Prompt War",
+      "Innovatex - Future Habitat Challenge",
+      "Event Date: 14th November, 2026",
+      "Venue: UEM Kolkata",
+    ],
+    coordinators: [
+      { name: "Sayantani Das", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
+      { name: "Tejasri Chate", linkedin: "https://in.linkedin.com/in/tejashri-chate" },
+      { name: "Nitu Saha", linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6" },
+      { name: "Saikat Mukherjee", linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/" },
+      { name: "Apalok Roy", linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/" },
+      { name: "Tannishtha Bhattacharya", phone: "+91 90000 00003" },
+      { name: "Hriddhita Bhattacharya", phone: "+91 90000 00004" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://techfest.org/competitions",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/desktop_315x410.png",
+    title: "Techfest IIT Bombay",
+    description:
+      "Tech Kurukshetra 2026 in collaboration with Techfest, IIT Bombay presents Kolkata Zonals featuring premier robotics competitions.",
+    rules: [
+      "ThetaShift - Spherical Bot Competition",
+      "Meshmerize - Line Following Robot",
+      "Roboreach - Robotic Arm Competition",
+      "Event Date: 14th November, 2026",
+      "Venue: UEM Kolkata",
+    ],
+    coordinators: [
+      { name: "Apurba Nandi", linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/" },
+      { name: "Monalisa Chakraborty", linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/" },
+      { name: "Uddipan Ghosh", linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232" },
+      { name: "Dr. Ahona Ghosh", linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/" },
+      { name: "Rangon Sarkar", linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb" },
+      { name: "Riya Rai Sarkar", linkedin: "https://www.linkedin.com/in/riyasarkarofficial/" },
+      { name: "Debarshi Banerjee", phone: "+91 8167330456" },
+      { name: "Tannishtha Bhattacharya", phone: "+91 90000 00003" },
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",
