@@ -968,7 +968,11 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             facultySwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             To revert back to updating on slide completion:
+             Change onSlideChangeTransitionStart back to onSlideChange
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveFacultyIndex(swiper.realIndex % facultyCoordinators.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1368,7 +1372,11 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             coreSwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             To revert back to updating on slide completion:
+             Change onSlideChangeTransitionStart back to onSlideChange
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveCoreIndex(swiper.realIndex % members.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1716,7 +1724,11 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             volunteerSwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             To revert back to updating on slide completion:
+             Change onSlideChangeTransitionStart back to onSlideChange
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveVolunteerIndex(swiper.realIndex % studentVolunteers.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
