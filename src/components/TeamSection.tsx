@@ -968,14 +968,7 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             facultySwiperRef.current = swiper;
           }}
-          /* REVERT INSTRUCTION:
-             If you want to revert back to updating on slide completion:
-             Replace onSlideChangeTransitionStart with:
-             onSlideChange={(swiper) => {
-               setActiveFacultyIndex(swiper.realIndex % facultyCoordinators.length);
-             }}
-          */
-          onSlideChangeTransitionStart={(swiper) => {
+          onSlideChange={(swiper) => {
             setActiveFacultyIndex(swiper.realIndex % facultyCoordinators.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -984,15 +977,11 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          /* REVERT INSTRUCTION:
-             If you want to revert speed and delay:
-             Replace with speed={800} and delay: 3500
-          */
-          speed={500}
+          speed={800}
           watchSlidesProgress={true}
           touchStartPreventDefault={false}
           autoplay={{
-            delay: 3800,
+            delay: 3500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
@@ -1379,14 +1368,7 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             coreSwiperRef.current = swiper;
           }}
-          /* REVERT INSTRUCTION:
-             If you want to revert back to updating on slide completion:
-             Replace onSlideChangeTransitionStart with:
-             onSlideChange={(swiper) => {
-               setActiveCoreIndex(swiper.realIndex % members.length);
-             }}
-          */
-          onSlideChangeTransitionStart={(swiper) => {
+          onSlideChange={(swiper) => {
             setActiveCoreIndex(swiper.realIndex % members.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1395,15 +1377,11 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          /* REVERT INSTRUCTION:
-             If you want to revert speed and delay:
-             Replace with speed={800} and delay: 3500
-          */
-          speed={500}
+          speed={800}
           watchSlidesProgress={true}
           touchStartPreventDefault={false}
           autoplay={{
-            delay: 4600,
+            delay: 3500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
@@ -1738,14 +1716,7 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             volunteerSwiperRef.current = swiper;
           }}
-          /* REVERT INSTRUCTION:
-             If you want to revert back to updating on slide completion:
-             Replace onSlideChangeTransitionStart with:
-             onSlideChange={(swiper) => {
-               setActiveVolunteerIndex(swiper.realIndex % studentVolunteers.length);
-             }}
-          */
-          onSlideChangeTransitionStart={(swiper) => {
+          onSlideChange={(swiper) => {
             setActiveVolunteerIndex(swiper.realIndex % studentVolunteers.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1754,15 +1725,11 @@ export default function TeamCarousel() {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          /* REVERT INSTRUCTION:
-             If you want to revert speed and delay:
-             Replace with speed={800} and delay: 3500
-          */
-          speed={500}
+          speed={800}
           watchSlidesProgress={true}
           touchStartPreventDefault={false}
           autoplay={{
-            delay: 5400,
+            delay: 3500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
