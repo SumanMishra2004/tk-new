@@ -129,10 +129,57 @@ export default function Navigation() {
         WebkitBackdropFilter: "blur(22px) saturate(160%)",
       }}
     >
-      {/* ════════ LOGOS ════════ */}
-      <div className="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 justify-self-start min-w-0 shrink-0">
+      {/* ════════ LOGOS (ADAPTIVE: iPhone SE < 410px & Modern Phones >= 410px) ════════
+          REVERT INSTRUCTIONS:
+          If you ever want to revert back to the original single-size layout:
+          1. Delete this active <div className="..."> block below.
+          2. Uncomment the "ORIGINAL LOGOS BACKUP" block directly underneath it.
+      */}
+      <div className="flex items-center gap-1.5 min-[410px]:gap-2 sm:gap-2 xl:gap-2.5 justify-self-start min-w-0 max-w-[calc(100%-48px)] lg:max-w-none">
 
         {/* TK logo — always visible */}
+        <button
+          onClick={() => scrollTo("hero", "#hero")}
+          aria-label="Go to top"
+          className="flex items-center bg-transparent border-none p-0 cursor-pointer shrink-0"
+        >
+          <img
+            src="/tk-logo.webp"
+            alt="Tech Kurukshetra"
+            className="h-8 min-[410px]:h-[34px] sm:h-10 xl:h-[46px] max-w-[72px] min-[410px]:max-w-[78px] sm:max-w-[150px] w-auto object-contain transition-transform duration-300 hover:scale-105"
+          />
+        </button>
+
+        <div className={`h-5 min-[410px]:h-[22px] sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+
+        {/* IEDC */}
+        <img
+          src="/IEDC (2).webp"
+          alt="IEDC"
+          className="h-7 min-[410px]:h-[29px] sm:h-10 xl:h-[44px] max-w-[26px] min-[410px]:max-w-[30px] sm:max-w-[48px] w-auto object-contain shrink-0"
+        />
+
+        <div className={`h-5 min-[410px]:h-[22px] sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+
+        {/* IEM & UEM Combined Logo */}
+        <img
+          src="/IEM_UEM_4.webp"
+          alt="IEM & UEM"
+          className="h-7 min-[410px]:h-[29px] sm:h-10 xl:h-[44px] max-w-[68px] min-[410px]:max-w-[74px] sm:max-w-[130px] w-auto object-contain shrink-0"
+        />
+
+        <div className={`h-5 min-[410px]:h-[22px] sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
+
+        {/* IEEE Society */}
+        <img
+          src="/ieee-society.png"
+          alt="IEEE Society"
+          className="h-[30px] min-[410px]:h-[31px] sm:h-12 xl:h-[56px] max-w-[80px] min-[410px]:max-w-[92px] sm:max-w-[185px] w-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+
+      {/* ════════ ORIGINAL LOGOS BACKUP (UNCOMMENT TO REVERT) ════════
+      <div className="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 justify-self-start min-w-0 shrink-0">
         <button
           onClick={() => scrollTo("hero", "#hero")}
           aria-label="Go to top"
@@ -148,7 +195,6 @@ export default function Navigation() {
 
         <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
-        {/* IEDC */}
         <img
           src="/IEDC (2).webp"
           alt="IEDC"
@@ -158,7 +204,6 @@ export default function Navigation() {
 
         <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
-        {/* IEM & UEM Combined Logo */}
         <img
           src="/IEM_UEM_4.webp"
           alt="IEM & UEM"
@@ -168,7 +213,6 @@ export default function Navigation() {
 
         <div className={`h-5 sm:h-6 xl:h-7 w-px shrink-0 ${darkBg ? "bg-white/20" : "bg-black/15"}`} />
 
-        {/* IEEE Society */}
         <img
           src="/ieee-society.png"
           alt="IEEE Society"
@@ -176,6 +220,7 @@ export default function Navigation() {
           style={{ maxWidth: "clamp(80px, 10vw, 185px)" }}
         />
       </div>
+      ════════════════════════════════════════════════════════════════ */}
 
       {/* ════════ DESKTOP NAV LINKS (CENTER ALIGNED) ════════ */}
       <div className="hidden lg:flex items-center justify-self-center gap-0.5 xl:gap-1 px-1 translate-x-8 sm:translate-x-12 xl:translate-x-20">
