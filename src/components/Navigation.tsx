@@ -172,7 +172,7 @@ export default function Navigation() {
 
         {/* IEEE Society */}
         <img
-          src="/ieee-society.png"
+          src="https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/IEEE_Society_Logos__Kolkata_and_Robotics.png"
           alt="IEEE Society"
           className="h-[30px] min-[410px]:h-[31px] sm:h-12 xl:h-[56px] max-w-[80px] min-[410px]:max-w-[92px] sm:max-w-[185px] w-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105"
         />
@@ -296,7 +296,7 @@ export default function Navigation() {
                 <img src="/tk-logo.webp" alt="Tech Kurukshetra" className="h-8 w-auto object-contain" />
                 <img src="/IEDC (2).webp" alt="IEDC" className="h-7 w-auto object-contain" />
                 <img src="/IEM_UEM_4.webp" alt="IEM & UEM" className="h-7 w-auto object-contain" />
-                <img src="/ieee-society.png" alt="IEEE Society" className="h-6 w-auto object-contain" />
+                <img src="https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/IEEE_Society_Logos__Kolkata_and_Robotics.png" alt="IEEE Society" className="h-6 w-auto object-contain" />
               </div>
 
               <div className="flex flex-col gap-1 pt-3">

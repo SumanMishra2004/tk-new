@@ -9,7 +9,6 @@ import { Space_Grotesk, Rajdhani } from "next/font/google";
 
 import {
   EffectCoverflow,
-  Pagination,
   Autoplay,
   Navigation,
 } from "swiper/modules";
@@ -50,6 +49,9 @@ interface EventCard {
   bg: string;
 }
 
+/* ═════════════════════════════════════════════════════════════════════════
+   ORIGINAL EVENTS DATA (ACTIVE)
+   ═════════════════════════════════════════════════════════════════════════ */
 const events: EventCard[] = [
   {
     poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ordion2.jpg",
@@ -142,7 +144,6 @@ const events: EventCard[] = [
     coordinators: [
       { name: "Dr. Sangita Dutta", phone: "LinkedIn", linkedin: "https://www.linkedin.com/in/dr-sangita-dutta-509b201a4/" },
       { name: "Sayantani Das", phone: "LinkedIn", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
-      
     ],
     prizepool: "Revealing Soon",
     registerLink: "https://techfest.org/competitions",
@@ -171,10 +172,158 @@ const events: EventCard[] = [
   },
 ];
 
+/* ═════════════════════════════════════════════════════════════════════════
+   EXPANDED FACULTY & STUDENT COORDINATORS BACKUP (UNCOMMENT TO REVERT)
+   ═════════════════════════════════════════════════════════════════════════
+const _expandedEvents: EventCard[] = [
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/ordion2.jpg",
+    title: "Orbion",
+    description:
+      "A 8-hour hackathon where teams build a working prototype around a surprise theme revealed at kickoff.",
+    rules: [
+      "Teams of 2–4 members only",
+      "All code must be written during the event window",
+      "Use of open-source libraries and public APIs is allowed",
+      "Final submission via GitHub before the deadline",
+      "Plagiarized or pre-built submissions lead to disqualification",
+    ],
+    coordinators: [
+      { name: "Avik Kumar Das", linkedin: "https://in.linkedin.com/in/avikdasetc" },
+      { name: "Rupayan Halder", linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/" },
+      { name: "Dr. Raktim Kumar Dey", linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343" },
+      { name: "Ritam Das Gupta", phone: "+91 62915 34401" },
+      { name: "Aritra Sen", phone: "+91 90000 00001" },
+      { name: "Priya Das", phone: "+91 90000 00002" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://unstop.com/hackathons/orbion-8-hour-hackathon-institute-of-engineering-and-managemet-1756946?lb=I5srHPJQ&utm_medium=Share&utm_source=roshayad43718&utm_campaign=Online_coding_challenge",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/mystic_mind_2.jpg",
+    title: "Mystic Minds",
+    description:
+      "It's time to whirl all the knowledge inside your brain!! Join this exciting quiz event and put your intellect to the ultimate test.",
+    rules: [
+      "Open to all university/college students.",
+      "Team Size: [Solo / Teams of 2]",
+      "Solo Participant: ₹49",
+      "Team of 2: ₹79",
+      "Decision of the quizmasters/organizers will be final.",
+    ],
+    coordinators: [
+      { name: "Sayantani Das", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
+      { name: "Tejasri Chate", linkedin: "https://in.linkedin.com/in/tejashri-chate" },
+      { name: "Arista Seth", phone: "+91 79803 12509" },
+      { name: "Ritam Das Gupta", phone: "+91 62915 34401" },
+      { name: "Anadir Paul", phone: "+91 93877 96623" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://forms.gle/g5DaYwkiQPfrE5ZK9",
+    bg: "#43392f",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/mind_forge_2.jpg",
+    title: "Mind Forge",
+    description:
+      "Get ready to forge bold ideas into powerful innovations at MIND FORGE: The Ultimate Pitch Challenge, where creativity meets technology and ideas take center stage !!",
+    rules: [
+      "Open to all university/college student",
+      "Team Size: 2–4",
+      "Registration Fee: ₹100",
+    ],
+    coordinators: [
+      { name: "Dr. Siddhartha Roy", linkedin: "https://in.linkedin.com/in/siddhartha-roy-3893732b9" },
+      { name: "Sweta Saha", linkedin: "https://www.linkedin.com/in/sweta-sarkar-825984238/" },
+      { name: "Roshan Yadav", phone: "+91 6289 374 236" },
+      { name: "Arista Seth", phone: "+91 79803 12509" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSe1IMCCqCMSqZ9k1lzV0Ia6_TRhkhk0URErHvtrsjmpnhzZZA/viewform",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-03_at_5.44.29_PM.jpg",
+    title: "Tech Canvas",
+    description: "Step into the dark, sleek world of high-tech aesthetics and let your creativity take center stage at Tech Canvas, the premier poster design competition at TechKurukshetra '26!",
+    rules: [
+      "Maximum team size - 2",
+      "Every participant has to register either individually or as a team.",
+      "If registering as a team, only one member must fill the form.",
+      "Partnered participants must register with the same team name to avoid confusion on the day of the event.",
+      "Theme of the poster must be pertaining to emerging technologies."
+    ],
+    coordinators: [
+      { name: "Apalok Roy", linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/" },
+      { name: "Nitu Saha", linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6" },
+      { name: "Arista Seth", phone: "+91 79803 12509" },
+      { name: "Asmita Chatterjee", phone: "+91 6291 750 785" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScU78xo8AwtZY6EH4ue2VTs3fPaUQp0fGCLkRA662opR2Q2AA/viewform",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/lg_315x410.png",
+    title: "Techfest IIT Bombay",
+    description:
+      "Tech Kurukshetra 2026 in collaboration with Techfest, IIT Bombay presents Kolkata Zonals featuring premier national-level competitions.",
+    rules: [
+      "SparkX - National AI Competition",
+      "Zerocode - Prompt War",
+      "Innovatex - Future Habitat Challenge",
+      "Event Date: 14th November, 2026",
+      "Venue: UEM Kolkata",
+    ],
+    coordinators: [
+      { name: "Sayantani Das", linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6" },
+      { name: "Tejasri Chate", linkedin: "https://in.linkedin.com/in/tejashri-chate" },
+      { name: "Nitu Saha", linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6" },
+      { name: "Saikat Mukherjee", linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/" },
+      { name: "Apalok Roy", linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/" },
+      { name: "Tannishtha Bhattacharya", phone: "+91 90000 00003" },
+      { name: "Hriddhita Bhattacharjee", phone: "+91 90000 00004" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://techfest.org/competitions",
+    bg: "#2f251e",
+  },
+  {
+    poster: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/desktop_315x410.png",
+    title: "Techfest IIT Bombay",
+    description:
+      "Tech Kurukshetra 2026 in collaboration with Techfest, IIT Bombay presents Kolkata Zonals featuring premier robotics competitions.",
+    rules: [
+      "ThetaShift - Spherical Bot Competition",
+      "Meshmerize - Line Following Robot",
+      "Roboreach - Robotic Arm Competition",
+      "Event Date: 14th November, 2026",
+      "Venue: UEM Kolkata",
+    ],
+    coordinators: [
+      { name: "Apurba Nandi", linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/" },
+      { name: "Monalisa Chakraborty", linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/" },
+      { name: "Uddipan Ghosh", linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232" },
+      { name: "Dr. Ahona Ghosh", linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/" },
+      { name: "Rangon Sarkar", linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb" },
+      { name: "Riya Rai Sarkar", linkedin: "https://www.linkedin.com/in/riyasarkarofficial/" },
+      { name: "Debarshi Banerjee", phone: "+91 8167330456" },
+      { name: "Tannishtha Bhattacharya", phone: "+91 90000 00003" },
+    ],
+    prizepool: "Revealing Soon",
+    registerLink: "https://techfest.org/competitions",
+    bg: "#2f251e",
+  },
+];
+═════════════════════════════════════════════════════════════════════════ */
+
+const displayEvents: EventCard[] = [...events, ...events];
+
 export default function EventsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const detailsRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -184,6 +333,11 @@ export default function EventsSection() {
 
   const handleNext = useCallback(() => {
     swiperRef.current?.slideNext();
+  }, []);
+
+  const handleBulletClick = useCallback((targetIndex: number) => {
+    if (!swiperRef.current) return;
+    swiperRef.current.slideToLoop(targetIndex);
   }, []);
 
   useEffect(() => {
@@ -209,17 +363,19 @@ export default function EventsSection() {
     return () => ctx.revert();
   }, []);
 
+  // Smoothly cross-fade only inner card content on event change without making the glassmorphic card container transparent
   useEffect(() => {
-    if (detailsRef.current) {
+    if (contentRef.current) {
+      gsap.killTweensOf(contentRef.current);
       gsap.fromTo(
-        detailsRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+        contentRef.current,
+        { opacity: 0.35 },
+        { opacity: 1, duration: 0.22, ease: "power1.out" }
       );
     }
   }, [activeIndex]);
 
-  const activeEvent = events[activeIndex] || events[0];
+  const activeEvent = events[activeIndex % events.length] || events[0];
 
   return (
     <section ref={sectionRef} id="events" className="w-full bg-[#12100e] py-16 sm:py-24 text-white overflow-hidden relative">
@@ -295,14 +451,18 @@ export default function EventsSection() {
           </button>
 
           <Swiper
-            modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+            modules={[EffectCoverflow, Autoplay, Navigation]}
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            /* REVERT INSTRUCTION:
+               If you want to revert back to updating details on slide completion:
+               Replace onSlideChangeTransitionStart with:
+               onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % events.length)}
+            */
+            onSlideChangeTransitionStart={(swiper) => setActiveIndex(swiper.realIndex % events.length)}
             effect="coverflow"
             centeredSlides={true}
             slidesPerView="auto"
             loop={true}
-            loopAdditionalSlides={2}
             watchSlidesProgress={true}
             touchStartPreventDefault={false}
             grabCursor={true}
@@ -320,12 +480,11 @@ export default function EventsSection() {
               scale: 0.94,
               slideShadows: false,
             }}
-            pagination={{ clickable: true }}
             className="eventsSwiper"
           >
-            {events.map((event, index) => (
+            {displayEvents.map((event, index) => (
               <SwiperSlide
-                key={`${event.title}-${index}`}
+                key={`event-${event.title}-${index}`}
                 className="
                 !w-[220px] !h-[285px]
                 sm:!w-[255px] sm:!h-[330px]
@@ -374,10 +533,27 @@ export default function EventsSection() {
             ))}
           </Swiper>
 
-          <div className="mt-8 flex items-center justify-center gap-3 text-center">
+          {/* PAGINATION BULLETS */}
+          <div className="mt-5 flex items-center justify-center gap-2">
+            {events.map((_, i) => (
+              <button
+                key={`event-bullet-${i}`}
+                type="button"
+                onClick={() => handleBulletClick(i)}
+                aria-label={`Go to event ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  (activeIndex % events.length) === i
+                    ? "w-6 bg-[#E6392F] shadow-[0_0_10px_rgba(230,57,47,0.5)] border border-[#E6392F]/40"
+                    : "w-1.5 bg-white/25 border border-white/10 hover:bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="mt-3 flex items-center justify-center gap-3 text-center">
             <span className="h-px w-6 bg-white/20 sm:w-10" />
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/35 sm:text-[11px] transition-all duration-500">
-              {String(activeIndex + 1).padStart(2, "0")} / {String(events.length).padStart(2, "0")}
+              {String((activeIndex % events.length) + 1).padStart(2, "0")} / {String(events.length).padStart(2, "0")}
             </p>
             <span className="h-px w-6 bg-white/20 sm:w-10" />
           </div>
@@ -404,15 +580,15 @@ export default function EventsSection() {
         </div>
 
         {/* RIGHT: Active Event Details */}
-        <div ref={detailsRef} className="w-full max-w-3xl xl:max-w-none xl:w-[50%] relative z-20 flex flex-col justify-center">
+        <div className="w-full max-w-3xl xl:max-w-none xl:w-[50%] relative z-20 flex flex-col justify-center">
           <div
-            className="rounded-3xl border border-white/[0.14] bg-white/[0.08] p-4 sm:p-6 xl:p-8 transition-all duration-700 relative overflow-hidden flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0.5px_0_rgba(255,255,255,0.14)] backdrop-blur-[22px] backdrop-saturate-[160%]"
+            className="rounded-3xl border border-white/[0.14] bg-white/[0.08] p-4 sm:p-6 xl:p-8 relative overflow-hidden flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0.5px_0_rgba(255,255,255,0.14)] backdrop-blur-[22px] backdrop-saturate-[160%]"
             style={{ WebkitBackdropFilter: "blur(22px) saturate(160%)" }}
           >
             {/* subtle glow accent based on bg color, though keeping it neutral is safer */}
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="flex flex-col md:flex-row gap-5 md:gap-8 relative z-10">
+            <div ref={contentRef} className="flex flex-col md:flex-row gap-5 md:gap-8 relative z-10">
               {/* Left: Info */}
               <div className="flex-1">
                 <div className="mb-3">
@@ -467,19 +643,25 @@ export default function EventsSection() {
                               href={coordinator.linkedin}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={`${bodyFont.className} inline-flex items-center gap-1 text-[9px] sm:text-[10px] text-white/80 hover:text-white transition-colors font-medium`}
+                              className={`${bodyFont.className} mt-1 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-0.5 text-[9px] sm:text-[10px] font-medium text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)] transition-all duration-200 hover:scale-[1.03] hover:border-white/35 hover:bg-white/15 hover:text-white active:scale-95`}
                             >
-                              <span>LinkedIn</span>
                               <svg viewBox="0 0 24 24" fill="currentColor" className="h-2.5 w-2.5 text-white">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8m1.39 9.74v-8.37H5.07v8.37h2.78z" />
                               </svg>
+                              <span className="text-white">LinkedIn</span>
                             </a>
                           ) : coordinator.phone && coordinator.phone !== "TBA" && coordinator.phone !== "LinkedIn" ? (
-                            <a href={`tel:${coordinator.phone.replace(/\s+/g, "")}`} className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/50 hover:text-white transition-colors`}>
-                              {coordinator.phone}
+                            <a
+                              href={`tel:${coordinator.phone.replace(/\s+/g, "")}`}
+                              className={`${bodyFont.className} mt-1 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-0.5 text-[9px] sm:text-[10px] font-medium text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)] transition-all duration-200 hover:scale-[1.03] hover:border-white/35 hover:bg-white/15 hover:text-white active:scale-95`}
+                            >
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-2.5 w-2.5 text-[#E6392F]">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                              </svg>
+                              <span>{coordinator.phone}</span>
                             </a>
                           ) : (
-                            <span className={`${bodyFont.className} text-[9px] sm:text-[10px] text-white/40 tracking-wider`}>
+                            <span className={`${bodyFont.className} mt-1 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 text-[9px] sm:text-[10px] text-white/45 tracking-wider`}>
                               {coordinator.phone || "Contact TBA"}
                             </span>
                           )}

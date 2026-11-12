@@ -85,6 +85,9 @@ const facultyMembers: FacultyMember[] = [
   },
 ];
 
+/* ═════════════════════════════════════════════════════════════════════════
+   ORIGINAL FACULTY COORDINATORS DATA (ACTIVE)
+   ═════════════════════════════════════════════════════════════════════════ */
 const facultyCoordinators: CoordinatorMember[] = [
   {
     name: "Sayantani Das",
@@ -198,6 +201,130 @@ const facultyCoordinators: CoordinatorMember[] = [
   },
 ];
 
+/* ═════════════════════════════════════════════════════════════════════════
+   EXPANDED FACULTY EVENT LIST BACKUP (UNCOMMENT TO REVERT)
+   ═════════════════════════════════════════════════════════════════════════
+const _expandedFacultyCoordinators: CoordinatorMember[] = [
+  {
+    name: "Sayantani Das",
+    role: "Faculty Coordinator",
+    event: ["Mystic Minds", "Zerocode (IIT Bombay Techfest)"],
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Sayantani.jpg",
+    linkedin: "https://in.linkedin.com/in/sayantani-das-2636102b6",
+  },
+  {
+    name: "Avik Kumar Das",
+    role: "Faculty Coordinator",
+    event: "Orbion (Hackathon)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/4b1a97c3-7ec0-4abb-beaa-975e02ddca7a.png",
+    linkedin: "https://in.linkedin.com/in/avikdasetc",
+  },
+  {
+    name: "Apurba Nandi",
+    role: "Faculty Coordinator",
+    event: "ThetaShift (IIT Bombay Techfest)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/c2c77c23-20cc-4cd6-8788-82eacf0779fe.png",
+    linkedin: "https://www.linkedin.com/in/apurba-nandi-8b63b2174/",
+  },
+  {
+    name: "Rangon Sarkar",
+    role: "Faculty Coordinator",
+    event: "Roboreach (IIT Bombay Techfest)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-09-20_at_11.10.40_PM.jpg",
+    linkedin: "https://in.linkedin.com/in/rangon-sarkar-a453981bb",
+  },
+  {
+    name: "Uddipan Ghosh",
+    role: "Faculty Coordinator",
+    event: "Meshmerize (IIT Bombay Techfest)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/9c2d31d5-a96e-4978-9712-4dd3d3c6162c_1.png",
+    linkedin: "https://in.linkedin.com/in/uddipan-ghosh-9685a5232",
+  },
+  {
+    name: "Apalok Roy",
+    role: "Faculty Coordinator",
+    event: ["TechCanvas", "InnovateX (IIT Bombay Techfest)"],
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809122/1768022154930.jpg",
+    linkedin: "https://www.linkedin.com/in/apalok-roy-b25a65205/",
+  },
+  {
+    name: "Sweta Saha",
+    role: "Faculty Coordinator",
+    event: "Mind Forge (Ideathon)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/lkxoyuxhfwc1lklygjpo.jpg",
+    linkedin: "https://www.linkedin.com/in/sweta-sarkar-825984238/",
+  },
+  {
+    name: "Dr. Siddhartha Roy",
+    role: "Faculty Coordinator",
+    event: "Mind Forge (Ideathon)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/sf82lahannlnw8gd79dp.jpg",
+    linkedin: "https://in.linkedin.com/in/siddhartha-roy-3893732b9",
+  },
+  {
+    name: "Nitu Saha",
+    role: "Faculty Coordinator",
+    event: ["TechCanvas", "SparkX (IIT Bombay Techfest)"],
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809316/Nitu_Saha.jpg",
+    linkedin: "https://in.linkedin.com/in/nitu-saha-3846551b6",
+  },
+  {
+    name: "Dr. Ahona Ghosh",
+    role: "Faculty Coordinator",
+    event: "Meshmerize (IIT Bombay Techfest)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Ahona.jpg",
+    linkedin: "https://www.linkedin.com/in/dr-ahona-ghosh-66757a85/",
+  },
+  {
+    name: "Tejasri Chate",
+    role: "Faculty Coordinator",
+    event: ["Mystic Minds", "Zerocode (IIT Bombay Techfest)"],
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tejashri_Srivastava.jpg",
+    linkedin: "https://in.linkedin.com/in/tejashri-chate",
+  },
+  {
+    name: "Dr. Raktim Kumar Dey",
+    role: "Faculty Coordinator",
+    event: "Orbion (Hackathon)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793809013/WhatsApp_Image_2026-11-04_at_8.09.37_PM.jpg",
+    linkedin: "https://in.linkedin.com/in/dr-raktim-kumar-dey-1a971343",
+  },
+  {
+    name: "Rupayan Halder",
+    role: "Faculty Coordinator",
+    event: "Orbion (Hackathon)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/RPH.png",
+    linkedin: "https://www.linkedin.com/in/rupayan-halder-962922209/",
+  },
+  {
+    name: "Riya Rai Sarkar",
+    role: "Faculty Coordinator",
+    event: "Roboreach (IIT Bombay Techfest)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/v1793808642/Riya.jpg",
+    linkedin: "https://www.linkedin.com/in/riyasarkarofficial/",
+  },
+  {
+    name: "Riya Jana",
+    role: "Faculty Coordinator",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-05_at_1.05.55_PM.jpg",
+  },
+  {
+    name: "Monalisa Chakraborty",
+    role: "Faculty Coordinator",
+    event: "ThetaShift (IIT Bombay Techfest)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_8.09.37_PM_1.jpg",
+    linkedin: "https://www.linkedin.com/in/monalisa-chakraborty-1336862a4/",
+  },
+  {
+    name: "Saikat Mukherjee",
+    role: "Faculty Coordinator",
+    event: "SparkX (IIT Bombay Techfest)",
+    image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/WhatsApp_Image_2026-11-04_at_9.53.17_PM.jpg",
+    linkedin: "https://www.linkedin.com/in/saikat-mukherjee-b212332a2/",
+  },
+];
+═════════════════════════════════════════════════════════════════════════ */
+
 const displayFacultyCoordinators: CoordinatorMember[] = [
   ...facultyCoordinators,
   ...facultyCoordinators,
@@ -286,7 +413,7 @@ const studentVolunteers: Member[] = [
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Rudrodeb_Saha.jpg",
   },
   {
-    name: "Tannistha Bhattacharya",
+    name: "Tannishtha Bhattacharya",
     image: "https://res.cloudinary.com/r5icihkw/image/upload/f_auto/q_auto/Tannistha_Bhattacharya.jpg",
   },
   {
@@ -657,7 +784,7 @@ export default function TeamCarousel() {
 
                   return (
                     <div className="mt-0.5 space-y-0.5">
-                      {events.map((ev, i) => (
+                      {events.map((ev: string, i: number) => (
                         <p
                           key={i}
                           className="
@@ -749,21 +876,20 @@ export default function TeamCarousel() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-l from-black to-transparent" />
 
-        {/* NAV ARROWS — DESKTOP */}
+        {/* NAV ARROWS — VISIBLE ON BOTH MOBILE & DESKTOP (REVERTIBLE: change flex h-8 w-8 to hidden md:flex h-10 w-10) */}
         <button
           onClick={handleFacultyPrev}
           aria-label="Previous faculty coordinator"
           className="
             pointer-events-auto
-            absolute left-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute left-2 sm:left-4 lg:left-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:left-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -773,7 +899,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m15 18-6-6 6-6" />
           </svg>
@@ -784,15 +910,14 @@ export default function TeamCarousel() {
           aria-label="Next faculty coordinator"
           className="
             pointer-events-auto
-            absolute right-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute right-2 sm:right-4 lg:right-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:right-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -802,7 +927,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -812,7 +937,11 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             facultySwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             To revert back to updating on slide completion:
+             Change onSlideChangeTransitionStart back to onSlideChange
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveFacultyIndex(swiper.realIndex % facultyCoordinators.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1151,21 +1280,20 @@ export default function TeamCarousel() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-l from-black to-transparent" />
 
-        {/* NAV ARROWS — DESKTOP */}
+        {/* NAV ARROWS — VISIBLE ON BOTH MOBILE & DESKTOP (REVERTIBLE: change flex h-8 w-8 to hidden md:flex h-10 w-10) */}
         <button
           onClick={handleCorePrev}
           aria-label="Previous student lead"
           className="
             pointer-events-auto
-            absolute left-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute left-2 sm:left-4 lg:left-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:left-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1175,7 +1303,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m15 18-6-6 6-6" />
           </svg>
@@ -1186,15 +1314,14 @@ export default function TeamCarousel() {
           aria-label="Next student lead"
           className="
             pointer-events-auto
-            absolute right-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute right-2 sm:right-4 lg:right-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:right-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1204,7 +1331,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -1214,7 +1341,11 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             coreSwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             To revert back to updating on slide completion:
+             Change onSlideChangeTransitionStart back to onSlideChange
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveCoreIndex(swiper.realIndex % members.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
@@ -1501,21 +1632,20 @@ export default function TeamCarousel() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 sm:w-28 bg-gradient-to-l from-black to-transparent" />
 
-        {/* NAV ARROWS — DESKTOP */}
+        {/* NAV ARROWS — VISIBLE ON BOTH MOBILE & DESKTOP (REVERTIBLE: change flex h-8 w-8 to hidden md:flex h-10 w-10) */}
         <button
           onClick={handleVolunteerPrev}
           aria-label="Previous student volunteer"
           className="
             pointer-events-auto
-            absolute left-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute left-2 sm:left-4 lg:left-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:left-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1525,7 +1655,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m15 18-6-6 6-6" />
           </svg>
@@ -1536,15 +1666,14 @@ export default function TeamCarousel() {
           aria-label="Next student volunteer"
           className="
             pointer-events-auto
-            absolute right-4 top-1/2 z-30
-            hidden -translate-y-1/2
-            h-10 w-10 items-center justify-center
+            absolute right-2 sm:right-4 lg:right-8 top-1/2 z-30
+            -translate-y-1/2
+            flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center
             rounded-full border border-white/20
             bg-black/60 text-white backdrop-blur-sm
             transition-all duration-300
             hover:scale-110 hover:border-[#E6392F] hover:bg-[#E6392F]
-            active:scale-95
-            md:flex lg:right-8 cursor-pointer
+            active:scale-95 cursor-pointer
           "
         >
           <svg
@@ -1554,7 +1683,7 @@ export default function TeamCarousel() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5 sm:h-4 sm:w-4"
           >
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -1564,7 +1693,11 @@ export default function TeamCarousel() {
           onSwiper={(swiper) => {
             volunteerSwiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => {
+          /* REVERT INSTRUCTION:
+             To revert back to updating on slide completion:
+             Change onSlideChangeTransitionStart back to onSlideChange
+          */
+          onSlideChangeTransitionStart={(swiper) => {
             setActiveVolunteerIndex(swiper.realIndex % studentVolunteers.length);
           }}
           modules={[EffectCoverflow, Autoplay, Navigation]}
