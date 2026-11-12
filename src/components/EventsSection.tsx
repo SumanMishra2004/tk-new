@@ -317,6 +317,8 @@ const events: EventCard[] = [
   },
 ];
 
+const displayEvents: EventCard[] = [...events, ...events];
+
 export default function EventsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -330,6 +332,11 @@ export default function EventsSection() {
 
   const handleNext = useCallback(() => {
     swiperRef.current?.slideNext();
+  }, []);
+
+  const handleBulletClick = useCallback((targetIndex: number) => {
+    if (!swiperRef.current) return;
+    swiperRef.current.slideToLoop(targetIndex);
   }, []);
 
   useEffect(() => {
@@ -365,7 +372,7 @@ export default function EventsSection() {
     }
   }, [activeIndex]);
 
-  const activeEvent = events[activeIndex] || events[0];
+  const activeEvent = events[activeIndex % events.length] || events[0];
 
   return (
     <section ref={sectionRef} id="events" className="w-full bg-[#12100e] py-16 sm:py-24 text-white overflow-hidden relative">
@@ -441,14 +448,13 @@ export default function EventsSection() {
           </button>
 
           <Swiper
-            modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+            modules={[EffectCoverflow, Autoplay, Navigation]}
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % events.length)}
             effect="coverflow"
             centeredSlides={true}
             slidesPerView="auto"
             loop={true}
-            loopAdditionalSlides={2}
             watchSlidesProgress={true}
             touchStartPreventDefault={false}
             grabCursor={true}
@@ -466,12 +472,11 @@ export default function EventsSection() {
               scale: 0.94,
               slideShadows: false,
             }}
-            pagination={{ clickable: true }}
             className="eventsSwiper"
           >
-            {events.map((event, index) => (
+            {displayEvents.map((event, index) => (
               <SwiperSlide
-                key={`${event.title}-${index}`}
+                key={`event-${event.title}-${index}`}
                 className="
                 !w-[220px] !h-[285px]
                 sm:!w-[255px] sm:!h-[330px]
@@ -520,10 +525,27 @@ export default function EventsSection() {
             ))}
           </Swiper>
 
-          <div className="mt-8 flex items-center justify-center gap-3 text-center">
+          {/* PAGINATION BULLETS */}
+          <div className="mt-5 flex items-center justify-center gap-2">
+            {events.map((_, i) => (
+              <button
+                key={`event-bullet-${i}`}
+                type="button"
+                onClick={() => handleBulletClick(i)}
+                aria-label={`Go to event ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  (activeIndex % events.length) === i
+                    ? "w-6 bg-[#E6392F] shadow-[0_0_10px_rgba(230,57,47,0.5)] border border-[#E6392F]/40"
+                    : "w-1.5 bg-white/25 border border-white/10 hover:bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="mt-3 flex items-center justify-center gap-3 text-center">
             <span className="h-px w-6 bg-white/20 sm:w-10" />
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/35 sm:text-[11px] transition-all duration-500">
-              {String(activeIndex + 1).padStart(2, "0")} / {String(events.length).padStart(2, "0")}
+              {String((activeIndex % events.length) + 1).padStart(2, "0")} / {String(events.length).padStart(2, "0")}
             </p>
             <span className="h-px w-6 bg-white/20 sm:w-10" />
           </div>
